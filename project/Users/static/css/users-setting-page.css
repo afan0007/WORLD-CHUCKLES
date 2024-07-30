@@ -1,0 +1,430 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster|Monoton|Truculenta|Turret+Road|Space+Mono');  
+.users-setting-page-container {
+  width: 100%;
+  /* height: 100vh; */
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+.users-setting-page-users-setting-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  background-color: rgba(255, 255, 255, 1);
+}
+.users-setting-page-rectangle2 {
+  top: -4px;
+  left: -5px;
+  width: 302px;
+  height: 1028px;
+  position: absolute;
+  background: linear-gradient(359.15deg, #3579FD 14.16%, rgba(21, 204, 94, 0.51) 39.73%, rgba(173, 98, 243, 0.51) 100.2%);
+ 
+}
+/* .users-setting-page-rectangle2 {
+  top: -4px;
+  left: -5px;
+  width: 302px;
+  height: 1028px;
+  position: absolute;
+} */
+.users-setting-page-chevronleftdouble {
+  top: 47px;
+  left: 238px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+}
+.users-setting-page-rectangle3 {
+  top: 47px;
+  left: 337px;
+  width: 5px;
+  height: 40px;
+  position: absolute;
+}
+.users-setting-page-rectangle4 {
+  top: 47px;
+  left: 337px;
+  width: 5px;
+  height: 40px;
+  position: absolute;
+}
+.users-setting-page-text {
+  top: 45px;
+  left: 354px;
+  color: rgba(0, 0, 0, 1);
+  width: 556px;
+  height: auto;
+  position: absolute;
+  font-size: 40px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Lobster;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+/* .users-setting-page-text02 {
+  top: 261px;
+  left: 124px;
+  color: rgba(43, 64, 255, 1);
+  width: 178px;
+  height: auto;
+  position: absolute;
+  font-size: 36px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Turret Road;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+} */
+.users-setting-page-text02 {
+  top: 185px;
+  left: 119px;
+  color: rgb(25, 62, 184);
+  width: 160px; /* Adjusted width to fit within the navigation bar */
+  position: absolute;
+  font-size: 31px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Turret Road;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+  word-wrap: break-word; /* Ensure long words break to the next line */
+  white-space: normal; /* Allow text to wrap to the next line */
+  overflow-wrap: break-word; /* Break long words */
+}
+.users-setting-page-text04 {
+  top: 349px;
+  left: 124px;
+  color: rgba(0, 0, 0, 1);
+  width: 203px;
+  height: auto;
+  position: absolute;
+  font-size: 36px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Lobster;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.users-setting-page-text06 {
+  top: 437px;
+  left: 124px;
+  color: rgba(0, 0, 0, 1);
+  width: 203px;
+  height: auto;
+  position: absolute;
+  font-size: 36px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Lobster;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.users-setting-page-text08 {
+  top: 529px;
+  left: 124px;
+  color: rgba(43, 64, 255, 1);
+  width: 219px;
+  height: auto;
+  position: absolute;
+  font-size: 36px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Lobster;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: underline;
+}
+.users-setting-page-rectangle41 {
+  top: 211px;
+  left: 321px;
+  width: 1091px;
+  height: 3px;
+  position: absolute;
+}
+.users-setting-page-rectangle7 {
+  top: 234px;
+  left: 321px;
+  width: 1091px;
+  height: 75px;
+  position: absolute;
+}
+.users-setting-page-rectangle9 {
+  top: 211px;
+  left: 321px;
+  width: 1091px;
+  height: 3px;
+  position: absolute;
+}
+.users-setting-page-rectangle8 {
+  top: 211px;
+  left: 321px;
+  width: 1091px;
+  height: 3px;
+  position: absolute;
+}
+.users-setting-page-text10 {
+  top: 169px;
+  left: 278px;
+  color: rgba(0, 0, 0, 1);
+  width: 216px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Regular;
+  text-align: center;
+  font-family: "Space Mono";
+  font-weight: 800;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.users-setting-page-text12 {
+  top: 169px;
+  left: 674px;
+  color: rgba(0, 0, 0, 1);
+  width: 95px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Regular;
+  text-align: center;
+  font-family: "Space Mono";
+  font-weight: 800;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.users-setting-page-text14 {
+  top: 169px;
+  left: 850px;
+  color: rgba(0, 0, 0, 1);
+  width: 95px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Regular;
+  text-align: center;
+  font-family: "Space Mono";
+  font-weight: 800;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.users-setting-page-text16 {
+  top: 169px;
+  left: 990px;
+  color: rgba(0, 0, 0, 1);
+  width: 157px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Regular;
+  text-align: center;
+  font-family: "Space Mono";
+  font-weight: 800;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.users-setting-page-text18 {
+  top: 260px;
+  left: 351px;
+  color: rgba(0, 0, 0, 1);
+  width: 240px;
+  /* height: auto; */
+  position: absolute;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+
+  word-wrap: break-word; /* Ensure long words break to the next line */
+  white-space: normal; /* Allow text to wrap to the next line */
+  overflow-wrap: break-word; /* Break long words */
+}
+.users-setting-page-text20 {
+  top: 260px;
+  left: 690px;
+  color: rgba(0, 0, 0, 1);
+  width: 257px;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.users-setting-page-text22 {
+  top: 260px;
+  left: 878px;
+  color: rgba(0, 0, 0, 1);
+  width: 257px;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.users-setting-page-text24 {
+  top: 260px;
+  left: 1028px;
+  color: rgba(0, 0, 0, 1);
+  width: 257px;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.users-setting-page-pencil02 {
+  top: 258px;
+  left: 1310px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  cursor:pointer;
+}
+.users-setting-page-group13 {
+  /* top: 948px; */
+  bottom: 20px;
+  left: 80px;
+  width: 131px;
+  height: 43px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  /* added cursor and text deco , it does not have it originally */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  text-decoration: none; /* Remove underline from text */
+}
+.users-setting-page-rectangle49 {
+  top: 0px;
+  left: 0px;
+  width: 131px;
+  height: 43px;
+  position: absolute;
+}
+.users-setting-page-logout04 {
+  top: 10px;
+  left: 99px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+}
+.users-setting-page-text26 {
+  top: 8px;
+  left: 14px;
+  color: rgba(43, 64, 255, 1);
+  width: 77px;
+  height: auto;
+  position: absolute;
+  font-size: 22px;
+  font-style: Regular;
+  text-align: right;
+  font-family: Spinnaker;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.users-setting-page-ellipse6 {
+  /* top: 234px;
+  left: 26px;
+  width: 89px;
+  height: 84px;
+  position: absolute;
+  border-radius: 30px; */
+  top: 182px;
+  left: 15px;
+  width: 89px;
+  height: 84px;
+  position: absolute;
+  border-radius: 30px;
+}
+
+.admin-setting-page-group1 {
+  bottom:20px;
+  /* top: 611px; */
+  left: 1243px;
+  width: 179px;
+  height: 84px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+  cursor: pointer; /* Change cursor to pointer on hover */
+  text-decoration: none; /* Remove underline from text */
+}
+.admin-setting-page-rectangle5 {
+  
+  width: 179px;
+  height: 80px;
+  /* height: 60px;  */
+  /* Adjusted to match the container height */
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  /* border-radius: 10px; */
+  /* width: 195px;
+  height: 36px;
+  position: absolute;
+  border-radius: 10px; */
+  background-color:rgb(105, 155, 247);
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow */
+}
+
+.admin-setting-page-text28 {
+  top: 24px;
+  left: 16px;
+  color: rgb(244, 239, 239);
+  height: auto;
+  position: absolute;
+  font-size: 18px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}

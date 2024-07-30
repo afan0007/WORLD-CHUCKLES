@@ -1,0 +1,724 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+        html {
+            line-height: 1.15;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+        }
+
+        p,
+        li,
+        ul,
+        pre,
+        div,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        figure,
+        blockquote,
+        figcaption {
+            margin: 0;
+            padding: 0;
+        }
+
+        button {
+            background-color: transparent;
+        }
+
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            font-family: inherit;
+            font-size: 100%;
+            line-height: 1.15;
+            margin: 0;
+        }
+
+        button,
+        select {
+            text-transform: none;
+        }
+
+        button,
+        [type="button"],
+        [type="reset"],
+        [type="submit"] {
+            -webkit-appearance: button;
+        }
+
+        button::-moz-focus-inner,
+        [type="button"]::-moz-focus-inner,
+        [type="reset"]::-moz-focus-inner,
+        [type="submit"]::-moz-focus-inner {
+            border-style: none;
+            padding: 0;
+        }
+
+        button:-moz-focus,
+        [type="button"]:-moz-focus,
+        [type="reset"]:-moz-focus,
+        [type="submit"]:-moz-focus {
+            outline: 1px dotted ButtonText;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+
+        input {
+            padding: 2px 4px;
+        }
+
+        img {
+            display: block;
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+    </style>
+    <style data-tag="default-style-sheet">
+        html {
+            font-family: Inter;
+            font-size: 16px;
+        }
+
+        body {
+            font-weight: 400;
+            font-style: normal;
+            text-decoration: none;
+            text-transform: none;
+            letter-spacing: normal;
+            line-height: 1.15;
+            color: var(--dl-color-theme-neutral-dark);
+            background-color: var(--dl-color-theme-neutral-light);
+
+            fill: var(--dl-color-theme-neutral-dark);
+        }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/animate.css@4.1.1/animate.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css" />
+</head>
+
+
+<body>
+    {% if user %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <div>
+        <link href="{% static 'css/home-page.css' %}" rel="stylesheet" />
+        <div class="home-page-container">
+            <div class="home-page-home-page">
+                <!-- Navigation bar background -->
+                <!-- <img src="{% static 'asset/rectangle21122-b0t.svg' %}" alt="Rectangle21122"
+                    class="home-page-rectangle2" /> -->
+                <div class="home-page-rectangle2"></div>
+
+                <!-- Drawback icon for on  Nav bar -->
+                <img src="{% static 'asset/chevronleftdouble1122-5hd6.svg' %}" alt="chevronleftdouble1122"
+                    class="home-page-chevronleftdouble" />
+                <!-- Grey vertical rectangle left of "Home" text-->
+                <img src="{% static 'asset/rectangle41122-y8l4-200w.png' %}" alt="Rectangle41122"
+                    class="home-page-rectangle4" />
+
+                <span class="home-page-text"><span>Home</span></span>
+
+                <!-- Current logged user profile image -->
+                <img src="{{ user.profile_image.url }}" alt="Ellipse88534" class="home-page-ellipse8" />
+
+                <!-- Current Logged user ({{ user.username }}) and list of Directories  -->
+                <span class="home-page-text02"><span>{{ user.username }}</span></span>
+                <span class="home-page-text04"> <span>Home</span></span>
+                <span class="home-page-text06">
+                    <a href="{% url 'history' %}" class="home-page-link">History</a>
+                </span>
+                <span class="home-page-text08">
+                    <a href="{% url 'usersettings' %}" class="home-page-link">Settings</a>
+                </span>
+
+
+                <!-- "Joke of the Day" text -->
+                <span class="home-page-text10">Joke of the Day</span>
+                
+                <!-- <img src="{% static 'asset/rectangle71123-a00e.svg' %}" alt="Rectangle71123"
+                     class="home-page-rectangle7" required class="home-page-text14"/> -->
+
+                <!-- <div class="text-bubble"></div> -->
+            <div class="text-bubble-container">
+                <div class="home-page-text-container">
+                    
+                    <span class="home-page-text14" id="joke-text">
+                        
+                        Two friends, Mei Lin and Ramesh, are hiking in the Cameron Highlands. They reach a beautiful viewpoint overlooking rolling hills and lush greenery.Mei Lin sighs contentedly. "Isn't it amazing, Ramesh? The fresh air, the scenery..."Ramesh nods, taking it all in. "Truly breathtaking. But Mei Lin, there's one thing I don't understand.""What's that?""Why do they call it Cameron Highlands? It's not that high at all!"Mei Lin smiles. "Well, Ramesh, compared to the rest of Malaysia, it practically is!"
+                        
+                        <!-- Why did the durian bring a fan to the party? Because it didn't want to be "stinky" in the heat of the conversation, just like Malaysians always keep things cool even when the discussions get spicy! -->
+                        
+                        <!-- How can prostitutes make a lot of money? 
+                        They have to "duit" a lot. ("duit" sounds like do i. "duit" means money in Malay) -->
+
+                        <!-- Why did the durian bring a fan to the party?
+                        <br />
+                        Because it didn't want to be "stinky" in the heat of the conversation,
+                        <br />
+                        just like Malaysians always keep things cool even when
+                        <br />
+                        the discussions get spicy! -->
+                    </span>
+                </div>
+                
+
+                <div class="bottom-right-container">
+                    <!-- Copy icon button -->
+                    <button onclick="copyToClipboard()">
+                        <img src="{% static 'asset/image101044-zua-200w.png' %}" alt="Copy icon"
+                            class="home-page-image10" />
+                    </button>
+                    
+                    <div id="copyStatus"></div>
+                    <!-- Link to js code "home-page.js" where code for functionalities is located -->
+                    <script src="{% static 'js/home-page.js' %}"></script>
+
+                    <!-- Offensive/non offensive button -->
+                    <div class="sign-up-page-input2">
+                        <select name="offensive" required class="home-page-rectangle60">
+                            <option value="" disabled selected>Offensive/Non-Offensive</option>
+                            <option value="Offensive">Offensive</option>
+                            <option value="Non Offensive">Non-Offensive</option>
+                        </select>
+                    </div>
+                
+                    <!--Rectangle Background that holds 5 stars
+                    wih the 5 stars(images with transparent background) -->
+                    <style>
+                        /* .star {
+                            width: 24px;
+                            /* Adjust size as needed */
+                            /* height: 24px; */
+                            /* Adjust size as needed */
+                            /* margin: 1px; */
+                            /* Adjust spacing as needed */
+                            /* cursor: pointer; */
+                        /* } */ 
+
+                        .star.filled {
+                            content: url('{% static "asset/image71033-pwn-200h.png" %}');
+                        }
+                    </style>
+                    <img src="{% static 'asset/rectangle5i973-6lh-200h.png' %}" alt="Rectangle5I973"
+                        class="home-page-rectangle51" />
+                        
+                    <div class="home-page-group14">
+                        <div class="star-rating">
+                            <img src="{% static 'asset/image41033-0dx-200h.png' %}" alt="Star" class="star"
+                                data-index="1" />
+                            <img src="{% static 'asset/image41033-0dx-200h.png' %}" alt="Star" class="star"
+                                data-index="2" />
+                            <img src="{% static 'asset/image41033-0dx-200h.png' %}" alt="Star" class="star"
+                                data-index="3" />
+                            <img src="{% static 'asset/image41033-0dx-200h.png' %}" alt="Star" class="star"
+                                data-index="4" />
+                            <img src="{% static 'asset/image41033-0dx-200h.png' %}" alt="Star" class="star"
+                                data-index="5" />
+                        </div>
+                        
+                        <!-- <span class="home-page-text28">Rate relativity & Humour</span> -->
+                    </div>
+                </div>
+            </div>
+            <script src="{% static 'js/home-page.js' %}"></script>
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const stars = document.querySelectorAll('.star');
+
+                        stars.forEach(star => {
+                            star.addEventListener('click', function () {
+                                const index = parseInt(star.getAttribute('data-index'));
+
+                                // Fill the stars up to the clicked one
+                                stars.forEach((s, i) => {
+                                    if (i < index) {
+                                        s.classList.add('filled');
+                                    } else {
+                                        s.classList.remove('filled');
+                                    }
+                                });
+                            });
+                        });
+                    });
+                </script>
+
+
+                <!-- Logout button -->
+                <div class="home-page-group13" onclick="confirmLogout()">
+                    <img src="{% static 'asset/rectangle491125-hq87.svg' %}" alt="Rectangle491125"
+                        class="home-page-rectangle49" />
+                    <img src="{% static 'asset/logout041125-yt97.svg' %}" alt="logout041125"
+                        class="home-page-logout04" />
+                    <span class="home-page-text22">
+                        <a href="{% url 'logout' %}" id="logout-link">Logout</a>
+                    </span>
+ 
+                    <script src="{% static 'js/home-page.js' %}"></script>
+                </div>
+
+                <!-- <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button type="submit">Logout</button>
+                </form> -->
+
+
+                <!-- <p>Welcome, {{ user.username }}!</p>
+
+                <h1>Jokes are automatically saved to history page</h1> -->
+
+                <!-- Generate Joke button -->
+                <div class="home-page-group1">
+                    <button id="generate-joke-button" class="home-page-joke-button">
+                        <!-- <img src="{% static 'asset/rectangle5i112-ird-200h.png' %}" alt="Rectangle5I112"
+                            class="home-page-rectangle5" /> -->
+                            <div class="home-page-rectangle5"></div>
+                        <span class="home-page-text24"><span>Generate Joke</span></span>
+                    </button>
+                </div>
+                <!-- Link to js code "home-page.js" where code for functionalities is located -->
+                <script src="{% static 'js/home-page.js' %}"></script>
+
+                
+
+
+                <!-- country -->
+                <div class="sign-up-page-input2">
+                    <select id="country" name="country" required class="home-page-rectangle91">
+                        <option value="" disabled selected>Choose</option>
+                        <option value="1">Malaysia</option>
+                        <option value="2">China</option>
+                        <option value="3">India</option>
+                        <option value="4">South Korea</option>
+                        <option value="5">Qatar</option>
+                    </select>
+                    <!-- <img src="{% static 'asset/rectangle81243-twivf.svg' %}" alt="Rectangle81243"
+                    class="linedivider" /> -->
+                    <div  class="linedivider"></div>
+                    <span class="home-page-text50"><span>Select Your Preferred Country<br /> for Joke Generation</span></span>
+                </div>
+
+                <!-- type of jokes
+                <div class="sign-up-page-input2">
+                    <select id="joke-type" name="type of jokes" required class="home-page-rectangle92">
+                        <option value="" disabled selected>Choose</option>
+                        <option value="Knock-knock">Knock-knock</option>
+                        <option value="Anecdote">Anecdote</option>
+                        <option value="Pun">Pun</option>
+                    </select>
+                    <span class="home-page-text51"><span>Type of Jokes</span></span>
+                </div> -->
+
+
+                <div id="result"></div>
+
+                <!-- Link to js code "home-page.js" where code for functionalities is located -->
+                <script>
+
+
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const generateButton = document.getElementById('generate-joke-button');
+                        const resultDiv = document.getElementById('result');
+
+                        generateButton.addEventListener('click', function () {
+                            const selectedCountry = document.getElementById('country').value;
+                            const selectedJokeType = document.getElementById('joke-type').value;
+
+                            if (!selectedCountry || !selectedJokeType) {
+                                alert('Please select both a country and a type of joke.');
+                                return;
+                            }
+
+                            fetch('/generate-sentence/', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'X-CSRFToken': '{{ csrf_token }}'
+                                },
+                                body: JSON.stringify({ country: parseInt(selectedCountry), joke_type: selectedJokeType })
+                            })
+                                .then(response => response.json())
+                                .then(data => {
+                                    resultDiv.innerText = data.sentence;
+                                })
+                                .catch(error => {
+                                    console.error('Error:', error);
+                                    resultDiv.innerText = 'Error generating sentence.';
+                                });
+                        });
+                    });
+
+
+
+
+
+                </script>
+
+                <!-- image above is the rectangle image background for 5 stars -->
+                <!-- <img src="{% static 'asset/rectangle5i973-6lh-200h.png' %}" alt="Rectangle5I973"
+                    class="home-page-rectangle51" /> -->
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <p>You are not logged in. <a href="{% url 'login' %}">Click here to login</a></p>
+    {% endif %}
+
+</body>
+
+</html>

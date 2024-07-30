@@ -1,0 +1,804 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <title>Document</title>
+    <style data-tag="reset-style-sheet">
+        html {
+            line-height: 1.15;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+        }
+
+        p,
+        li,
+        ul,
+        pre,
+        div,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        figure,
+        blockquote,
+        figcaption {
+            margin: 0;
+            padding: 0;
+        }
+
+        button {
+            background-color: transparent;
+        }
+
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            font-family: inherit;
+            font-size: 100%;
+            line-height: 1.15;
+            margin: 0;
+        }
+
+        button,
+        select {
+            text-transform: none;
+        }
+
+        button,
+        [type="button"],
+        [type="reset"],
+        [type="submit"] {
+            -webkit-appearance: button;
+        }
+
+        button::-moz-focus-inner,
+        [type="button"]::-moz-focus-inner,
+        [type="reset"]::-moz-focus-inner,
+        [type="submit"]::-moz-focus-inner {
+            border-style: none;
+            padding: 0;
+        }
+
+        button:-moz-focus,
+        [type="button"]:-moz-focus,
+        [type="reset"]:-moz-focus,
+        [type="submit"]:-moz-focus {
+            outline: 1px dotted ButtonText;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+
+        input {
+            padding: 2px 4px;
+        }
+
+        img {
+            display: block;
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+    </style>
+    <style data-tag="default-style-sheet">
+        html {
+            font-family: Inter;
+            font-size: 16px;
+        }
+
+        body {
+            font-weight: 400;
+            font-style: normal;
+            text-decoration: none;
+            text-transform: none;
+            letter-spacing: normal;
+            line-height: 1.15;
+            color: var(--dl-color-theme-neutral-dark);
+            background-color: var(--dl-color-theme-neutral-light);
+
+            fill: var(--dl-color-theme-neutral-dark);
+        }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/animate.css@4.1.1/animate.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css" />
+</head>
+
+<body>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <div>
+        {% if user %}
+        <link href="{% static 'css/users-setting-page.css' %}" rel="stylesheet" />
+        <div class="users-setting-page-container">
+            <div class="users-setting-page-users-setting-page">
+                <!-- Navigation Bar -->
+                <!-- <img src="{% static 'asset/rectangle21226-rpeg.svg' %}" alt="Rectangle21226"
+                    class="users-setting-page-rectangle2" /> -->
+                <div class="users-setting-page-rectangle2"></div>
+
+                <!-- Drawback icon -->
+                <img src="{% static 'asset/chevronleftdouble1227-5kh.svg' %}" alt="chevronleftdouble1227"
+                    class="users-setting-page-chevronleftdouble" />
+
+                <!-- Grey vertical rectangle left of "Settings" text-->
+                <!-- <img src="{% static 'asset/rectangle31228-7ke5-200w.png' %}" alt="Rectangle31228"
+                    class="users-setting-page-rectangle3" /> -->
+                <img src="{% static 'asset/rectangle41229-04z-200w.png' %}" alt="Rectangle41229"
+                    class="users-setting-page-rectangle4" />
+                <span class="users-setting-page-text"><span>Settings</span></span>
+
+                <!-- Current logged user profile image  -->
+                <img src="{{ user.profile_image.url }}" alt="Ellipse68731" class="users-setting-page-ellipse6" />
+                
+                <!-- Current Logged user and list of Directories  -->
+                <span class="users-setting-page-text02"><span>{{ user.username }}</span></span>
+                <span class="users-setting-page-text04"><a href="{% url 'index' %}" class="history-link">Home</a></span>
+                <span class="users-setting-page-text06"> <a href="{% url 'history' %}">History</a></span>
+                <span class="users-setting-page-text08"><a href="{% url 'usersettings' %}">Settings</a></span>
+                <img src="{% static 'asset/rectangle41240-tzv.svg' %}" alt="Rectangle41240"
+                    class="users-setting-page-rectangle41" />
+
+                <!-- text bubble which holds user information details -->
+                <img src="{% static 'asset/rectangle71241-vqqn.svg' %}" alt="Rectangle71241"
+                    class="users-setting-page-rectangle7" />
+
+                <!-- <img src="{% static 'asset/rectangle91242-qql.svg' %}" alt="Rectangle91242"
+                    class="users-setting-page-rectangle9" /> -->
+
+                <!-- <img src="{% static 'asset/rectangle81243-twivf.svg' %}" alt="Rectangle81243"
+                    class="users-setting-page-rectangle8" /> -->
+
+               <!-- User's information details within text bubble -->
+                <span class="users-setting-page-text10"><span>Username</span></span>
+                <span class="users-setting-page-text12"><span>Country</span></span>
+                <span class="users-setting-page-text14"><span>Age</span></span>
+                <span class="users-setting-page-text16"><span>Password</span></span>
+                <span class="users-setting-page-text18"><span>{{ user.username }}</span></span>
+                <span class="users-setting-page-text20"><span>{{ user.get_country_display }}</span></span>
+                <span class="users-setting-page-text22"><span>{{ user.age }}</span></span>
+                <span class="users-setting-page-text24"><span>{{ user.password }}</span></span>
+                <img src="{% static 'asset/pencil021252-qmb.svg' %}" alt="pencil021252"
+                    class="users-setting-page-pencil02" id="edit-profile-btn" />
+
+                <!-- <ul>
+                    <li>Username: {{ user.username }}</li>
+                    <li>Country: {{ user.get_country_display }}</li>
+                    <li>Age: {{ user.age }}</li>
+                    <li><img src="{{ user.profile_image.url }}" alt="Profile Image" width="100"></li>
+                </ul>
+
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit">Update</button>
+                </form> -->
+
+                <!-- Modal Structure --> 
+                <!-- Pop up that displays current user details and options to edit their details -->
+                <div id="profileModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <ul>
+                            <!-- <li>Username: {{ user.username }}</li>
+                            <li>Country: {{ user.get_country_display }}</li>
+                            <li>Age: {{ user.age }}</li>
+                            <li><img src="{{ user.profile_image.url }}" alt="Profile Image" width="100"></li> -->
+
+                            <!-- the list below this comment is working , above one is for reference -->
+                            <!-- <li><span class="label">Username:</span> <span class="value">{{ user.username }}</span></li>
+                            <li><span class="label">Country:</span> <span class="value">{{ user.get_country_display }}</span></li>
+                            <li><span class="label">Age:</span> <span class="value">{{ user.age }}</span></li>
+                            <li><span class="label">Current Profile Image:</span> <span class="value"><img src="{{ user.profile_image.url }}" alt="Profile Image" width="100"></span></li> -->
+
+                        </ul>
+                        <form method="post" enctype="multipart/form-data">
+
+                            <div class="popup">
+                                <span class="popup-text"><span>Edit Information</span></span>
+                                <div class="line"></div>
+                                
+                            </div>
+
+
+                            {% csrf_token %}
+                            <!-- {{ form.as_p }} -->
+                            {% for field in form %}
+                            <p>
+                                <!-- <label for="{{ field.id_for_label }}">
+                                    <span class="label2">{{ field.label_tag|safe }}</span>
+                                </label>
+                                {{ field }} -->
+                                
+                                <!-- <label for="{{ field.id_for_label }}">
+                                    {% if field.name == 'profile_image' %}
+                                        <span class="label2">{{ field.label_tag|safe }}</span><br>
+                                    {% else %}
+                                        <span class="label2">{{ field.label_tag|safe }}</span>
+                                    {% endif %}
+                                </label>
+                                {{ field }} -->
+
+                                <label for="{{ field.id_for_label }}">
+                                    <span class="label2">{{ field.label_tag|safe }}</span>
+                                </label>
+                                {% if field.name == 'profile_image' %}
+                                    <!-- <br>
+                                    <span class="value">Currently: {{ user.profile_image.url }}</span>
+                                    <br> -->
+                                    <img src="{{ user.profile_image.url }}" alt="Profile Image" width="100">
+                                    <br>
+                                {% endif %}
+                                {{ field }}
+                            </p>
+                            {% endfor %}
+                            <button class="updatebtn" type="submit">Update</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- JavaScript to Handle Modal -->
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        var modal = document.getElementById("profileModal");
+                        var btn = document.getElementById("edit-profile-btn");
+                        var span = document.getElementsByClassName("close")[0];
+
+                        btn.onclick = function () {
+                            modal.style.display = "block";
+                        }
+
+                        span.onclick = function () {
+                            modal.style.display = "none";
+                        }
+
+                        window.onclick = function (event) {
+                            if (event.target == modal) {
+                                modal.style.display = "none";
+                            }
+                        }
+                    });
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const usernameField = document.querySelector('input[name="username"]');
+                        const profileImageField = document.querySelector('input[name="profile_image"]');
+
+                        profileImageField.addEventListener('change', function () {
+                            const file = profileImageField.files[0];
+                            if (file) {
+                                const username = usernameField.value;
+                                const extension = file.name.split('.').pop();
+                                const newFileName = `${username}.${extension}`;
+
+                                const dataTransfer = new DataTransfer();
+                                const newFile = new File([file], newFileName, { type: file.type });
+                                dataTransfer.items.add(newFile);
+                                profileImageField.files = dataTransfer.files;
+                            }
+                        });
+                    });
+                </script>
+                <style>
+                    @import url('https://fonts.googleapis.com/css?family=Lobster|Monoton|Truculenta|Turret+Road|Space+Mono|Stalinist+One|VT323');  
+                    /* Modal container */
+                    .modal {
+                        display: none;
+                        position: fixed;
+                        z-index: 1;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        /* height: 100%; */
+                        min-height: 100vh;
+                        overflow: auto;
+                        background-color: rgb(0, 0, 0);
+                        background-color: rgba(0, 0, 0, 0.4);
+                    }
+
+                    /* Modal content */
+                    .modal-content {
+                        background-color: #B6F2FF;
+                        margin: 5% auto;
+                        padding: 20px;
+                        border: 1px solid #888;
+                        width: 80%;
+                        max-width: 600px;
+                        border-radius: 10px;
+                    }
+                    /* header edit information  */
+                    .popup-text {
+                        font-family: Lobster;
+                        font-style: normal;
+                        font-weight: 800;
+                        font-size: 30px;
+                        line-height: 29px;
+                        text-align: center;
+
+                        color: #000000;
+
+                    }
+                    /* line */
+                    .line {
+                        position: relative; /* Change from absolute to relative */
+                        width: 530px;
+                        height: 3px;
+                        
+
+                        background: #898989;
+                        margin-bottom: 20px;
+                    }
+                    /* Label before the colon */
+                    .label {
+                        color: rgb(25, 62, 184);
+                        font-weight: bold; /* Optional: makes the label bold */
+                        font-family: Lobster;
+                    }
+                    .label2 {
+                        color: rgb(25, 62, 184);
+                        font-weight: bold; /* Optional: makes the label bold */
+                        font-family: "Spinnaker";
+                        font-size: 20px;
+                        
+                    }
+                    /* label::before {
+                        content: attr(for) ": ";
+                        color: rgb(25, 62, 184);
+                        font-weight: bold;
+                        font-family: Lobster;
+                    } */
+
+                    /* Value after the colon */
+                    .value {
+                        color: black;
+                    }
+
+                    /* Add spacing between list items */
+                    .modal-content ul {
+                        list-style-type: none; /* Remove default list styling */
+                        padding: 0; /* Remove default padding */
+                    }
+
+                    .modal-content ul li {
+                        
+                        margin-bottom: 10px; /* Add spacing between each list item */
+                    }
+
+                    /* Close button */
+                    .close {
+                        color: #898989;
+                        float: right;
+                        font-size: 28px;
+                        font-weight: bold;
+                    }
+
+                    .close:hover,
+                    .close:focus {
+                        color: black;
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
+
+                    /* Add spacing between form fields */
+                    form p {
+                        margin-bottom: 15px; /* Add space between form fields */
+                    }
+                    /* Style for input fields */
+                    input[type="text"],
+                    input[type="number"],
+                    select {
+                        border: 1px solid grey; /* Grey outline */
+                        padding: 5px;
+                        border-radius: 5px;
+                        width: calc(100% - 12px); /* Adjust for padding and border */
+                        box-sizing: border-box;
+                        background-color:whitesmoke;
+                        /* background-color:rgba(53, 121, 253, 0.23); */
+                    }
+
+                    /* Style for file input (optional if you have one) */
+                    input[type="file"] {
+                        border: none; /* Usually file inputs are not styled with borders */
+                        margin-top: 10px;
+                    }
+                    /* update btn */
+                    .updatebtn {
+                        /* left: 50%; */
+                        width: 109px;
+                        height: 40px;
+                        border-radius: 10px;
+                        background-color: rgb(105, 155, 247);
+                        border: none; /* Remove the default border */
+                        color: white; /* Set text color to white */
+                        font-size: 16px; /* Adjust the font size */
+                        cursor: pointer; /* Change cursor to pointer on hover */
+                        transition: background-color 0.3s; /* Smooth transition for background color change */
+                        }
+                    .updatebtn:hover,
+                    .updatebtn:focus {
+                        /* color: black;
+                        text-decoration: none;
+                        cursor: pointer; */
+                        background-color: rgb(85, 135, 227); /* Slightly darker shade on hover/focus */
+                        color: white; /* Keep text color white */
+                        text-decoration: none; /* Remove text decoration */
+
+                        
+                    }
+                </style>
+
+
+
+
+                <div class="users-setting-page-group13">
+                    <img src="{% static 'asset/rectangle491254-i82j.svg' %}" alt="Rectangle491254"
+                        class="users-setting-page-rectangle49" />
+                    <img src="{% static 'asset/logout041255-hd.svg' %}" alt="logout041255"
+                        class="users-setting-page-logout04" />
+                    <span class="users-setting-page-text26">
+                        <a href="{% url 'logout' %}">Logout</a>
+                    </span>
+                    
+                    <!-- {% if user.is_admin %}
+                    <span class="admin-setting-page-text28">
+                        <a href="{% url 'user_database' %}">user database</a>
+                    </span>
+                    {% endif %} -->
+                </div>
+                
+                    <!-- <div class="userdatabase-button">
+                        {% if user.is_admin %}
+                        <span class="admin-setting-page-text28">
+                            <a href="{% url 'user_database' %}">user database</a>
+                        </span>
+                        {% endif %}
+                    </div> -->
+
+                    <!-- User Database button [ONLY ADMIN can view this button] -->
+                    <div>{% if user.is_admin %}
+                        <a href="{% url 'user_database' %}" class="admin-setting-page-group1">
+                            <!-- <img
+                            src="{% static 'asset/userdatabaseButton.svg' %}"
+                            alt="Rectangle5I112"
+                            class="admin-setting-page-rectangle5"
+                            /> -->
+                            <div class="admin-setting-page-rectangle5"></div>
+                            <span class="admin-setting-page-text28">
+                            <span>Users Database</span>
+                            </span>
+                        </a>
+                      {% endif %}
+                    </div>
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <p>You are not logged in. <a href="{% url 'login' %}">Click here to login</a></p>
+    {% endif %}
+
+</body>
+
+</html>
