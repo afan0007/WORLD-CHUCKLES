@@ -448,8 +448,8 @@
         </span>
         <img src="{% static 'asset/rectangle456943-daqb-200h.png' %}" alt="Rectangle456943"
           class="more-infopopup-rectangle45" />
-        <span class="more-infopopup-text10"><span>Keyword</span></span>
-        <span class="more-infopopup-text12"><span>{{ history.keyword }}</span></span>
+        <span class="more-infopopup-text10"><span>Country</span></span>
+        <span class="more-infopopup-text12"><span>{{ history.country }}</span></span>
 
         <!-- Star Rating -->
         <div class="star-rating">
@@ -461,6 +461,7 @@
             {% endif %}
           {% endfor %}
         </div>
+        
         <!-- Copy icon button -->
         <button onclick="copyToClipboard()">
           <img src="{% static 'asset/image111053-q93a-200w.png' %}" alt="image111053" class="more-infopopup-image111" />
@@ -471,17 +472,6 @@
         <script src="{% static 'js/moreinfo.js' %}"></script>
 
       </div>
-      <style>
-        .star-rating {
-            display: flex;
-        }
-    
-        .star {
-            width: 30px; /* Adjust the width as per your design */
-            height: 30px; /* Adjust the height as per your design */
-            margin-right: 5px; /* Adjust the spacing between stars */
-        }
-    </style>
     </div>
   </div>
 </body>

@@ -462,39 +462,64 @@
                     <button class="search-button">Search</button>
                 </div>
 
-                <img src="{% static 'asset/rectangle41293-nqoo.svg' %}" alt="Rectangle41293"
-                    class="history-page-rectangle41" />
-
-                <img src="{% static 'asset/rectangle71294-u0l.svg' %}" alt="Rectangle71294"
-                    class="history-page-rectangle7" />
-
-                <img src="{% static 'asset/rectangle91295-xp2a.svg' %}" alt="Rectangle91295"
-                    class="history-page-rectangle9" />
 
                 <img src="{% static 'asset/rectangle81296-owf2.svg' %}" alt="Rectangle81296"
                     class="history-page-rectangle8" />
+                
 
-                <span class="history-page-text12"><span>Joke</span></span>
+                <span class="history-page-text12"> Joke </span>
+                <span class="history-page-text13"> Actions </span>
                 <!-- <span class="history-page-text14"><span>Keyword</span></span> -->
 
 
-                <ul id="historyList">
+                <!--<ul id="historyList">
+
+                    
                     {% for history in histories %}
                     <li id="history-{{ history.id }}">
                         <span class="history-page-text16">
                             {{ history.description }} - {{ history.keyword }} -
                         </span>
+                        
+                        <button type="button" onclick="showMoreInfo('{{ history.id }}')" class="history-page-text40">More Info</button>
+                        
                         <button type="button"
                             onclick="showModal('{{ history.id }}', '{{ history.description }}', '{{ history.keyword }}', '{{ history.status }}')">More
                             Info</button>
                         <button type="button" class="delete-button" data-id="{{ history.id }}">Delete</button>
-                        <!-- more info SAMPLE ONLY-->
+                         more info SAMPLE ONLY
                         <div class="history-page-group14">
-                            <button type="button" onclick="showMoreInfo('{{ history.id }}')" class="history-page-text40">More Info</button>        
+                            <button type="button" onclick="showMoreInfo('{{ history.id }}')" class="history-page-text40">More Info</button>       
                         </div>
                     </li>
                     {% endfor %}
-                </ul>
+                </ul> -->
+
+                <table class="history-info-table">
+                    {% for history in histories %}
+                    <tr id="history-{{ history.id }}">
+                        <td>{{ history.description }}</td>
+                        <td>
+                            <button class = more-info-button type="button" onclick="showMoreInfo('{{ history.id }}')">More Info</button>
+                        </td>
+                        <td>
+                            <button class = delete-button type="button" data-id="{{ history.id }}" onclick="confirmDelete()">Remove</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+
+                <!--<table class="history-info-table">
+                    {% for history in histories %}
+                    <tr id="history-{{ history.id }}" class="container-bg">
+                        <td>{{ history.description }}</td>
+                        <td>
+                            <button type="button" onclick="showMoreInfo('{{ history.id }}')">More Info</button>
+                            <button type="button" class="delete-button" data-id="{{ history.id }}">Delete</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>-->
 
                 <!-- popupfunction -->
                 <script>

@@ -281,7 +281,7 @@
 .history-page-text12 {
   top: 169px;
   left: 257px;
-  color: rgba(0, 0, 0, 1);
+  color: black;
   width: 216px;
   height: auto;
   position: absolute;
@@ -294,6 +294,25 @@
   font-stretch: normal;
   text-decoration: none;
 }
+
+.history-page-text13 {
+  top: 169px;
+  left: 1200px;
+  color: black;
+  width: 216px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Regular;
+  text-align: center;
+  font-family: "Space Mono";
+  font-weight: 800;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+
 .history-page-text14 {
   top: 167px;
   left: 720px;
@@ -591,15 +610,18 @@
   text-decoration: none;
 }
 .history-page-group14 {
-  top: 250px;
-  left: 1243px;
   width: 94px;
-  height: 35px;
+  height: 30px;
+  left: 850px;
+  padding-top: 8px;
+  padding-left: 10px;
+  padding-bottom: 10px;
   display: flex;
   position: absolute;
-  align-items: flex-start;
+  align-items: center;
   flex-shrink: 1;
   background-color: rgba(83, 147, 223, 0.5);
+  
 }
 .history-page-text40 {
   top: 10px;
@@ -736,3 +758,75 @@
   text-decoration: underline;
   color:rgba(43, 64, 255, 1);
 }
+
+/* table version user list information display */
+/* Position the table */
+.history-info-table {
+  position: absolute;
+  top: 240px;
+  left: 321px;
+  width: 1091px;
+  border-collapse: collapse;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border: none;
+}
+
+/* General table styling */
+.history-info-table tr, .history-info-table td {
+  padding: 10px;
+  text-align: left;
+  border: none;
+}
+
+
+.history-info-table tr:nth-child(even) {
+  background-color:rgba(0, 0, 0, 0.1) /* Light grey background for even rows */
+}
+
+.history-info-table tr:nth-child(odd) {
+  background-color: #dc9ddb; /* White background for odd rows */
+}
+
+.more-info-button {
+  background-color: #5483b9; /* Green background */
+  border: none; /* Remove border */
+  color: white; /* White text */
+  padding: 15px 32px; /* Some padding */
+  text-align: center; /* Centered text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Get the element to behave like an inline element while retaining block-level properties */
+  font-size: 16px; /* Increase font size */
+  margin: 2px 2px; /* Add some margin */
+  cursor: pointer; /* Pointer/hand icon on hover */
+  border-radius: 12px; /* Rounded corners */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+}
+
+.more-info-button:hover {
+  background-color: #5045a0; /* Darker green on hover */
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+.delete-button{
+  background-color: #e74c3c; /* Red background */
+    border: none; /* Remove border */
+    color: white; /* White text */
+    padding: 15px 32px; /* Some padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Get the element to behave like an inline element while retaining block-level properties */
+    font-size: 16px; /* Increase font size */
+    margin: 4px 2px; /* Add some margin */
+    cursor: pointer; /* Pointer/hand icon on hover */
+    border-radius: 12px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+}
+
+.delete-button:hover {
+  background-color: #c0392b; /* Darker red on hover */
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+
+

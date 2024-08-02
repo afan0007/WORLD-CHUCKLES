@@ -92,6 +92,7 @@
   width: 37px;
   height: 37px;
   position: absolute;
+  display: flex;
 }
 .more-infopopup-text06 {
   top: 132px;
@@ -120,7 +121,7 @@
 .more-infopopup-text10 {
   top: 349px;
   left: 31px;
-  color: rgba(0, 0, 0, 1);
+  color: blue;
   height: auto;
   position: absolute;
   font-size: 20px;
@@ -135,7 +136,7 @@
 .more-infopopup-text12 {
   top: 390px;
   left: 43px;
-  color: rgba(0, 0, 0, 1);
+  color: blue;
   width: 441px;
   height: auto;
   position: absolute;
@@ -197,4 +198,10 @@
   margin-left: 50%;
   color: green;
   display: none;
+}
+
+.star-rating{
+  top: 484px;
+  left: 143px;
+  display: flex;
 }
