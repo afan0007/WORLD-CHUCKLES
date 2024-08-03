@@ -605,9 +605,8 @@
 
                 
 
-
-                <!-- country -->
-                <div class="sign-up-page-input2">
+                <!--ORIGINAL country drop down that does not select current loggedin user's country by default -->
+                <!-- <div class="sign-up-page-input2">
                     <select id="country" name="country" required class="home-page-rectangle91">
                         <option value="" disabled selected>Choose</option>
                         <option value="1">Malaysia</option>
@@ -615,12 +614,32 @@
                         <option value="3">India</option>
                         <option value="4">South Korea</option>
                         <option value="5">Qatar</option>
+                    </select> -->
+
+                    <!-- <img src="{% static 'asset/rectangle81243-twivf.svg' %}" alt="Rectangle81243"
+                    class="linedivider" /> -->
+
+                    <!-- <div  class="linedivider"></div>
+                    <span class="home-page-text50"><span>Select Your Preferred Country<br /> for Joke Generation</span></span>
+                </div> -->
+
+                <!-- country drop down which select current loggedin user's country by default -->
+                {% if user %}
+                <div class="sign-up-page-input2">
+                    <select id="country" name="country" required class="home-page-rectangle91">
+                        <option value="" disabled {% if not user.country %}selected{% endif %}>Choose</option>
+                        <option value="1" {% if user.country == "MY" %}selected{% endif %}>Malaysia</option>
+                        <option value="2" {% if user.country == "CN" %}selected{% endif %}>China</option>
+                        <option value="3" {% if user.country == "IN" %}selected{% endif %}>India</option>
+                        <option value="4" {% if user.country == "KR" %}selected{% endif %}>South Korea</option>
+                        <option value="5" {% if user.country == "QA" %}selected{% endif %}>Qatar</option>
                     </select>
                     <!-- <img src="{% static 'asset/rectangle81243-twivf.svg' %}" alt="Rectangle81243"
                     class="linedivider" /> -->
                     <div  class="linedivider"></div>
                     <span class="home-page-text50"><span>Select Your Preferred Country<br /> for Joke Generation</span></span>
                 </div>
+                {% endif %}
 
                 <!-- type of jokes
                 <div class="sign-up-page-input2">
