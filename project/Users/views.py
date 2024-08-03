@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login as auth_login, logout as aut
 from .forms import SignUpForm, AuthenticationForm, UserUpdateForm
 from .models import User, History
 from .nlpmodel import dummy
-
+from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 import json
 
@@ -172,18 +172,35 @@ def delete_user(request):
     else:
         return JsonResponse({'error': 'Method not allowed'}, status=405)
 
+@csrf_exempt
 def delete_history(request):
+    # if request.method == 'POST':
+    #     data = json.loads(request.body)
+    #     history_id = data.get('id')
+    #     try:
+    #         history = History.objects.get(id=history_id)
+    #         history.delete()
+    #         return JsonResponse({'message': 'History deleted successfully'})
+    #     except History.DoesNotExist:
+    #         return JsonResponse({'message': 'History not found'}, status=404)
+    # else:
+    #     return JsonResponse({'message': 'Invalid request method'}, status=405)
     if request.method == 'POST':
-        data = json.loads(request.body)
-        history_id = data.get('id')
         try:
+            data = json.loads(request.body)
+            history_id = data.get('id')
             history = History.objects.get(id=history_id)
             history.delete()
             return JsonResponse({'message': 'History deleted successfully'})
         except History.DoesNotExist:
             return JsonResponse({'message': 'History not found'}, status=404)
+        except json.JSONDecodeError:
+            return JsonResponse({'message': 'Invalid JSON'}, status=400)
+        except Exception as e:
+            return JsonResponse({'message': str(e)}, status=500)
     else:
         return JsonResponse({'message': 'Invalid request method'}, status=405)
+
 
 
 def rate_history(request):

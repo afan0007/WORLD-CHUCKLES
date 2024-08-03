@@ -429,30 +429,79 @@
     <div class="more-infopopup-container">
       <div class="more-infopopup-more-infopopup">
         <span class="more-infopopup-text"><span>More Information</span></span>
+        <!-- below image rectangle30 is line divider  -->
         <img src="{% static 'asset/rectangle305246-xtrp-200h.png' %}" alt="Rectangle305246"
           class="more-infopopup-rectangle30" />
-        <span class="more-infopopup-text02"><span>Joke</span></span>
-        <img src="{% static 'asset/rectangle435248-loct-300h.png' %}" alt="Rectangle435248"
-          class="more-infopopup-rectangle43" />
-        <img src="{% static 'asset/rectangle445250-b2a-200h.png' %}" alt="Rectangle445250"
-          class="more-infopopup-rectangle44" />
-        <span class="more-infopopup-text04"><span>Status</span></span>
 
 
+        <!-- below images are images of blue text bubble  that was previously used -->
+        <!-- <img src="{% static 'asset/rectangle435248-loct-300h.png' %}" alt="Rectangle435248"
+          class="more-infopopup-rectangle43" /> -->
+        <!-- <img src="{% static 'asset/rectangle445250-b2a-200h.png' %}" alt="Rectangle445250"
+          class="more-infopopup-rectangle44" /> -->
+        <!-- <img src="{% static 'asset/rectangle456943-daqb-200h.png' %}" alt="Rectangle456943"
+          class="more-infopopup-rectangle45" /> -->
+
+
+          <!-- Joke header with its joke text bubble  -->
+          <span class="more-infopopup-text02"><span>Joke</span></span>
+          <div class="text-bubble-container2">
+            <div class="home-page-text-container2">
+              <span class="joke-text-description" id="joke-text"> {{ history.description }}</span>
+               <!-- Copy icon button -->
+               <div class="bottom-right-container">
+                  <button onclick="copyToClipboard()">
+                    <img src="{% static 'asset/image111053-q93a-200w.png' %}" alt="image111053" class="more-infopopup-image111" />
+                  </button>
+                  <div id="copyStatus"></div>
+                  
+               </div>
+            </div>
+          </div>
+           <!-- Link to js code "home-page.js" where code for functionalities is located -->
+           <script src="{% static 'js/moreinfo.js' %}"></script>
+
+          <!-- Country header with its text bubble  -->
+          <span class="more-infopopup-text10"><span>Country</span></span>
+          <div class="text-bubble-container3">
+            <div class="home-page-text-container3">
+              <span>{{ history.country }}</span>
+                <!-- <span class="more-infopopup-text12"><span>{{ history.country }}</span></span> -->
+            </div>
+          </div>
+        <!-- 5 Star Rating Status header  with its text bubble that consist of recorded 5 star icon rating-->
+        <span class="more-infopopup-text04"><span>5 Star Rating Status</span></span>
+        <div class="text-bubble-container1">
+          <div class="home-page-text-container1">
+              
+              <div class="star-rating">
+                  {% for i in "12345" %}
+                    {% if forloop.counter <= history.status %} 
+                      <img src="{% static 'asset/image111046-v25m-200h.png' %}" alt="Filled Star"class="star filled-star" />
+                    {% else %}
+                      <img src="{% static 'asset/image91045-6jps-200h.png' %}" alt="Unfilled Star" class="star unfilled-star" />
+                    {% endif %}
+                  {% endfor %}
+                </div>
+          </div>
+        </div>
+
+        
+
+        <!-- X icon at top right of pop up  -->
         <a href="{% url 'history' %}">
 
           <img src="{% static 'asset/xsquare5254-o4x.svg' %}" alt="xsquare5254" class="more-infopopup-xsquare" />
         </a>
-        <span class="more-infopopup-text06" id="joke-text">
+        
+        <!-- <span class="more-infopopup-text06" id="joke-text">
           <span> {{ history.description }}</span>
-        </span>
-        <img src="{% static 'asset/rectangle456943-daqb-200h.png' %}" alt="Rectangle456943"
-          class="more-infopopup-rectangle45" />
-        <span class="more-infopopup-text10"><span>Country</span></span>
-        <span class="more-infopopup-text12"><span>{{ history.country }}</span></span>
-
+        </span> -->
+        
+        
+       
         <!-- Star Rating -->
-        <div class="star-rating">
+        <!-- <div class="star-rating">
           {% for i in "12345" %}
             {% if forloop.counter <= history.status %} 
               <img src="{% static 'asset/image111046-v25m-200h.png' %}" alt="Filled Star"class="star filled-star" />
@@ -460,16 +509,12 @@
               <img src="{% static 'asset/image91045-6jps-200h.png' %}" alt="Unfilled Star" class="star unfilled-star" />
             {% endif %}
           {% endfor %}
-        </div>
+        </div> -->
         
-        <!-- Copy icon button -->
-        <button onclick="copyToClipboard()">
-          <img src="{% static 'asset/image111053-q93a-200w.png' %}" alt="image111053" class="more-infopopup-image111" />
-        </button>
-        <div id="copyStatus"></div>
+       
 
         <!-- Link to js code "home-page.js" where code for functionalities is located -->
-        <script src="{% static 'js/moreinfo.js' %}"></script>
+        <!-- <script src="{% static 'js/moreinfo.js' %}"></script> -->
 
       </div>
     </div>

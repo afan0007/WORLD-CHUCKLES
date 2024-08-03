@@ -437,7 +437,7 @@
                 <img src="{% static 'asset/chevronleftdouble1280-8vcl.svg' %}" alt="chevronleftdouble1280"
                     class="history-page-chevronleftdouble" />
 
-                    <!-- Current logged user profile image  -->
+                <!-- Current logged user profile image  -->
                 <img src="{{ user.profile_image.url }}" alt="Ellipse98631" class="history-page-ellipse9" />
 
                 <!-- Current Logged user and list of Directories  -->
@@ -465,7 +465,7 @@
 
                 <img src="{% static 'asset/rectangle81296-owf2.svg' %}" alt="Rectangle81296"
                     class="history-page-rectangle8" />
-                
+
 
                 <span class="history-page-text12"> Joke </span>
                 <span class="history-page-text13"> Actions </span>
@@ -500,14 +500,48 @@
                     <tr id="history-{{ history.id }}">
                         <td>{{ history.description }}</td>
                         <td>
-                            <button class = more-info-button type="button" onclick="showMoreInfo('{{ history.id }}')">More Info</button>
+                            <button class=more-info-button type="button" onclick="showMoreInfo('{{ history.id }}')">More
+                                Info</button>
                         </td>
                         <td>
-                            <button class = delete-button type="button" data-id="{{ history.id }}" onclick="confirmDelete()">Remove</button>
+                            <button class=delete-button type="button" data-id="{{ history.id }}"
+                                onclick="confirmDelete('{{ history.id }}')">Remove</button>
                         </td>
                     </tr>
                     {% endfor %}
                 </table>
+                <script>
+                    function confirmDelete(historyId) {
+                        if (confirm("Are you sure you want to delete this history entry?")) {
+                            deleteHistory(historyId);
+                        }
+                    }
+
+                    function deleteHistory(historyId) {
+                        fetch('/delete-history/', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({ id: historyId })
+                        })
+                            .then(response => {
+                                if (!response.ok) {
+                                    throw new Error('Network response was not ok');
+                                }
+                                return response.json();
+                            })
+                            .then(data => {
+                                if (data.message === 'History deleted successfully') {
+                                    document.getElementById('history-' + historyId).remove();
+                                } else {
+                                    alert(data.message);
+                                }
+                            })
+                            .catch(error => console.error('Error:', error));
+                    }
+                </script>
+
 
                 <!--<table class="history-info-table">
                     {% for history in histories %}
