@@ -7,7 +7,7 @@ from .nlpmodel import dummy
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 import json
-
+from django.views.decorators.http import require_http_methods
 
 
 def moreinfo(request, history_id):
@@ -217,3 +217,23 @@ def rate_history(request):
             return JsonResponse({'message': 'History not found'}, status=404)
     else:
         return JsonResponse({'message': 'Invalid request method'}, status=405)
+    
+@require_http_methods(["GET"])
+def search_users(request):
+    query = request.GET.get('q', '')
+    print(request.user)
+    
+    if query:
+        users = User.objects.filter(username__icontains=query)
+    else:
+        users = User.objects.all()  # Return all users if query is empty
+
+    results = [{
+        'username': user.username,
+        'country': user.country,  # Assuming you have a Profile model linked to User with country info
+        'age': user.age,          # Assuming age is also stored in the Profile model
+        'gender': user.gender,    # Assuming gender is also stored in the Profile model
+        'can_delete': user != request.user,
+    } for user in users]
+
+    return JsonResponse({'users': results})

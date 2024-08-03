@@ -13,13 +13,13 @@ urlpatterns = [
     path('user_database/', views.user_database, name='user_database'),#with rd (ajax method) done
     #RESTAPI
     path('generate-sentence/', views.generate_sentence, name='generate_sentence'), #done #no refresh and redirect for generating using ai model
-    path('delete-user/', views.delete_user, name='delete_user'),
+    path('delete-user/', views.delete_user, name='delete_user'), #done
     path('delete-history/', views.delete_history, name='delete_history'), # done
 
     # rate offensive 
-    #search 
     path('rate-history/', views.rate_history, name='rate_history'),
     
+    path('search-users/', views.search_users, name='search_users'), # Real-time search
     path('moreinfo/<int:history_id>/', views.moreinfo, name='moreinfo'), #done
 
 

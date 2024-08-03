@@ -467,10 +467,11 @@
                     <button class="search-button">Search</button>
                 </div> -->
                 <div class="database-page-search">
-                    <input type="search" id="search-bar" class="search-bar" placeholder="Search..." oninput="filterUsers()">
+                    <input type="search" id="search-bar" class="search-bar" placeholder="Search..."
+                        oninput="filterUsers()">
                     <button class="search-button" onclick="searchUser()">Search</button>
                 </div>
-                
+
                 <!-- Container for displaying search results -->
                 <div id="search-results" class="search-results"></div>
                 <script src="{% static 'js/admindatabase.js' %}"></script>
@@ -485,7 +486,7 @@
                 <!-- horizontal line below header   -->
                 <img src="{% static 'asset/rectangle81117-io2.svg' %}" alt="Rectangle81117"
                     class="adminuserdatabase-page-rectangle8" />
-                
+
                 <!-- Header -->
                 <!-- <span class="adminuserdatabase-page-text12">
                     <span>Sign Up Usernames</span>
@@ -499,7 +500,7 @@
                     <span class="adminuserdatabase-page-text14">Country</span>
                     <span class="adminuserdatabase-page-text16">Age</span>
                 </div>
-                
+
                 <!-- display of Users that has sign up in our application  -->
                 <!-- <div class="text-bubble-container">
                     <div class="home-page-text-container">
@@ -556,7 +557,7 @@
                         {% endfor %}
                     </table>
                 </div> -->
-               
+
 
                 <!-- table of user information without styling -->
                 <!-- <table border="1">
@@ -582,15 +583,21 @@
                         </tr>
                     {% endfor %}
                 </table> -->
-                
+
                 <table class="user-info-table" border="1">
-                    <tr>
-                        <th>Username</th>
-                        <th>Country</th>
-                        <th>Age</th>
-                        <th>Gender</th>
-                    </tr>
-                    {% for each_user in allusers %}
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Country</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- User rows will be populated here -->
+                    </tbody>
+                    <!-- temp -->
+                    <!-- {% for each_user in allusers %}
                         <tr class="user-info-row">
                             <td>{{ each_user.username }}</td>
                             <td>{{ each_user.country }}</td>
@@ -604,57 +611,96 @@
                         <tr>
                             <td colspan="4">No users found.</td>
                         </tr>
-                    {% endfor %}
+                    {% endfor %} -->
+                    <!-- temp -->
                 </table>
-                
+                <script>
+                    const loggedInUsername = '{{ user.username }}';
+                    function filterUsers() {
+                        const query = document.getElementById('search-bar').value.trim();
+                        fetch(`/search-users/?q=${encodeURIComponent(query)}`)
+                            .then(response => response.json())
+                            .then(data => {
+                                updateUserTable(data.users);
+                            })
+                            .catch(error => console.error('Error:', error));
+                    }
 
+                    function updateUserTable(users) {
+                        const userTable = document.querySelector('.user-info-table tbody');
+                        userTable.innerHTML = ''; // Clear current table content
 
-                </div>
-                <!-- Embed users data in a script tag -->
-                <script id="users-data" type="application/json">
-                    {{ allusers|safe }}
+                        if (users.length === 0) {
+                            userTable.innerHTML = '<tr><td colspan="5">No users found.</td></tr>'; // Adjust colspan if necessary
+                        } else {
+                            users.forEach(user => {
+                                const row = document.createElement('tr');
+                                row.className = "user-info-row";
+                                row.innerHTML = `
+                                    <td>${user.username}</td>
+                                    <td>${user.country}</td>
+                                    <td>${user.age}</td>
+                                    <td>${user.gender}</td>
+                                    ${user.username !== loggedInUsername ? `<td><button class="delete-button" data-username="${user.username}">Remove</button></td>` : ''}
+                                 `;
+                                userTable.appendChild(row);
+                            });
+                        }
+                    }
+
+                    // Ensure to call filterUsers on initial page load to display all users.
+                    document.addEventListener('DOMContentLoaded', filterUsers);
+
                 </script>
 
 
-                <!-- js code for search bar  -->
-                <script>
-                    document.addEventListener("DOMContentLoaded", () => {
-                        const users = JSON.parse(document.getElementById("users-data").textContent);
-                    
-                        function filterUsers() {
-                            const query = document.getElementById("search-bar").value.toLowerCase();
-                            const resultsContainer = document.getElementById("search-results");
-                            resultsContainer.innerHTML = ""; // Clear previous results
-                    
-                            if (query) {
-                                const filteredUsers = users.filter(user => user.username.toLowerCase().includes(query));
-                                if (filteredUsers.length > 0) {
-                                    const ul = document.createElement("ul");
-                                    filteredUsers.forEach(user => {
-                                        const li = document.createElement("li");
-                                        li.textContent = user.username;
-                                        li.onclick = () => showUserDetails(user.username);
-                                        ul.appendChild(li);
-                                    });
-                                    resultsContainer.appendChild(ul);
-                                }
+
+            </div>
+            <!-- Embed users data in a script tag -->
+            <!-- <script id="users-data" type="application/json">
+                    {{ allusers|safe }}
+                </script> -->
+
+
+            <!-- js code for search bar  -->
+            <!-- <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    const users = JSON.parse(document.getElementById("users-data").textContent);
+
+                    function filterUsers() {
+                        const query = document.getElementById("search-bar").value.toLowerCase();
+                        const resultsContainer = document.getElementById("search-results");
+                        resultsContainer.innerHTML = ""; // Clear previous results
+
+                        if (query) {
+                            const filteredUsers = users.filter(user => user.username.toLowerCase().includes(query));
+                            if (filteredUsers.length > 0) {
+                                const ul = document.createElement("ul");
+                                filteredUsers.forEach(user => {
+                                    const li = document.createElement("li");
+                                    li.textContent = user.username;
+                                    li.onclick = () => showUserDetails(user.username);
+                                    ul.appendChild(li);
+                                });
+                                resultsContainer.appendChild(ul);
                             }
                         }
-                    
-                        function showUserDetails(username) {
-                            const userItems = document.querySelectorAll(".user-info");
-                            userItems.forEach(item => {
-                                item.style.display = item.dataset.username === username ? "block" : "none";
-                            });
-                            document.getElementById("search-results").innerHTML = ""; // Clear search results
-                        }
-                    
-                        window.filterUsers = filterUsers;
-                        window.showUserDetails = showUserDetails;
-                    });
-                    </script>
-                    
-                <!-- <form method="post" action="{% url 'logout' %}">
+                    }
+
+                    function showUserDetails(username) {
+                        const userItems = document.querySelectorAll(".user-info");
+                        userItems.forEach(item => {
+                            item.style.display = item.dataset.username === username ? "block" : "none";
+                        });
+                        document.getElementById("search-results").innerHTML = ""; // Clear search results
+                    }
+
+                    window.filterUsers = filterUsers;
+                    window.showUserDetails = showUserDetails;
+                });
+            </script> -->
+
+            <!-- <form method="post" action="{% url 'logout' %}">
                     {% csrf_token %}
                     <button type="submit">Logout</button>
                 </form>
@@ -672,20 +718,20 @@
                     {% endfor %}
                 </ul> -->
 
-                <!-- logout -->
-                <div class="adminuserdatabase-page-group13" onclick="confirmLogout()">
-                    <img src="{% static 'asset/rectangle491120-12xe.svg' %}" alt="Rectangle491120"
-                        class="adminuserdatabase-page-rectangle49" />
-                    <img src="{% static 'asset/logout041120-erbh.svg' %}" alt="logout041120"
-                        class="adminuserdatabase-page-logout04" />
-                    <span class="adminuserdatabase-page-text42">
-                        <a href="{% url 'logout' %}">Logout</a>        
-                    </span>
-                        <script src="{% static 'js/admindatabase.js' %}"></script>
-                </div>
-
+            <!-- logout -->
+            <div class="adminuserdatabase-page-group13" onclick="confirmLogout()">
+                <img src="{% static 'asset/rectangle491120-12xe.svg' %}" alt="Rectangle491120"
+                    class="adminuserdatabase-page-rectangle49" />
+                <img src="{% static 'asset/logout041120-erbh.svg' %}" alt="logout041120"
+                    class="adminuserdatabase-page-logout04" />
+                <span class="adminuserdatabase-page-text42">
+                    <a href="{% url 'logout' %}">Logout</a>
+                </span>
+                <script src="{% static 'js/admindatabase.js' %}"></script>
             </div>
+
         </div>
+    </div>
     </div>
     {% else %}
     <p>You are not logged in as admin. <a href="{% url 'login' %}">Click here to login</a></p>
