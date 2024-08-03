@@ -430,9 +430,9 @@
       <div class="more-infopopup-more-infopopup">
         <span class="more-infopopup-text"><span>More Information</span></span>
         <!-- below image rectangle30 is line divider  -->
-        <img src="{% static 'asset/rectangle305246-xtrp-200h.png' %}" alt="Rectangle305246"
-          class="more-infopopup-rectangle30" />
-
+        <!-- <img src="{% static 'asset/rectangle305246-xtrp-200h.png' %}" alt="Rectangle305246"
+          class="more-infopopup-rectangle30" /> -->
+        <div class="line"></div>
 
         <!-- below images are images of blue text bubble  that was previously used -->
         <!-- <img src="{% static 'asset/rectangle435248-loct-300h.png' %}" alt="Rectangle435248"
@@ -444,6 +444,7 @@
 
 
           <!-- Joke header with its joke text bubble  -->
+          <div class="section">
           <span class="more-infopopup-text02"><span>Joke</span></span>
           <div class="text-bubble-container2">
             <div class="home-page-text-container2">
@@ -458,10 +459,13 @@
                </div>
             </div>
           </div>
+        </div>
            <!-- Link to js code "home-page.js" where code for functionalities is located -->
            <script src="{% static 'js/moreinfo.js' %}"></script>
 
+
           <!-- Country header with its text bubble  -->
+          <div class="section">
           <span class="more-infopopup-text10"><span>Country</span></span>
           <div class="text-bubble-container3">
             <div class="home-page-text-container3">
@@ -469,7 +473,20 @@
                 <!-- <span class="more-infopopup-text12"><span>{{ history.country }}</span></span> -->
             </div>
           </div>
+        </div>
+
+        <div class="section">
+          <span class="more-infopopup-text10"><span>Sensitivity Status</span></span>
+          <div class="text-bubble-container4">
+            <div class="home-page-text-container4">
+              <span>{{ history.country }}</span>
+                <!-- <span class="more-infopopup-text12"><span>{{ history.country }}</span></span> -->
+            </div>
+          </div>
+        </div>
+
         <!-- 5 Star Rating Status header  with its text bubble that consist of recorded 5 star icon rating-->
+        <div class="section">
         <span class="more-infopopup-text04"><span>5 Star Rating Status</span></span>
         <div class="text-bubble-container1">
           <div class="home-page-text-container1">
@@ -485,7 +502,7 @@
                 </div>
           </div>
         </div>
-
+      </div>
         
 
         <!-- X icon at top right of pop up  -->
