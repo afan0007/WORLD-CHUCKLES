@@ -458,7 +458,8 @@
 
                 <!-- Search bar -->
                 <div class="history-page-search">
-                    <input type="search" class="search-bar" placeholder="Search...">
+                    <input type="search" id="search-bar" class="search-bar" placeholder="Search..."
+                        oninput="filterJokes()">
                     <button class="search-button">Search</button>
                 </div>
 
@@ -496,7 +497,11 @@
                 </ul> -->
 
                 <table class="history-info-table">
-                    {% for history in histories %}
+                    <tbody>
+                        <!-- History rows will be populated here -->
+                    </tbody>
+
+                    <!-- {% for history in histories %}
                     <tr id="history-{{ history.id }}">
                         <td>{{ history.description }}</td>
                         <td>
@@ -508,9 +513,42 @@
                                 onclick="confirmDelete('{{ history.id }}')">Remove</button>
                         </td>
                     </tr>
-                    {% endfor %}
+                    {% endfor %} -->
                 </table>
                 <script>
+                    function filterJokes() {
+                        const query = document.getElementById('search-bar').value.trim();
+                        fetch(`/search-jokes/?q=${encodeURIComponent(query)}`)
+                            .then(response => response.json())
+                            .then(data => {
+                                updateHistoryTable(data.histories);
+                            })
+                            .catch(error => console.error('Error:', error));
+                    }
+
+                    function updateHistoryTable(histories) {
+                        const historyTable = document.querySelector('.history-info-table tbody');
+                        historyTable.innerHTML = ''; // Clear current table content
+
+                        if (histories.length === 0) {
+                            historyTable.innerHTML = '<tr><td colspan="3">No histories found.</td></tr>'; // Adjust colspan if necessary
+                        } else {
+                            histories.forEach(history => {
+                                const row = document.createElement('tr');
+                                row.id = `history-${history.id}`;
+                                row.innerHTML = `
+                        <td>${history.description}</td>
+                        <td><button class="more-info-button" type="button" onclick="showMoreInfo('${history.id}')">More Info</button></td>
+                        <td><button class="delete-button" type="button" data-id="${history.id}" onclick="confirmDelete('${history.id}')">Remove</button></td>
+                    `;
+                                historyTable.appendChild(row);
+                            });
+                        }
+                    }
+                    document.addEventListener('DOMContentLoaded', filterJokes);
+
+
+
                     function confirmDelete(historyId) {
                         if (confirm("Are you sure you want to delete this history entry?")) {
                             deleteHistory(historyId);
