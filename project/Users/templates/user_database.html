@@ -712,7 +712,7 @@
                         .then(response => response.json())
                         .then(data => {
                             if (data.message.includes('deleted successfully')) {
-                                this.closest('li').remove();
+                                this.closest('tr').remove();
                             } else {
                                 alert('Failed to delete user: ' + data.message);
                             }
