@@ -665,10 +665,14 @@
 
                         generateButton.addEventListener('click', function () {
                             const selectedCountry = document.getElementById('country').value;
-                            const selectedJokeType = document.getElementById('joke-type').value;
+                            //const selectedJokeType = document.getElementById('joke-type').value;
 
-                            if (!selectedCountry || !selectedJokeType) {
-                                alert('Please select both a country and a type of joke.');
+                            // if (!selectedCountry || !selectedJokeType) {
+                            //     alert('Please select both a country and a type of joke.');
+                            //     return;
+                            // }
+                            if (!selectedCountry ) {
+                                alert('Please select a country');
                                 return;
                             }
 
@@ -678,7 +682,8 @@
                                     'Content-Type': 'application/json',
                                     'X-CSRFToken': '{{ csrf_token }}'
                                 },
-                                body: JSON.stringify({ country: parseInt(selectedCountry), joke_type: selectedJokeType })
+                                // body: JSON.stringify({ country: parseInt(selectedCountry), joke_type: selectedJokeType })
+                                body: JSON.stringify({ country: parseInt(selectedCountry), joke_type: "selectedJokeType" })
                             })
                                 .then(response => response.json())
                                 .then(data => {

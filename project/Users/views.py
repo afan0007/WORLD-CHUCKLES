@@ -18,7 +18,7 @@ def moreinfo(request, history_id):
 def generate_sentence(request):
     if request.method == 'POST':
         data = json.loads(request.body)
-        selected_number = data.get('joke_type')
+        #selected_number = data.get('joke_type')
         
         # Map selected_number to corresponding keyword
         # if selected_number == 1:
@@ -40,9 +40,9 @@ def generate_sentence(request):
         if selected_country == 1:
             Country = "Malaysia"
         elif selected_country == 2:
-            Country = "India"
-        elif selected_country == 3:
             Country = "China"
+        elif selected_country == 3:
+            Country = "India"
         elif selected_country == 4:
             Country = "South Korea"
         elif selected_country == 5:
@@ -55,8 +55,10 @@ def generate_sentence(request):
         #sentence = f"You generated the sentence with keyword '{keyword}'."
         usr_obj = User.objects.get(id=request.session.get('user_id'))
 
-        sentence = dummy(Country, selected_number)
-        History.objects.create(user=usr_obj, description=sentence, keyword=selected_number,country = Country,offensive=None, status=0).save() 
+        # sentence = dummy(Country, selected_number)
+        sentence = dummy(Country)
+
+        History.objects.create(user=usr_obj, description=sentence, keyword="No keyword",country = Country,offensive=None, status=0).save() 
 
         
         return JsonResponse({'sentence': sentence})

@@ -25,7 +25,7 @@ print(result)
 #question = "Respond to the following greeting: hello"
 #print(llm.invoke(question))
 
-def dummy(country, keyword):
+def dummy(country, keyword="dummy no keyword"):
     #change country short form to full 
     return keyword + " jokes generated for country " + country
 
