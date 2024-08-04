@@ -507,10 +507,10 @@
 
                         <!-- Offensive/non offensive button -->
                         <div class="sign-up-page-input2">
-                            <select name="offensive" required class="home-page-rectangle60">
+                            <select id="offensive-status" name="offensive" required class="home-page-rectangle60">
                                 <option value="" disabled selected>Offensive/Non-Offensive</option>
-                                <option value="Offensive">Offensive</option>
-                                <option value="Non Offensive">Non-Offensive</option>
+                                <option value="True">Offensive</option>
+                                <option value="False">Non-Offensive</option>
                             </select>
                         </div>
 
@@ -556,6 +556,41 @@
 
                 <script>
                     document.addEventListener('DOMContentLoaded', function () {
+                        const offensiveSelect = document.getElementById('offensive-status');
+                        offensiveSelect.addEventListener('change', function () {
+                            const selectedValue = offensiveSelect.value;
+                            const historyId = currenttorate  
+                            console.log(currenttorate)
+
+                            if (!historyId) {
+                                console.error('No history ID available');
+                                return;
+                            }
+
+                            fetch('/update-offensive/', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'X-CSRFToken': '{{ csrf_token }}' // Ensure CSRF token is correctly inserted
+                                },
+                                body: JSON.stringify({
+                                    id: historyId,
+                                    offensive: selectedValue
+                                })
+                            })
+                                .then(response => response.json())
+                                .then(data => {
+                                    console.log('Success:', data.message);
+                                    // Optionally, display a message or handle the response
+                                })
+                                .catch(error => {
+                                    console.error('Error:', error);
+                                    // Optionally, handle the error
+                                });
+                        });
+                    });
+
+                    document.addEventListener('DOMContentLoaded', function () {
                         const stars = document.querySelectorAll('.star');
                         const resultDiv = document.getElementById('result');
                         const historyId = resultDiv.getAttribute('data-history-id');
@@ -582,13 +617,13 @@
                                 rating: rating
                             })
                         })
-                        .then(response => response.json())
-                        .then(data => {
-                            console.log('Success:', data);
-                        })
-                        .catch(error => {
-                            console.error('Error:', error);
-                        });
+                            .then(response => response.json())
+                            .then(data => {
+                                console.log('Success:', data);
+                            })
+                            .catch(error => {
+                                console.error('Error:', error);
+                            });
                     }
                     function updateStarDisplay(rating) {
                         const stars = document.querySelectorAll('.star');
@@ -720,8 +755,8 @@
                                 // body: JSON.stringify({ country: parseInt(selectedCountry), joke_type: selectedJokeType })
                                 body: JSON.stringify({ country: parseInt(selectedCountry), joke_type: "selectedJokeType" })
                             })
-                            .then(response => response.json())
-                            .then(data => {
+                                .then(response => response.json())
+                                .then(data => {
                                     // resultDiv.innerText = data.sentence;
                                     resultDiv.innerText = `Sentence: ${data.sentence}\nRow ID: ${data.id}`;
                                     //resultDiv.setAttribute('data-history-id', data.id);
@@ -731,7 +766,7 @@
                                     console.error('Error:', error);
                                     resultDiv.innerText = 'Error generating sentence.';
                                 });
-                            
+
 
                         });
                     });

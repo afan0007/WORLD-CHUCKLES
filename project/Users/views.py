@@ -257,3 +257,18 @@ def search_jokes(request):
     print(results)
 
     return JsonResponse({'histories': results})
+
+
+def update_offensive(request):
+    data = json.loads(request.body)
+    history_id = data.get('id')
+    offensive = data.get('offensive')
+    try:
+        history = History.objects.get(id=history_id)
+        history.offensive = offensive
+        history.save()
+        return JsonResponse({'message': 'Offensive status updated successfully'})
+    except History.DoesNotExist:
+        return JsonResponse({'message': 'History not found'}, status=404)
+    except Exception as e:
+        return JsonResponse({'message': str(e)}, status=500)

@@ -21,8 +21,12 @@ urlpatterns = [
     path('search-users/', views.search_users, name='search_users'), # Real-time search done
     path('moreinfo/<int:history_id>/', views.moreinfo, name='moreinfo'), #done
 
-        # rate offensive and rating
-    path('ratehistory/', views.rate_history, name='rate_history'),
+    # rating
+    path('ratehistory/', views.rate_history, name='rate_history'), #done
+
+    # offensive or not
+    path('update-offensive/', views.update_offensive, name='update_offensive'),
+
 
 ]
 
