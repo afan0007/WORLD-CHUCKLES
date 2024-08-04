@@ -1,7 +1,7 @@
 // generate joke button 
-document.getElementById('generate-joke-button').addEventListener('click', function() {
-    alert('Joke generated!'); // You can replace this with the actual joke generation logic.
-  });
+// document.getElementById('generate-joke-button').addEventListener('click', function() {
+//     alert('Joke generated!'); // You can replace this with the actual joke generation logic.
+//   });
 //new 5 star rating
 // document.addEventListener('DOMContentLoaded', function () {
 //   const stars = document.querySelectorAll('.star');
@@ -22,26 +22,26 @@ document.getElementById('generate-joke-button').addEventListener('click', functi
 //   });
 // });
 //5 star ratings 
-document.addEventListener('DOMContentLoaded', function() {
-const stars = document.querySelectorAll('.star');
+// document.addEventListener('DOMContentLoaded', function() {
+// const stars = document.querySelectorAll('.star');
 
-stars.forEach(star => {
-    star.addEventListener('click', function() {
-    const clickedIndex = Array.from(stars).indexOf(star);
+// stars.forEach(star => {
+//     star.addEventListener('click', function() {
+//     const clickedIndex = Array.from(stars).indexOf(star);
 
-    // Remove 'filled' class from all stars
-    stars.forEach((star, index) => {
-        star.classList.remove('filled');
-        if (index <= clickedIndex) {
-        star.classList.add('filled');
-        }
-    });
+//     // Remove 'filled' class from all stars
+//     stars.forEach((star, index) => {
+//         star.classList.remove('filled');
+//         if (index <= clickedIndex) {
+//         star.classList.add('filled');
+//         }
+//     });
 
-    // Optionally, you can send the rating to a server or perform other actions here
-    console.log('User rated:', clickedIndex + 1, 'stars');
-    });
-});
-});
+//     // Optionally, you can send the rating to a server or perform other actions here
+//     console.log('User rated:', clickedIndex + 1, 'stars');
+//     });
+// });
+// });
  
 //copy function 
 function copyToClipboard() {

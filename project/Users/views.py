@@ -207,6 +207,8 @@ def rate_history(request):
         data = json.loads(request.body)
         history_id = data.get('id')
         rating = data.get('rating')
+        print(history_id)
+        print(rating)
         try:
             history = History.objects.get(id=history_id)
             history.status = rating

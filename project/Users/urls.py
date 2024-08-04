@@ -22,7 +22,7 @@ urlpatterns = [
     path('moreinfo/<int:history_id>/', views.moreinfo, name='moreinfo'), #done
 
         # rate offensive and rating
-    path('rate-history/', views.rate_history, name='rate_history'),
+    path('ratehistory/', views.rate_history, name='rate_history'),
 
 ]
 

@@ -458,58 +458,66 @@
 
                 <!-- "Joke of the Day" text -->
                 <span class="home-page-text10">Joke of the Day</span>
-                
+
                 <!-- <img src="{% static 'asset/rectangle71123-a00e.svg' %}" alt="Rectangle71123"
                      class="home-page-rectangle7" required class="home-page-text14"/> -->
 
                 <!-- <div class="text-bubble"></div> -->
-            <div class="text-bubble-container">
-                <div class="home-page-text-container">
-                    
-                    <span class="home-page-text14" id="joke-text">
-                        
-                        Two friends, Mei Lin and Ramesh, are hiking in the Cameron Highlands. They reach a beautiful viewpoint overlooking rolling hills and lush greenery.Mei Lin sighs contentedly. "Isn't it amazing, Ramesh? The fresh air, the scenery..."Ramesh nods, taking it all in. "Truly breathtaking. But Mei Lin, there's one thing I don't understand.""What's that?""Why do they call it Cameron Highlands? It's not that high at all!"Mei Lin smiles. "Well, Ramesh, compared to the rest of Malaysia, it practically is!"
-                        
-                        <!-- Why did the durian bring a fan to the party? Because it didn't want to be "stinky" in the heat of the conversation, just like Malaysians always keep things cool even when the discussions get spicy! -->
-                        
-                        <!-- How can prostitutes make a lot of money? 
+                <div class="text-bubble-container">
+                    <div class="home-page-text-container">
+
+                        <span class="home-page-text14" id="joke-text">
+                            <div id="result"></div>
+
+                            <!-- use for when user has no joke at all -->
+                            <!-- Two friends, Mei Lin and Ramesh, are hiking in the Cameron Highlands. They reach a beautiful viewpoint overlooking rolling hills and lush greenery.Mei Lin sighs contentedly. "Isn't it amazing, Ramesh? The fresh air, the scenery..."Ramesh nods, taking it all in. "Truly breathtaking. But Mei Lin, there's one thing I don't understand.""What's that?""Why do they call it Cameron Highlands? It's not that high at all!"Mei Lin smiles. "Well, Ramesh, compared to the rest of Malaysia, it practically is!" -->
+
+
+
+
+
+
+
+                            <!-- Why did the durian bring a fan to the party? Because it didn't want to be "stinky" in the heat of the conversation, just like Malaysians always keep things cool even when the discussions get spicy! -->
+
+                            <!-- How can prostitutes make a lot of money? 
                         They have to "duit" a lot. ("duit" sounds like do i. "duit" means money in Malay) -->
 
-                        <!-- Why did the durian bring a fan to the party?
+                            <!-- Why did the durian bring a fan to the party?
                         <br />
                         Because it didn't want to be "stinky" in the heat of the conversation,
                         <br />
                         just like Malaysians always keep things cool even when
                         <br />
                         the discussions get spicy! -->
-                    </span>
-                </div>
-                
-
-                <div class="bottom-right-container">
-                    <!-- Copy icon button -->
-                    <button onclick="copyToClipboard()">
-                        <img src="{% static 'asset/image101044-zua-200w.png' %}" alt="Copy icon"
-                            class="home-page-image10" />
-                    </button>
-                    
-                    <div id="copyStatus"></div>
-                    <!-- Link to js code "home-page.js" where code for functionalities is located -->
-                    <script src="{% static 'js/home-page.js' %}"></script>
-
-                    <!-- Offensive/non offensive button -->
-                    <div class="sign-up-page-input2">
-                        <select name="offensive" required class="home-page-rectangle60">
-                            <option value="" disabled selected>Offensive/Non-Offensive</option>
-                            <option value="Offensive">Offensive</option>
-                            <option value="Non Offensive">Non-Offensive</option>
-                        </select>
+                        </span>
                     </div>
-                
-                    <!--Rectangle Background that holds 5 stars
+
+
+                    <div class="bottom-right-container">
+                        <!-- Copy icon button -->
+                        <button onclick="copyToClipboard()">
+                            <img src="{% static 'asset/image101044-zua-200w.png' %}" alt="Copy icon"
+                                class="home-page-image10" />
+                        </button>
+
+                        <div id="copyStatus"></div>
+                        <!-- Link to js code "home-page.js" where code for functionalities is located -->
+                        <script src="{% static 'js/home-page.js' %}"></script>
+
+                        <!-- Offensive/non offensive button -->
+                        <div class="sign-up-page-input2">
+                            <select name="offensive" required class="home-page-rectangle60">
+                                <option value="" disabled selected>Offensive/Non-Offensive</option>
+                                <option value="Offensive">Offensive</option>
+                                <option value="Non Offensive">Non-Offensive</option>
+                            </select>
+                        </div>
+
+                        <!--Rectangle Background that holds 5 stars
                     wih the 5 stars(images with transparent background) -->
-                    <style>
-                        /* .star {
+                        <style>
+                            /* .star {
                             width: 24px;
                             /* Adjust size as needed */
                             /* height: 24px; */
@@ -517,54 +525,81 @@
                             /* margin: 1px; */
                             /* Adjust spacing as needed */
                             /* cursor: pointer; */
-                        /* } */ 
+                            /* } */
 
-                        .star.filled {
-                            content: url('{% static "asset/image71033-pwn-200h.png" %}');
-                        }
-                    </style>
-                    <img src="{% static 'asset/rectangle5i973-6lh-200h.png' %}" alt="Rectangle5I973"
-                        class="home-page-rectangle51" />
-                        
-                    <div class="home-page-group14">
-                        <div class="star-rating">
-                            <img src="{% static 'asset/image41033-0dx-200h.png' %}" alt="Star" class="star"
-                                data-index="1" />
-                            <img src="{% static 'asset/image41033-0dx-200h.png' %}" alt="Star" class="star"
-                                data-index="2" />
-                            <img src="{% static 'asset/image41033-0dx-200h.png' %}" alt="Star" class="star"
-                                data-index="3" />
-                            <img src="{% static 'asset/image41033-0dx-200h.png' %}" alt="Star" class="star"
-                                data-index="4" />
-                            <img src="{% static 'asset/image41033-0dx-200h.png' %}" alt="Star" class="star"
-                                data-index="5" />
+                            .star.filled {
+                                content: url('{% static "asset/image71033-pwn-200h.png" %}');
+                            }
+                        </style>
+                        <img src="{% static 'asset/rectangle5i973-6lh-200h.png' %}" alt="Rectangle5I973"
+                            class="home-page-rectangle51" />
+
+                        <div class="home-page-group14">
+                            <div class="star-rating">
+                                <img src="{% static 'asset/image41033-0dx-200h.png' %}" alt="Star" class="star"
+                                    data-index="1" />
+                                <img src="{% static 'asset/image41033-0dx-200h.png' %}" alt="Star" class="star"
+                                    data-index="2" />
+                                <img src="{% static 'asset/image41033-0dx-200h.png' %}" alt="Star" class="star"
+                                    data-index="3" />
+                                <img src="{% static 'asset/image41033-0dx-200h.png' %}" alt="Star" class="star"
+                                    data-index="4" />
+                                <img src="{% static 'asset/image41033-0dx-200h.png' %}" alt="Star" class="star"
+                                    data-index="5" />
+                            </div>
+
+                            <!-- <span class="home-page-text28">Rate relativity & Humour</span> -->
                         </div>
-                        
-                        <!-- <span class="home-page-text28">Rate relativity & Humour</span> -->
                     </div>
                 </div>
-            </div>
-            <script src="{% static 'js/home-page.js' %}"></script>
+                <script src="{% static 'js/home-page.js' %}"></script>
 
                 <script>
                     document.addEventListener('DOMContentLoaded', function () {
                         const stars = document.querySelectorAll('.star');
-
+                        const resultDiv = document.getElementById('result');
+                        const historyId = resultDiv.getAttribute('data-history-id');
+                        console.log(historyId)
                         stars.forEach(star => {
                             star.addEventListener('click', function () {
                                 const index = parseInt(star.getAttribute('data-index'));
-
-                                // Fill the stars up to the clicked one
-                                stars.forEach((s, i) => {
-                                    if (i < index) {
-                                        s.classList.add('filled');
-                                    } else {
-                                        s.classList.remove('filled');
-                                    }
-                                });
+                                rateHistory(currenttorate, index);
+                                updateStarDisplay(index);
                             });
                         });
                     });
+
+                    function rateHistory(historyId, rating) {
+                        console.log(currenttorate)
+                        fetch("/ratehistory/", {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRFToken': '{{ csrf_token }}'
+                            },
+                            body: JSON.stringify({
+                                id: historyId,
+                                rating: rating
+                            })
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log('Success:', data);
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                        });
+                    }
+                    function updateStarDisplay(rating) {
+                        const stars = document.querySelectorAll('.star');
+                        stars.forEach((star, index) => {
+                            if (index < rating) {
+                                star.classList.add('filled');
+                            } else {
+                                star.classList.remove('filled');
+                            }
+                        });
+                    }
                 </script>
 
 
@@ -577,7 +612,7 @@
                     <span class="home-page-text22">
                         <a href="{% url 'logout' %}" id="logout-link">Logout</a>
                     </span>
- 
+
                     <script src="{% static 'js/home-page.js' %}"></script>
                 </div>
 
@@ -596,14 +631,14 @@
                     <button id="generate-joke-button" class="home-page-joke-button">
                         <!-- <img src="{% static 'asset/rectangle5i112-ird-200h.png' %}" alt="Rectangle5I112"
                             class="home-page-rectangle5" /> -->
-                            <div class="home-page-rectangle5"></div>
+                        <div class="home-page-rectangle5"></div>
                         <span class="home-page-text24"><span>Generate Joke</span></span>
                     </button>
                 </div>
                 <!-- Link to js code "home-page.js" where code for functionalities is located -->
                 <script src="{% static 'js/home-page.js' %}"></script>
 
-                
+
 
                 <!--ORIGINAL country drop down that does not select current loggedin user's country by default -->
                 <!-- <div class="sign-up-page-input2">
@@ -616,12 +651,13 @@
                         <option value="5">Qatar</option>
                     </select> -->
 
-                    <!-- <img src="{% static 'asset/rectangle81243-twivf.svg' %}" alt="Rectangle81243"
+                <!-- <img src="{% static 'asset/rectangle81243-twivf.svg' %}" alt="Rectangle81243"
                     class="linedivider" /> -->
 
-                    <!-- <div  class="linedivider"></div>
+                <!-- <div  class="linedivider"></div>
                     <span class="home-page-text50"><span>Select Your Preferred Country<br /> for Joke Generation</span></span>
                 </div> -->
+
 
                 <!-- country drop down which select current loggedin user's country by default -->
                 {% if user %}
@@ -634,10 +670,9 @@
                         <option value="4" {% if user.country == "KR" %}selected{% endif %}>South Korea</option>
                         <option value="5" {% if user.country == "QA" %}selected{% endif %}>Qatar</option>
                     </select>
-                    <!-- <img src="{% static 'asset/rectangle81243-twivf.svg' %}" alt="Rectangle81243"
-                    class="linedivider" /> -->
-                    <div  class="linedivider"></div>
-                    <span class="home-page-text50"><span>Select Your Preferred Country<br /> for Joke Generation</span></span>
+                    <div class="linedivider"></div>
+                    <span class="home-page-text50"><span>Select Your Preferred Country<br /> for Joke
+                            Generation</span></span>
                 </div>
                 {% endif %}
 
@@ -653,7 +688,7 @@
                 </div> -->
 
 
-                <div id="result"></div>
+
 
                 <!-- Link to js code "home-page.js" where code for functionalities is located -->
                 <script>
@@ -671,7 +706,7 @@
                             //     alert('Please select both a country and a type of joke.');
                             //     return;
                             // }
-                            if (!selectedCountry ) {
+                            if (!selectedCountry) {
                                 alert('Please select a country');
                                 return;
                             }
@@ -685,15 +720,19 @@
                                 // body: JSON.stringify({ country: parseInt(selectedCountry), joke_type: selectedJokeType })
                                 body: JSON.stringify({ country: parseInt(selectedCountry), joke_type: "selectedJokeType" })
                             })
-                                .then(response => response.json())
-                                .then(data => {
+                            .then(response => response.json())
+                            .then(data => {
                                     // resultDiv.innerText = data.sentence;
                                     resultDiv.innerText = `Sentence: ${data.sentence}\nRow ID: ${data.id}`;
+                                    //resultDiv.setAttribute('data-history-id', data.id);
+                                    currenttorate = data.id;
                                 })
                                 .catch(error => {
                                     console.error('Error:', error);
                                     resultDiv.innerText = 'Error generating sentence.';
                                 });
+                            
+
                         });
                     });
 
@@ -706,8 +745,8 @@
                 <!-- image above is the rectangle image background for 5 stars -->
                 <!-- <img src="{% static 'asset/rectangle5i973-6lh-200h.png' %}" alt="Rectangle5I973"
                     class="home-page-rectangle51" /> -->
-                
-                
+
+
 
 
 
