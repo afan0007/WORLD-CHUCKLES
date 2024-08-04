@@ -687,7 +687,8 @@
                             })
                                 .then(response => response.json())
                                 .then(data => {
-                                    resultDiv.innerText = data.sentence;
+                                    // resultDiv.innerText = data.sentence;
+                                    resultDiv.innerText = `Sentence: ${data.sentence}\nRow ID: ${data.id}`;
                                 })
                                 .catch(error => {
                                     console.error('Error:', error);
