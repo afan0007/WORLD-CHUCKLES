@@ -2,17 +2,17 @@
 
 .history-page-container {
   width: 100%;
-  display: flex;
-  overflow: auto;
-  min-height: 100vh;
-  align-items: center;
-  flex-direction: column;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+
 }
 .history-page-history-page {
   width: 100%;
   height: 100vh;
   display: flex;
-  overflow: hidden;
+  overflow-y: auto;
   position: relative;
   align-items: flex-start;
   flex-shrink: 0;
@@ -281,7 +281,7 @@
 .history-page-text12 {
   top: 169px;
   left: 257px;
-  color: black;
+  color: blue;
   width: 216px;
   height: auto;
   position: absolute;
