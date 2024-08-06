@@ -343,7 +343,8 @@
 }
 .home-page-group1 {
   bottom: 23px;
-  left: 788px;
+  /* left: 788px; */
+  left: 55.1%;
   width: 169px;
   height: 84px;
   display: flex;
