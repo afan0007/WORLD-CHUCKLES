@@ -479,7 +479,13 @@
           <span class="more-infopopup-text10"><span>Sensitivity Status</span></span>
           <div class="text-bubble-container4">
             <div class="home-page-text-container4">
-              <span>{{ history.offensive }}</span>
+              {% if history.offensive is None %}
+              <span>Not rated</span>
+            {% elif history.offensive %}
+              <span>Offensive</span>
+            {% else %}
+              <span>Not offensive</span>
+            {% endif %}
                 <!-- <span class="more-infopopup-text12"><span>{{ history.country }}</span></span> -->
             </div>
           </div>
