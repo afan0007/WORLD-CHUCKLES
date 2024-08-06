@@ -193,8 +193,17 @@
   position: absolute;
   top: 200px; /* Adjust as needed */
   left: 327px; /* Adjust as needed */
-  width: auto;
-  max-width: 1091px; /* Adjust max-width as needed */
+  /* width: auto;
+  max-width: 1091px;  */
+ 
+  /* width: 75%;  */
+  /* Adjust the width to stretch to the right end */
+  /* margin-right: 5%;  */
+  /* Leave some space on the right */
+  
+  width: calc(100% - 347px); /* 100% width minus left and right margins */
+  margin-right: 20px; /* Space on the right */
+
   padding: 20px;
   background-color: #bce7f5; /* Light blue background color */
   border-radius: 15px; /* Rounded edges */
