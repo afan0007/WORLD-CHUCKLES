@@ -629,27 +629,74 @@
                             .catch(error => console.error('Error:', error));
                     }
 
-                    function updateUserTable(users) {
-                        const userTable = document.querySelector('.user-info-table tbody');
-                        userTable.innerHTML = ''; // Clear current table content
+                    // function updateUserTable(users) {
+                    //     // Sort users alphabetically by username
+                    //     users.sort((a, b) => a.username.localeCompare(b.username));
 
-                        if (users.length === 0) {
-                            userTable.innerHTML = '<tr><td colspan="5">No users found.</td></tr>'; // Adjust colspan if necessary
-                        } else {
-                            users.forEach(user => {
+                    //     const userTable = document.querySelector('.user-info-table tbody');
+                    //     userTable.innerHTML = ''; // Clear current table content
+
+                    //     if (users.length === 0) {
+                    //         userTable.innerHTML = '<tr><td colspan="5">No users found.</td></tr>'; // Adjust colspan if necessary
+                    //     } else {
+                    //         users.forEach(user => {
+                    //             const row = document.createElement('tr');
+                    //             row.className = "user-info-row";
+                    //             row.innerHTML = `
+                    //                 <td>${user.username}</td>
+                    //                 <td>${user.country}</td>
+                    //                 <td>${user.age}</td>
+                    //                 <td>${user.gender}</td>
+                    //                  ${user.username !== loggedInUsername ? `<td><button class="delete-button" data-username="${user.username}">Remove</button></td>` : ''}
+                    //              `;
+                    //             userTable.appendChild(row);
+                    //         });
+                    //     }
+                    // }
+                    function updateUserTable(users) {
+                            // Separate the logged-in user from the rest
+                            const loggedInUser = users.find(user => user.username === loggedInUsername);
+                            const otherUsers = users.filter(user => user.username !== loggedInUsername);
+
+                            // Sort the other users alphabetically by username
+                            otherUsers.sort((a, b) => a.username.localeCompare(b.username));
+
+                            const userTable = document.querySelector('.user-info-table tbody');
+                            userTable.innerHTML = ''; // Clear current table content
+
+                            // Add the logged-in user first if exists
+                            if (loggedInUser) {
                                 const row = document.createElement('tr');
                                 row.className = "user-info-row";
                                 row.innerHTML = `
-                                    <td>${user.username}</td>
-                                    <td>${user.country}</td>
-                                    <td>${user.age}</td>
-                                    <td>${user.gender}</td>
-                                     ${user.username !== loggedInUsername ? `<td><button class="delete-button" data-username="${user.username}">Remove</button></td>` : ''}
-                                 `;
+                                    <td>${loggedInUser.username}</td>
+                                    <td>${loggedInUser.country}</td>
+                                    <td>${loggedInUser.age}</td>
+                                    <td>${loggedInUser.gender}</td>
+                                    <!-- No delete button for the logged-in user -->
+                                `;
                                 userTable.appendChild(row);
-                            });
+                            }
+
+                            // Add the rest of the users
+                            if (otherUsers.length === 0 && !loggedInUser) {
+                                userTable.innerHTML = '<tr><td colspan="5">No users found.</td></tr>'; // Adjust colspan if necessary
+                            } else {
+                                otherUsers.forEach(user => {
+                                    const row = document.createElement('tr');
+                                    row.className = "user-info-row";
+                                    row.innerHTML = `
+                                        <td>${user.username}</td>
+                                        <td>${user.country}</td>
+                                        <td>${user.age}</td>
+                                        <td>${user.gender}</td>
+                                        <td><button class="delete-button" data-username="${user.username}">Remove</button></td>
+                                    `;
+                                    userTable.appendChild(row);
+                                });
+                            }
                         }
-                    }
+
 
                     // Ensure to call filterUsers on initial page load to display all users.
                     document.addEventListener('DOMContentLoaded', filterUsers);
