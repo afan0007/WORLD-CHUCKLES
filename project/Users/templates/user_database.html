@@ -501,6 +501,7 @@
                     <span class="adminuserdatabase-page-text12">Sign Up Usernames</span>
                     <span class="adminuserdatabase-page-text14">Country</span>
                     <span class="adminuserdatabase-page-text16">Age</span>
+                    <span class="adminuserdatabase-page-text161">Gender</span>
                 </div>
 
                 <!-- display of Users that has sign up in our application  -->
@@ -586,7 +587,7 @@
                     {% endfor %}
                 </table> -->
 
-                <table class="user-info-table" border="1">
+                <table class="user-info-table" border="0">
                     <!-- <thead>
                         <tr>
                             <th>Username</th>
@@ -643,7 +644,7 @@
                                     <td>${user.country}</td>
                                     <td>${user.age}</td>
                                     <td>${user.gender}</td>
-                                    ${user.username !== loggedInUsername ? `<td><button class="delete-button" data-username="${user.username}">Remove</button></td>` : ''}
+                                     ${user.username !== loggedInUsername ? `<td><button class="delete-button" data-username="${user.username}">Remove</button></td>` : ''}
                                  `;
                                 userTable.appendChild(row);
                             });
