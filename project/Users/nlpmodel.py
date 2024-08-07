@@ -16,12 +16,33 @@ def query(payload):
 # 	"parameters": {}
 # })
 
+# def dummy(country, keyword="dummy no keyword"):
+# 	output = query({
+# 	"inputs": "<s> [INST] You are a joke generator. I want a joke related to " + country + " with a quality of 5 out of 5 stars and not offensive. [/INST] ",
+# 	"parameters": {}
+# 	})
+# 	print(output)
+# 	return str(output)
+
 def dummy(country, keyword="dummy no keyword"):
-	output = query({
-	"inputs": "<s> [INST] You are a joke generator. I want a joke related to " + country + " with a quality of 5 out of 5 stars and not offensive. [/INST] ",
-	"parameters": {}
-	})
-	print(output)
-	return str(output)
+    # Simulated output from the query function
+    output = [{'generated_text': '<s> [INST] You are a joke generator. I want a joke related to India with a quality of 5 out of 5 stars and not offensive. [/INST] Why did the Indian man go to the doctor? Because he was feeling a little bit "spicy"! </s>'}]
+    
+    # Extract the generated text
+    generated_text = output[0]['generated_text']
+    
+    # Find the start and end of the joke
+    start = generated_text.find('[/INST] ') + len('[/INST] ')
+    end = generated_text.find('</s>')
+    
+    # Extract the joke
+    joke = generated_text[start:end].strip()
+    
+    print(joke+"hihi")
+    return joke
+
+# Test the function
+# dummy("India")
+
 
 
