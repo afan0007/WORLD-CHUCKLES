@@ -1,30 +1,27 @@
-# from huggingface_hub import hf_hub_download
-# from langchain import HuggingFaceHub, PromptTemplate, LLMChain
-# import os
 
-# HUGGINGFACEHUB_API_TOKEN = "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"
+import requests
 
-# os.environ['HUGGINGFACEHUB_API_TOKEN'] = HUGGINGFACEHUB_API_TOKEN 
+API_URL = "https://ci8b86d3ag2wz0in.us-east-1.aws.endpoints.huggingface.cloud"
+headers = {
+	"Accept" : "application/json",
+	"Content-Type": "application/json" 
+}
 
-# template = '''generate me a joke: {chat}
+def query(payload):
+	response = requests.post(API_URL, headers=headers, json=payload)
+	return response.json()
 
-# '''
-
-# prompt = PromptTemplate(
-#     input_variables=["chat"],
-#     template=template
-# )
-
-# llm = HuggingFaceHub(repo_id='mistralai/Mixtral-8x7B-Instruct-v0.1',
-#     model_kwargs= {'temperature': 0.2, 'max_length': 50})
-
-# chain = LLMChain(llm=llm, prompt=prompt)
-# result = chain.run(chat="indian")
-# print(result)
-
-
+# output = query({
+# 	"inputs": "Can you please let us know more details about your ",
+# 	"parameters": {}
+# })
 
 def dummy(country, keyword="dummy no keyword"):
-    #change country short form to full 
-    return keyword + " jokes generated for country " + country
+	output = query({
+	"inputs": "<s> [INST] You are a joke generator. I want a joke related to " + country + " with a quality of 5 out of 5 stars and not offensive. [/INST] ",
+	"parameters": {}
+	})
+	print(output)
+	return str(output)
+
 
