@@ -432,12 +432,45 @@
                 <!-- Navigation Bar -->
                 <!-- <img src="{% static 'asset/rectangle21226-rpeg.svg' %}" alt="Rectangle21226"
                     class="users-setting-page-rectangle2" /> -->
-                <div class="users-setting-page-rectangle2"></div>
-
-                <!-- Drawback icon -->
-                <img src="{% static 'asset/chevronleftdouble1227-5kh.svg' %}" alt="chevronleftdouble1227"
+                <div class="users-setting-page-rectangle2">
+                    <!-- Drawback icon -->
+                    <img src="{% static 'asset/chevronleftdouble1227-5kh.svg' %}" alt="chevronleftdouble1227"
                     class="users-setting-page-chevronleftdouble" />
 
+
+                     <!-- Current logged user profile image and username -->
+                     <div class="username-container">
+                        <!-- Current logged user profile image  -->
+                        <img src="{{ user.profile_image.url }}" alt="Ellipse68731" class="users-setting-page-ellipse6" />
+                        <span class="users-setting-page-text02"><span>{{ user.username }}</span></span>
+                     </div>
+
+                     <!-- Current Logged user and list of Directories  -->
+                    <!-- <span class="users-setting-page-text02"><span>{{ user.username }}</span></span> -->
+                    <span class="users-setting-page-text04"><a href="{% url 'index' %}" class="setting-link">Home</a></span>
+                    <span class="users-setting-page-text06"> <a href="{% url 'history' %}" class="setting-link">History</a></span>
+                    <span class="users-setting-page-text08"><a href="{% url 'usersettings' %}">Settings</a></span>
+                    
+                    <!-- Logout button -->
+                    <div class="users-setting-page-group13">
+                        <img src="{% static 'asset/rectangle491254-i82j.svg' %}" alt="Rectangle491254"
+                            class="users-setting-page-rectangle49" />
+                        <img src="{% static 'asset/logout041255-hd.svg' %}" alt="logout041255"
+                            class="users-setting-page-logout04" />
+                        <span class="users-setting-page-text26">
+                            <a href="{% url 'logout' %}">Logout</a>
+                        </span>
+                        
+                        <!-- {% if user.is_admin %}
+                        <span class="admin-setting-page-text28">
+                            <a href="{% url 'user_database' %}">user database</a>
+                        </span>
+                        {% endif %} -->
+                    </div>
+
+                </div>
+
+                
                 <!-- Grey vertical rectangle left of "Settings" text-->
                 <!-- <img src="{% static 'asset/rectangle31228-7ke5-200w.png' %}" alt="Rectangle31228"
                     class="users-setting-page-rectangle3" /> -->
@@ -445,14 +478,14 @@
                     class="users-setting-page-rectangle4" />
                 <span class="users-setting-page-text"><span>Settings</span></span>
 
-                <!-- Current logged user profile image  -->
-                <img src="{{ user.profile_image.url }}" alt="Ellipse68731" class="users-setting-page-ellipse6" />
                 
                 <!-- Current Logged user and list of Directories  -->
-                <span class="users-setting-page-text02"><span>{{ user.username }}</span></span>
-                <span class="users-setting-page-text04"><a href="{% url 'index' %}" class="history-link">Home</a></span>
+                <!-- <span class="users-setting-page-text02"><span>{{ user.username }}</span></span> -->
+                <!-- <span class="users-setting-page-text04"><a href="{% url 'index' %}" class="history-link">Home</a></span>
                 <span class="users-setting-page-text06"> <a href="{% url 'history' %}">History</a></span>
-                <span class="users-setting-page-text08"><a href="{% url 'usersettings' %}">Settings</a></span>
+                <span class="users-setting-page-text08"><a href="{% url 'usersettings' %}">Settings</a></span> -->
+                
+                <!-- line divider above blue text bubble -->
                 <img src="{% static 'asset/rectangle41240-tzv.svg' %}" alt="Rectangle41240"
                     class="users-setting-page-rectangle41" />
 
@@ -758,21 +791,7 @@
 
 
 
-                <div class="users-setting-page-group13">
-                    <img src="{% static 'asset/rectangle491254-i82j.svg' %}" alt="Rectangle491254"
-                        class="users-setting-page-rectangle49" />
-                    <img src="{% static 'asset/logout041255-hd.svg' %}" alt="logout041255"
-                        class="users-setting-page-logout04" />
-                    <span class="users-setting-page-text26">
-                        <a href="{% url 'logout' %}">Logout</a>
-                    </span>
-                    
-                    <!-- {% if user.is_admin %}
-                    <span class="admin-setting-page-text28">
-                        <a href="{% url 'user_database' %}">user database</a>
-                    </span>
-                    {% endif %} -->
-                </div>
+                
                 
                     <!-- <div class="userdatabase-button">
                         {% if user.is_admin %}

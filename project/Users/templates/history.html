@@ -431,24 +431,52 @@
                 <!-- sidebar -->
                 <!-- <img src="{% static 'asset/rectangle21279-vafl.svg' %}" alt="Rectangle21279"
                     class="history-page-rectangle2" /> -->
-                <div class="history-page-rectangle2"></div>
-
-                <!-- Drawback icon -->
-                <img src="{% static 'asset/chevronleftdouble1280-8vcl.svg' %}" alt="chevronleftdouble1280"
+                <div class="history-page-rectangle2">
+                    <!-- Drawback icon -->
+                    <img src="{% static 'asset/chevronleftdouble1280-8vcl.svg' %}" alt="chevronleftdouble1280"
                     class="history-page-chevronleftdouble" />
 
+                    <!-- Current logged user profile image and username -->
+                    <div class="username-container">
+                        <img src="{{ user.profile_image.url }}" alt="User Profile" class="history-page-ellipse9" />
+                        <span class="history-page-text04">{{ user.username }}</span>
+                    </div>
+                    
+                    <!-- Navigation Links -->
+                    <span class="history-page-text06">
+                        <a href="{% url 'index' %}" class="history-link">Home</a>
+                    </span>
+                    <span class="history-page-text08">History</span>
+                    <span class="history-page-text10">
+                        <a href="{% url 'usersettings' %}" class="history-link">Settings</a>
+                    </span>
+
+                    <!-- logout -->
+                    <div class="history-page-group13" onclick="confirmLogout()">
+                        <img src="{% static 'asset/rectangle491212-jvu.svg' %}" alt="Rectangle491212"
+                            class="history-page-rectangle49" />
+                        <img src="{% static 'asset/logout041212-f2ko.svg' %}" alt="logout041212"
+                            class="history-page-logout04" />
+                        <span class="history-page-text36">
+                            <a href="{% url 'logout' %}">Logout</a>
+                        </span>
+                        <script src="{% static 'js/history.js' %}"></script>
+                    </div>
+                </div>
+
+                
                 <!-- Current logged user profile image  -->
-                <img src="{{ user.profile_image.url }}" alt="Ellipse98631" class="history-page-ellipse9" />
+                <!-- <img src="{{ user.profile_image.url }}" alt="Ellipse98631" class="history-page-ellipse9" /> -->
 
                 <!-- Current Logged user and list of Directories  -->
-                <span class="history-page-text04"><span>{{ user.username }}</span></span>
+                <!-- <span class="history-page-text04"><span>{{ user.username }}</span></span>
                 <span class="history-page-text06">
                     <a href="{% url 'index' %}" class="history-link">Home</a>
                 </span>
                 <span class="history-page-text08"><span>History</span></span>
                 <span class="history-page-text10">
                     <a href="{% url 'usersettings' %}" class="history-link">Settings</a>
-                </span>
+                </span> -->
 
                 <!-- main page -->
                 <!-- Grey vertical rectangle left of "History" text -->
@@ -600,17 +628,7 @@
                         window.location.href = `/moreinfo/${historyId}/`;
                     }
                 </script>
-                <!-- logout -->
-                <div class="history-page-group13" onclick="confirmLogout()">
-                    <img src="{% static 'asset/rectangle491212-jvu.svg' %}" alt="Rectangle491212"
-                        class="history-page-rectangle49" />
-                    <img src="{% static 'asset/logout041212-f2ko.svg' %}" alt="logout041212"
-                        class="history-page-logout04" />
-                    <span class="history-page-text36">
-                        <a href="{% url 'logout' %}">Logout</a>
-                    </span>
-                    <script src="{% static 'js/history.js' %}"></script>
-                </div>
+                
 
 
 

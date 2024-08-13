@@ -432,25 +432,48 @@
                 <!-- sidebar -->
                 <!-- <img src="{% static 'asset/rectangle21116-18s7.svg' %}" alt="Rectangle21116"
                     class="adminuserdatabase-page-rectangle2" /> -->
-                <div class="adminuserdatabase-page-rectangle2"></div>
+                <div class="adminuserdatabase-page-rectangle2">
 
-                <!-- Drawback icon -->
-                <img src="{% static 'asset/chevronleftdouble1116-ilfk.svg' %}" alt="chevronleftdouble1116"
+                    <!-- Drawback icon -->
+                    <img src="{% static 'asset/chevronleftdouble1116-ilfk.svg' %}" alt="chevronleftdouble1116"
                     class="adminuserdatabase-page-chevronleftdouble" />
 
-                <img src="{{ user.profile_image.url }}" alt="Ellipse108632" class="adminuserdatabase-page-ellipse10" />
+                    <!-- Current logged user profile image and username -->
+                    <div class="username-container">
+                       <img src="{{ user.profile_image.url }}" alt="Ellipse108632" class="adminuserdatabase-page-ellipse10" />
+                       <span class="adminuserdatabase-page-text04"><span>{{ user.username }}</span></span>
+                    </div>
 
-                <span class="adminuserdatabase-page-text04"><span>{{ user.username }}</span></span>
-                <span class="adminuserdatabase-page-text06">
-                    <a href="{% url 'index' %}" class="database-link">Home</a>
-                </span>
-                <span class="adminuserdatabase-page-text08">
-                    <a href="{% url 'history' %}" class="database-link">History</a>
+                    <!-- Navigation Links -->
+                    <span class="adminuserdatabase-page-text06">
+                        <a href="{% url 'index' %}" class="database-link">Home</a>
+                    </span>
+                    <span class="adminuserdatabase-page-text08">
+                        <a href="{% url 'history' %}" class="database-link">History</a>
+    
+                    </span>
+                    <span class="adminuserdatabase-page-text10">
+                        <a href="{% url 'usersettings' %}">Settings</a>
+                    </span>
 
-                </span>
-                <span class="adminuserdatabase-page-text10">
-                    <a href="{% url 'usersettings' %}">Settings</a>
-                </span>
+
+                    <!-- logout -->
+                    <div class="adminuserdatabase-page-group13" onclick="confirmLogout()">
+                        <img src="{% static 'asset/rectangle491120-12xe.svg' %}" alt="Rectangle491120"
+                            class="adminuserdatabase-page-rectangle49" />
+                        <img src="{% static 'asset/logout041120-erbh.svg' %}" alt="logout041120"
+                            class="adminuserdatabase-page-logout04" />
+                        <span class="adminuserdatabase-page-text42">
+                            <a href="{% url 'logout' %}">Logout</a>
+                        </span>
+                        <script src="{% static 'js/admindatabase.js' %}"></script>
+                    </div>
+                </div>
+
+                
+                
+                
+                
 
                 <!-- main page -->
                 <!-- Grey vertical rectangle left of "Settings" text-->
@@ -769,7 +792,7 @@
                 </ul> -->
 
             <!-- logout -->
-            <div class="adminuserdatabase-page-group13" onclick="confirmLogout()">
+            <!-- <div class="adminuserdatabase-page-group13" onclick="confirmLogout()">
                 <img src="{% static 'asset/rectangle491120-12xe.svg' %}" alt="Rectangle491120"
                     class="adminuserdatabase-page-rectangle49" />
                 <img src="{% static 'asset/logout041120-erbh.svg' %}" alt="logout041120"
@@ -778,7 +801,7 @@
                     <a href="{% url 'logout' %}">Logout</a>
                 </span>
                 <script src="{% static 'js/admindatabase.js' %}"></script>
-            </div>
+            </div> -->
 
         </div>
     </div>

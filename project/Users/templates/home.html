@@ -431,29 +431,59 @@
                 <!-- Navigation bar background -->
                 <!-- <img src="{% static 'asset/rectangle21122-b0t.svg' %}" alt="Rectangle21122"
                     class="home-page-rectangle2" /> -->
-                <div class="home-page-rectangle2"></div>
-
-                <!-- Drawback icon for on  Nav bar -->
-                <img src="{% static 'asset/chevronleftdouble1122-5hd6.svg' %}" alt="chevronleftdouble1122"
+                <div class="home-page-rectangle2">
+                    <!-- Drawback icon for on  Nav bar -->
+                    <img src="{% static 'asset/chevronleftdouble1122-5hd6.svg' %}" alt="chevronleftdouble1122"
                     class="home-page-chevronleftdouble" />
+
+                    <!-- Current logged user profile image and username -->
+                    <div class="username-container">
+                        <!-- Current logged user profile image -->
+                        <img src="{{ user.profile_image.url }}" alt="Ellipse88534" class="home-page-ellipse8" />
+                        <span class="home-page-text02"><span>{{ user.username }}</span></span>
+                    </div>
+
+                    <!-- Current Logged user ({{ user.username }}) and list of Directories  -->
+                    <!-- <span class="home-page-text02"><span>{{ user.username }}</span></span> -->
+                    <span class="home-page-text04"> <span>Home</span></span>
+                    <span class="home-page-text06">
+                        <a href="{% url 'history' %}" class="home-page-link">History</a>
+                    </span>
+                    <span class="home-page-text08">
+                        <a href="{% url 'usersettings' %}" class="home-page-link">Settings</a>
+                    </span>
+
+                    <!-- Logout button -->
+                    <div class="home-page-group13" onclick="confirmLogout()">
+                        <img src="{% static 'asset/rectangle491125-hq87.svg' %}" alt="Rectangle491125"
+                            class="home-page-rectangle49" />
+                        <img src="{% static 'asset/logout041125-yt97.svg' %}" alt="logout041125"
+                            class="home-page-logout04" />
+                        <span class="home-page-text22">
+                            <a href="{% url 'logout' %}" id="logout-link">Logout</a>
+                        </span>
+
+                        <script src="{% static 'js/home-page.js' %}"></script>
+                    </div>
+                </div>
+
+                
                 <!-- Grey vertical rectangle left of "Home" text-->
                 <img src="{% static 'asset/rectangle41122-y8l4-200w.png' %}" alt="Rectangle41122"
                     class="home-page-rectangle4" />
 
                 <span class="home-page-text"><span>Home</span></span>
 
-                <!-- Current logged user profile image -->
-                <img src="{{ user.profile_image.url }}" alt="Ellipse88534" class="home-page-ellipse8" />
-
+                
                 <!-- Current Logged user ({{ user.username }}) and list of Directories  -->
-                <span class="home-page-text02"><span>{{ user.username }}</span></span>
+                <!-- <span class="home-page-text02"><span>{{ user.username }}</span></span>
                 <span class="home-page-text04"> <span>Home</span></span>
                 <span class="home-page-text06">
                     <a href="{% url 'history' %}" class="home-page-link">History</a>
                 </span>
                 <span class="home-page-text08">
                     <a href="{% url 'usersettings' %}" class="home-page-link">Settings</a>
-                </span>
+                </span> -->
 
 
                 <!-- "Joke of the Day" text -->
@@ -622,7 +652,7 @@
 
 
                 <!-- Logout button -->
-                <div class="home-page-group13" onclick="confirmLogout()">
+                <!-- <div class="home-page-group13" onclick="confirmLogout()">
                     <img src="{% static 'asset/rectangle491125-hq87.svg' %}" alt="Rectangle491125"
                         class="home-page-rectangle49" />
                     <img src="{% static 'asset/logout041125-yt97.svg' %}" alt="logout041125"
@@ -632,7 +662,7 @@
                     </span>
 
                     <script src="{% static 'js/home-page.js' %}"></script>
-                </div>
+                </div> -->
 
                 <!-- <form method="post" action="{% url 'logout' %}">
                     {% csrf_token %}
