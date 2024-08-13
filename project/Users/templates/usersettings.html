@@ -457,8 +457,21 @@
                     class="users-setting-page-rectangle41" />
 
                 <!-- text bubble which holds user information details -->
-                <img src="{% static 'asset/rectangle71241-vqqn.svg' %}" alt="Rectangle71241"
-                    class="users-setting-page-rectangle7" />
+                <!-- <img src="{% static 'asset/rectangle71241-vqqn.svg' %}" alt="Rectangle71241"
+                    class="users-setting-page-rectangle7" /> -->
+
+                 <!-- <div class="text-bubble"></div> -->
+                <div class="text-bubble-container">
+                    <div class="home-page-text-container">
+                        <span class="users-setting-page-text18"><span>{{ user.username }}</span></span>
+                        <span class="users-setting-page-text20"><span>{{ user.get_country_display }}</span></span>
+                        <span class="users-setting-page-text22"><span>{{ user.age }}</span></span>
+                        <span class="users-setting-page-text24"><span>{{ user.password }}</span></span>
+                        <img src="{% static 'asset/pencil021252-qmb.svg' %}" alt="pencil021252"
+                            class="users-setting-page-pencil02" id="edit-profile-btn" />
+
+                    </div>
+                </div>
 
                 <!-- <img src="{% static 'asset/rectangle91242-qql.svg' %}" alt="Rectangle91242"
                     class="users-setting-page-rectangle9" /> -->
@@ -471,12 +484,12 @@
                 <span class="users-setting-page-text12"><span>Country</span></span>
                 <span class="users-setting-page-text14"><span>Age</span></span>
                 <span class="users-setting-page-text16"><span>Password</span></span>
-                <span class="users-setting-page-text18"><span>{{ user.username }}</span></span>
+                <!-- <span class="users-setting-page-text18"><span>{{ user.username }}</span></span>
                 <span class="users-setting-page-text20"><span>{{ user.get_country_display }}</span></span>
                 <span class="users-setting-page-text22"><span>{{ user.age }}</span></span>
                 <span class="users-setting-page-text24"><span>{{ user.password }}</span></span>
                 <img src="{% static 'asset/pencil021252-qmb.svg' %}" alt="pencil021252"
-                    class="users-setting-page-pencil02" id="edit-profile-btn" />
+                    class="users-setting-page-pencil02" id="edit-profile-btn" /> -->
 
                 <!-- <ul>
                     <li>Username: {{ user.username }}</li>

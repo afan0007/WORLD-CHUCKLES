@@ -166,6 +166,69 @@
   height: 75px;
   position: absolute;
 }
+.text-bubble-container {
+  position: absolute;
+  top: 234px;
+  left: 321px;
+  /* width: auto;
+  max-width: 1091px;  */
+ 
+  /* width: 75%;  */
+  /* Adjust the width to stretch to the right end */
+  /* margin-right: 5%;  */
+  /* Leave some space on the right */
+  
+  width: calc(100% - 347px); /* 100% width minus left and right margins */
+  margin-right: 20px; /* Space on the right */
+
+  padding: 20px;
+  background-color: #9bcbfa; /* Light blue background color */
+  border-radius: 15px; /* Rounded edges */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+.home-page-text-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.users-setting-page-text18 {
+  flex: 2; /* Make the username take up more space */
+  color: rgba(0, 0, 0, 1);
+  font-size: 16px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.users-setting-page-text20,
+.users-setting-page-text22,
+.users-setting-page-text24 {
+  flex: 1; /* Make the other text elements take up equal space */
+  color: rgba(0, 0, 0, 1);
+  font-size: 16px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.users-setting-page-pencil02 {
+  flex: 0 0 24px; /* Fixed width for the pencil icon */
+  height: 24px;
+  cursor: pointer;
+}
 .users-setting-page-rectangle9 {
   top: 211px;
   left: 321px;
@@ -198,7 +261,7 @@
 }
 .users-setting-page-text12 {
   top: 169px;
-  left: 674px;
+  left: 734px;
   color: rgba(0, 0, 0, 1);
   width: 95px;
   height: auto;
@@ -214,7 +277,7 @@
 }
 .users-setting-page-text14 {
   top: 169px;
-  left: 850px;
+  left: 910px;
   color: rgba(0, 0, 0, 1);
   width: 95px;
   height: auto;
@@ -230,7 +293,7 @@
 }
 .users-setting-page-text16 {
   top: 169px;
-  left: 990px;
+  left: 1128px;
   color: rgba(0, 0, 0, 1);
   width: 157px;
   height: auto;
@@ -244,82 +307,7 @@
   font-stretch: normal;
   text-decoration: none;
 }
-.users-setting-page-text18 {
-  top: 260px;
-  left: 351px;
-  color: rgba(0, 0, 0, 1);
-  width: 240px;
-  /* height: auto; */
-  position: absolute;
-  font-size: 16px;
-  font-style: Regular;
-  text-align: left;
-  font-family: Montserrat;
-  font-weight: 400;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
 
-  word-wrap: break-word; /* Ensure long words break to the next line */
-  white-space: normal; /* Allow text to wrap to the next line */
-  overflow-wrap: break-word; /* Break long words */
-}
-.users-setting-page-text20 {
-  top: 260px;
-  left: 690px;
-  color: rgba(0, 0, 0, 1);
-  width: 257px;
-  height: auto;
-  position: absolute;
-  font-size: 16px;
-  font-style: Regular;
-  text-align: left;
-  font-family: Montserrat;
-  font-weight: 400;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.users-setting-page-text22 {
-  top: 260px;
-  left: 878px;
-  color: rgba(0, 0, 0, 1);
-  width: 257px;
-  height: auto;
-  position: absolute;
-  font-size: 16px;
-  font-style: Regular;
-  text-align: left;
-  font-family: Montserrat;
-  font-weight: 400;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.users-setting-page-text24 {
-  top: 260px;
-  left: 1028px;
-  color: rgba(0, 0, 0, 1);
-  width: 257px;
-  height: auto;
-  position: absolute;
-  font-size: 16px;
-  font-style: Regular;
-  text-align: left;
-  font-family: Montserrat;
-  font-weight: 400;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.users-setting-page-pencil02 {
-  top: 258px;
-  left: 1310px;
-  width: 24px;
-  height: 24px;
-  position: absolute;
-  cursor:pointer;
-}
 .users-setting-page-group13 {
   /* top: 948px; */
   bottom: 20px;
