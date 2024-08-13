@@ -281,7 +281,7 @@
 .history-page-text12 {
   top: 169px;
   left: 257px;
-  color: blue;
+  color: black;
   width: 216px;
   height: auto;
   position: absolute;
@@ -297,7 +297,7 @@
 
 .history-page-text13 {
   top: 169px;
-  left: 1200px;
+  left: 930px;
   color: black;
   width: 216px;
   height: auto;
@@ -773,26 +773,89 @@
 }
 
 /* General table styling */
-.history-info-table tr, .history-info-table td {
+/* .history-info-table tr, .history-info-table td {
   padding: 10px;
   text-align: left;
   border: none;
-}
+} */
 
 
-.history-info-table tr:nth-child(even) {
-  background-color:rgba(0, 0, 0, 0.1) /* Light grey background for even rows */
-}
+/* .history-info-table tr:nth-child(even) {
+  background-color:rgba(0, 0, 0, 0.1) ;/* Light grey background for even rows */
+/* } */ 
 
-.history-info-table tr:nth-child(odd) {
+/* .history-info-table tr:nth-child(odd) {
   background-color: #dc9ddb; /* White background for odd rows */
+/* } */ 
+/* table version user list information display */
+/* Position the table */
+.history-info-table {
+  position: absolute;
+  top: 234px;
+  left: 321px;
+  width: 1091px;
+  border-collapse: collapse;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* overflow: hidden; */
+}
+
+/* General table styling */
+.history-info-table th, .history-info-table td {
+  padding: 10px;
+  text-align: left;
+  border: none; /* Remove the borders */
+  /* 1px solid #ddd; */
+}
+
+/* Style for the header */
+.history-info-table th {
+  background-color: none;
+  /* #f2f2f2; */
+  font-family: 'Spinnaker', sans-serif;
+  font-weight: bold;
+}
+
+/* Style for user info rows with blue text bubble effect */
+/* .user-info-row td {
+  position: relative;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  background-color: #b2d5f8;
+  border-radius: 15px;
+  font-family: 'Spinnaker', sans-serif;
+} */
+/* Style for user info rows with blue text bubble effect */
+.history-info-row {
+  position: relative;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  background-color: #9bcbfa; /* Light blue background color for the bubble */
+  border-radius: 15px; /* Rounded corners for the bubble effect */
+  font-family: 'Spinnaker', sans-serif;
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr; /* Adjust columns as needed */
+  align-items: center;
+  }
+
+/* Remove borders from table cells */
+.history-info-row td {
+  border: none;
+  /* padding: 10px; */
+  min-width: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Optional: Additional hover effect for rows */
+.history-info-row:hover {
+  background-color: #d0e7ff; /* Slightly darker blue on hover */
 }
 
 .more-info-button {
-  background-color: #5483b9; /* Green background */
+  background-color: #279586; /* Green background */
   border: none; /* Remove border */
   color: white; /* White text */
-  padding: 15px 32px; /* Some padding */
+  padding: 10px 27px; /* Some padding */
   text-align: center; /* Centered text */
   text-decoration: none; /* Remove underline */
   display: inline-block; /* Get the element to behave like an inline element while retaining block-level properties */
@@ -804,7 +867,7 @@
 }
 
 .more-info-button:hover {
-  background-color: #5045a0; /* Darker green on hover */
+  background-color: #14695d; /* Darker green on hover */
   transform: scale(1.05); /* Slightly enlarge the button */
 }
 
@@ -812,7 +875,7 @@
   background-color: #e74c3c; /* Red background */
     border: none; /* Remove border */
     color: white; /* White text */
-    padding: 15px 32px; /* Some padding */
+    padding: 10px 27px; /* Some padding */
     text-align: center; /* Centered text */
     text-decoration: none; /* Remove underline */
     display: inline-block; /* Get the element to behave like an inline element while retaining block-level properties */

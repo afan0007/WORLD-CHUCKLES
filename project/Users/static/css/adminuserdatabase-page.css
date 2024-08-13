@@ -489,10 +489,13 @@ ul {
   overflow-wrap: break-word; /* Ensure long text wraps */
 }
 
-
+/* Optional: Additional hover effect for rows */
+.user-info-row:hover {
+  background-color: #d0e7ff;
+}
 /* Styling the Remove button */
 .delete-button {
-  background-color: #ff6666;
+  background-color: #e74c3c;
   color: white;
   border: none;
   padding: 5px 10px;
@@ -502,13 +505,11 @@ ul {
 }
 
 .delete-button:hover {
-  background-color: #cc0000;
+  background-color: #c0392b; /* Darker red on hover */
+  transform: scale(1.05); /* Slightly enlarge the button */
 }
 
-/* Optional: Additional hover effect for rows */
-.user-info-row:hover {
-  background-color: #d0e7ff;
-}
+
 
 .adminuserdatabase-page-text24 {
   top: 355px;

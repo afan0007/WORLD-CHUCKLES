@@ -496,7 +496,7 @@
                     {% endfor %}
                 </ul> -->
 
-                <table class="history-info-table">
+                <table class="history-info-table" border="0">
                     <tbody>
                         <!-- History rows will be populated here -->
                     </tbody>
@@ -535,6 +535,7 @@
                         } else {
                             histories.forEach(history => {
                                 const row = document.createElement('tr');
+                                row.classList.add('history-info-row');  // Apply the blue bubble class to each row
                                 row.id = `history-${history.id}`;
                                 row.innerHTML = `
                         <td>${history.description}</td>
