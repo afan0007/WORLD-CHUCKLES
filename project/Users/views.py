@@ -8,6 +8,8 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 import json
 from django.views.decorators.http import require_http_methods
+from django.db.models import Avg
+from django.db.models.functions import Trim
 
 
 def moreinfo(request, history_id):
@@ -272,3 +274,44 @@ def update_offensive(request):
         return JsonResponse({'message': 'History not found'}, status=404)
     except Exception as e:
         return JsonResponse({'message': str(e)}, status=500)
+    
+
+    
+
+def dashboard(request):
+    user_id = request.session.get('user_id')
+    if user_id:
+        user = User.objects.get(id=user_id)
+    else:
+        user = None
+    return render(request, 'Dashboard.html', {'user': user})
+
+def get_country_status_data(request):
+
+    country_status = History.objects.annotate(trimmed_country=Trim('country')).values('trimmed_country').annotate(avg_status=Avg('status')).order_by('trimmed_country')
+    
+    data = {
+        'countries': [item['trimmed_country'] for item in country_status],
+        'avg_statuses': [item['avg_status'] for item in country_status],
+    }
+    
+    return JsonResponse(data)
+
+
+def get_offensive_status_data(request):
+    try:
+        # Calculate counts directly
+        count_offensive = History.objects.filter(offensive=True).count()
+        count_non_offensive = History.objects.filter(offensive=False).count()
+        count_not_rated = History.objects.filter(offensive__isnull=True).count()
+        
+        # Prepare the data
+        data = {
+            'categories': ['Offensive', 'Non-Offensive', 'Not Rated'],
+            'counts': [count_offensive, count_non_offensive, count_not_rated]
+        }
+        
+        return JsonResponse(data)
+    except Exception as e:
+        print("Error occurred:", e)  # Debugging line
+        return JsonResponse({'error': 'An error occurred'}, status=500)
