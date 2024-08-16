@@ -66,7 +66,7 @@
   justify-content: center;
   margin-bottom: 20px; /* Space between username and other items */
 }
-.users-setting-page-text02, .users-setting-page-text04, .users-setting-page-text06, .users-setting-page-text08 {
+.users-setting-page-text02, .users-setting-page-text04, .users-setting-page-text06, .users-setting-page-text07, .users-setting-page-text08 {
   font-size: 36px; /* Adjusted font size */
   font-family: Lobster; /* Or any font of your choice */
   color: rgba(0, 0, 0, 1);
