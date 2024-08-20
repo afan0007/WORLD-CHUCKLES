@@ -434,7 +434,7 @@
                 <div class="home-page-rectangle2">
                     <!-- Drawback icon for on  Nav bar -->
                     <img src="{% static 'asset/chevronleftdouble1122-5hd6.svg' %}" alt="chevronleftdouble1122"
-                    class="home-page-chevronleftdouble" />
+                        class="home-page-chevronleftdouble" />
 
                     <!-- Current logged user profile image and username -->
                     <div class="username-container">
@@ -470,14 +470,14 @@
                     </div>
                 </div>
 
-                
+
                 <!-- Grey vertical rectangle left of "Home" text-->
                 <img src="{% static 'asset/rectangle41122-y8l4-200w.png' %}" alt="Rectangle41122"
                     class="home-page-rectangle4" />
 
                 <span class="home-page-text"><span>Home</span></span>
 
-                
+
                 <!-- Current Logged user ({{ user.username }}) and list of Directories  -->
                 <!-- <span class="home-page-text02"><span>{{ user.username }}</span></span>
                 <span class="home-page-text04"> <span>Home</span></span>
@@ -500,7 +500,7 @@
                     <div class="home-page-text-container">
 
                         <span class="home-page-text14" id="joke-text">
-                            <div id="result"></div>
+                            <div id="result"> press the generate button </div>
 
                             <!-- use for when user has no joke at all -->
                             <!-- Two friends, Mei Lin and Ramesh, are hiking in the Cameron Highlands. They reach a beautiful viewpoint overlooking rolling hills and lush greenery.Mei Lin sighs contentedly. "Isn't it amazing, Ramesh? The fresh air, the scenery..."Ramesh nods, taking it all in. "Truly breathtaking. But Mei Lin, there's one thing I don't understand.""What's that?""Why do they call it Cameron Highlands? It's not that high at all!"Mei Lin smiles. "Well, Ramesh, compared to the rest of Malaysia, it practically is!" -->
@@ -574,7 +574,7 @@
                         const offensiveSelect = document.getElementById('offensive-status');
                         offensiveSelect.addEventListener('change', function () {
                             const selectedValue = offensiveSelect.value;
-                            const historyId = currenttorate  
+                            const historyId = currenttorate
                             console.log(currenttorate)
 
                             if (!historyId) {
@@ -605,7 +605,7 @@
                         });
                     });
 
-                    
+
                     document.addEventListener('DOMContentLoaded', function () {
                         const stars = document.querySelectorAll('.star');
                         const resultDiv = document.getElementById('result');
@@ -742,7 +742,7 @@
 
 
                 <!-- Link to js code "home-page.js" where code for functionalities is located -->
-                
+
                 <!-- // function for when generate button is clicked, the result will appear in text bubble -->
                 <script>
 
@@ -764,6 +764,8 @@
                                 return;
                             }
 
+                            resultDiv.textContent = 'Generating, please wait...';
+
                             fetch('/generate-sentence/', {
                                 method: 'POST',
                                 headers: {
@@ -775,10 +777,22 @@
                             })
                                 .then(response => response.json())
                                 .then(data => {
-                                    // resultDiv.innerText = data.sentence;
-                                    resultDiv.innerText = `Sentence: ${data.sentence}\nRow ID: ${data.id}`;
-                                    //resultDiv.setAttribute('data-history-id', data.id);
+
+                                    // resultDiv.innerText = `Sentence: ${data.sentence}\nRow ID: ${data.id}`;
+
                                     currenttorate = data.id;
+                                    resultDiv.textContent = '';
+                                    let index = 0;
+                                    const interval = setInterval(() => {
+                                        if (index < data.sentence.length) {
+                                            resultDiv.textContent += data.sentence[index];
+                                            index++;
+                                        } else {
+                                            clearInterval(interval);
+                                        }
+                                    }, 50);
+
+
                                 })
                                 .catch(error => {
                                     console.error('Error:', error);
