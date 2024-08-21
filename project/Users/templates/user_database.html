@@ -681,48 +681,80 @@
                     //     }
                     // }
                     function updateUserTable(users) {
-                            // Separate the logged-in user from the rest
-                            const loggedInUser = users.find(user => user.username === loggedInUsername);
-                            const otherUsers = users.filter(user => user.username !== loggedInUsername);
+                        // Separate the logged-in user from the rest
+                        const loggedInUser = users.find(user => user.username === loggedInUsername);
+                        const otherUsers = users.filter(user => user.username !== loggedInUsername);
 
-                            // Sort the other users alphabetically by username
-                            otherUsers.sort((a, b) => a.username.localeCompare(b.username));
+                        // Sort the other users alphabetically by username
+                        otherUsers.sort((a, b) => a.username.localeCompare(b.username));
 
-                            const userTable = document.querySelector('.user-info-table tbody');
-                            userTable.innerHTML = ''; // Clear current table content
+                        const userTable = document.querySelector('.user-info-table tbody');
+                        userTable.innerHTML = ''; // Clear current table content
 
-                            // Add the logged-in user first if exists
-                            if (loggedInUser) {
-                                const row = document.createElement('tr');
-                                row.className = "user-info-row";
-                                row.innerHTML = `
+                        // Add the logged-in user first if exists
+                        if (loggedInUser) {
+                            const row = document.createElement('tr');
+                            row.className = "user-info-row";
+                            row.innerHTML = `
                                     <td>${loggedInUser.username}</td>
                                     <td>${loggedInUser.country}</td>
                                     <td>${loggedInUser.age}</td>
                                     <td>${loggedInUser.gender}</td>
                                     <!-- No delete button for the logged-in user -->
                                 `;
-                                userTable.appendChild(row);
-                            }
+                            userTable.appendChild(row);
+                        }
 
-                            // Add the rest of the users
-                            if (otherUsers.length === 0 && !loggedInUser) {
-                                userTable.innerHTML = '<tr><td colspan="5">No users found.</td></tr>'; // Adjust colspan if necessary
-                            } else {
-                                otherUsers.forEach(user => {
-                                    const row = document.createElement('tr');
-                                    row.className = "user-info-row";
-                                    row.innerHTML = `
+                        // Add the rest of the users
+                        if (otherUsers.length === 0 && !loggedInUser) {
+                            userTable.innerHTML = '<tr><td colspan="5">No users found.</td></tr>'; // Adjust colspan if necessary
+                        } else {
+                            otherUsers.forEach(user => {
+                                const row = document.createElement('tr');
+                                row.className = "user-info-row";
+                                row.innerHTML = `
                                         <td>${user.username}</td>
                                         <td>${user.country}</td>
                                         <td>${user.age}</td>
                                         <td>${user.gender}</td>
                                         <td><button class="delete-button" data-username="${user.username}">Remove</button></td>
                                     `;
-                                    userTable.appendChild(row);
-                                });
-                            }
+                                userTable.appendChild(row);
+                            });
                         }
+                        // Add event listeners to the delete buttons after updating the table
+                        const deleteButtons = document.querySelectorAll('.delete-button');
+                        deleteButtons.forEach(button => {
+                            button.addEventListener('click', function () {
+                                const usernameToDelete = this.getAttribute('data-username');
+
+                                // Send AJAX request to delete user
+                                fetch('/delete-user/', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                        'X-CSRFToken': '{{ csrf_token }}'
+                                    },
+                                    body: JSON.stringify({ username: usernameToDelete })
+                                })
+                                    .then(response => response.json())
+                                    .then(data => {
+                                        if (data.message.includes('deleted successfully')) {
+                                            this.closest('tr').remove();
+                                            filterUsers()
+                                        } else {
+                                            alert('Failed to delete user: ' + data.message);
+                                        }
+                                    })
+                                    .catch(error => {
+                                        console.error('Error:', error);
+                                        alert('Error deleting user.');
+                                    });
+                            });
+                        });
+
+
+                    }
 
 
                     // Ensure to call filterUsers on initial page load to display all users.
@@ -815,39 +847,7 @@
     {% endif %}
 
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const deleteButtons = document.querySelectorAll('.delete-button');
 
-            deleteButtons.forEach(button => {
-                button.addEventListener('click', function () {
-                    const usernameToDelete = this.getAttribute('data-username');
-
-                    // Send AJAX request to delete user
-                    fetch('/delete-user/', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'X-CSRFToken': '{{ csrf_token }}'
-                        },
-                        body: JSON.stringify({ username: usernameToDelete })
-                    })
-                        .then(response => response.json())
-                        .then(data => {
-                            if (data.message.includes('deleted successfully')) {
-                                this.closest('tr').remove();
-                            } else {
-                                alert('Failed to delete user: ' + data.message);
-                            }
-                        })
-                        .catch(error => {
-                            console.error('Error:', error);
-                            alert('Error deleting user.');
-                        });
-                });
-            });
-        });
-    </script>
 
 
 </body>
