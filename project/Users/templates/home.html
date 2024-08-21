@@ -763,6 +763,7 @@
                                 alert('Please select a country');
                                 return;
                             }
+                            generateButton.disabled = true;
 
                             resultDiv.textContent = 'Generating, please wait...';
 
@@ -789,6 +790,7 @@
                                             index++;
                                         } else {
                                             clearInterval(interval);
+                                            generateButton.disabled = false;
                                         }
                                     }, 50);
 
@@ -797,6 +799,7 @@
                                 .catch(error => {
                                     console.error('Error:', error);
                                     resultDiv.innerText = 'Error generating sentence.';
+                                    generateButton.disabled = false;
                                 });
 
 
