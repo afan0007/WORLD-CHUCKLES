@@ -18,5 +18,5 @@ class AuthenticationForm(forms.Form):
 class UserUpdateForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ['username', 'country', 'age', 'profile_image']
+        fields = ['username', 'password', 'country', 'age', 'profile_image', 'gender']
 
