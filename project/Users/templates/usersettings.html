@@ -601,6 +601,16 @@
                         </form>
                     </div>
                 </div>
+                
+                {% if form.errors %}
+                <div class="errorlist">
+                    {% for field in form %}
+                        {% if field.errors %}
+                            <div class="error">{{ field.label }}: {{ field.errors }}</div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {% endif %}
 
                 <!-- JavaScript to Handle Modal -->
                 <script>
