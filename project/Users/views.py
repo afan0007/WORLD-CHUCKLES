@@ -10,6 +10,7 @@ import json
 from django.views.decorators.http import require_http_methods
 from django.db.models import Avg
 from django.db.models.functions import Trim
+import os
 
 
 def moreinfo(request, history_id):
@@ -134,9 +135,13 @@ def usersettings(request):
         user = User.objects.get(id=user_id)
     else:
         user = None
+
+    old_profile_image = user.profile_image.path if user and user.profile_image and user.profile_image != 'images/profilepic.jpg' else None
     
     if request.method == 'POST':
         if 'remove_profile_image' in request.POST:
+            if old_profile_image and os.path.exists(old_profile_image):
+                os.remove(old_profile_image)
             user.profile_image = 'images/profilepic.jpg'  # Set back to default
             user.save()
             return redirect('usersettings')
