@@ -136,6 +136,10 @@ def usersettings(request):
         user = None
     
     if request.method == 'POST':
+        if 'remove_profile_image' in request.POST:
+            user.profile_image = 'images/profilepic.jpg'  # Set back to default
+            user.save()
+            return redirect('usersettings')
         form = UserUpdateForm(request.POST, request.FILES, instance=user)
         if form.is_valid():
             form.save()

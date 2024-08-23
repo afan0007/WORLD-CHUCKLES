@@ -599,9 +599,14 @@
                             {% endfor %}
                             <button class="updatebtn" type="submit">Update</button>
                         </form>
+                        <!-- Add button to remove the profile image -->
+                        <form method="post">
+                            {% csrf_token %}
+                            <button class="removebtn" name="remove_profile_image" type="submit">Remove Profile Image</button>
+                        </form>
                     </div>
                 </div>
-                
+
                 {% if form.errors %}
                 <div class="errorlist">
                     {% for field in form %}
@@ -654,6 +659,20 @@
                     });
                 </script>
                 <style>
+                    .removebtn {
+                        background-color: #ff4c4c;
+                        color: white;
+                        border: none;
+                        padding: 10px 20px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 16px;
+                        margin-top: 10px;
+                        cursor: pointer;
+                    }                    
+
+
                     @import url('https://fonts.googleapis.com/css?family=Lobster|Monoton|Truculenta|Turret+Road|Space+Mono|Stalinist+One|VT323');  
                     /* Modal container */
                     .modal {
