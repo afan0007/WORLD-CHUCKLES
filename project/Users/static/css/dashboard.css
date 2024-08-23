@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster|Monoton|Truculenta|Turret+Road|Space+Mono|Spinnaker');
 .adminuserdatabase-page-container {
   width: 100%;
-  overflow-y: scroll;
   display: flex;
   min-height: 100vh;
   align-items: center;
@@ -80,16 +79,16 @@
   width: 160px; /* Adjusted width to fit within the navigation bar */
   font-weight: 700;
   font-size: 31px;
-  color: rgb(25, 62, 184); /* Adjusted color */
+  color: #2E2E2E; /* Adjusted color */
   text-align: left;
-  font-family: Turret Road;
+  font-family: "Century Schoolbook";
   font-weight: 400;
   line-height: normal;
   text-decoration: none;
   word-wrap: break-word; /* Ensure long words break to the next line */
   white-space: normal; /* Allow text to wrap to the next line */
   overflow-wrap: break-word; /* Break long words */
-  margin-bottom: 50px; /* Space between items */
+  margin-bottom: 20px; /* Space between items */
 }
 .adminuserdatabase-page-text09 {
   font-size: 36px; /* Adjusted font size */
@@ -129,7 +128,7 @@
 
 .database-link:hover {
   text-decoration: underline;
-  color:rgba(43, 64, 255, 1);
+  color: #3579FD;
 }
 .adminuserdatabase-page-group13 {
     bottom:20px;
@@ -199,20 +198,19 @@
 }
 
 .adminuserdatabase-page-text01{
-    top: 95px;
+    top: 130px;
     left: 354px;
-    color: rgb(51, 23, 156);
+    color: rgb(207, 49, 207);
     width: 1091px;
     height: auto;
     position: absolute;
     font-size: 33px;
-    font-style: Regular;
-    text-align: left;
-    font-family: Turret Road;
+    font-style: italic;
+    text-align: center;
+    font-family: Spinnaker;
     font-weight: 400;
     line-height: normal;
     font-stretch: normal;
-    text-decoration:underline;
   }
   
 /* Container for each chart and its label */
@@ -228,12 +226,12 @@
     border-radius: 10px; /* Optional: round the corners of the container */
 }
 .chart-container2 {
-    /* position:absolute;
-    top: 234px;
-    left: 321px; */
+    /*position:absolute;
+    top: 100px;
+    left: 100px;*/
     width: calc(100% - 350px); /* Adjust to leave space for the sidebar */
     margin-left: 50px; /* Align with the sidebar */
-    margin-top: 234px; /* Spacing between charts */
+    margin-top: 650px; /* Spacing between charts */
     padding: 20px; /* Add padding around the charts */
     background-color: #acdef4; /* Optional: add a background color to the container */
     border-radius: 10px; /* Optional: round the corners of the container */
@@ -244,10 +242,9 @@
 font-size: 24px;
 font-family: Spinnaker;
 font-weight: 400;
-text-align: left;
+text-align: center;
 margin-bottom: 10px;
 color: rgba(0, 0, 0, 1);
-text-decoration: underline;
 }
 
 /* Chart canvas */
@@ -255,3 +252,4 @@ canvas {
 width: 100%; /* Stretch the chart to fill the container */
 height: 100; /* Maintain aspect ratio */
 }
+

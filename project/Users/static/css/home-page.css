@@ -73,16 +73,16 @@
   width: 160px; /* Adjusted width to fit within the navigation bar */
   font-weight: 700;
   font-size: 31px;
-  color: rgb(25, 62, 184); /* Adjusted color */
+  color: #2E2E2E; /* Adjusted color */
   text-align: left;
-  font-family: Turret Road;
+  font-family: "Century Schoolbook";
   font-weight: 400;
   line-height: normal;
   text-decoration: none;
   word-wrap: break-word; /* Ensure long words break to the next line */
   white-space: normal; /* Allow text to wrap to the next line */
   overflow-wrap: break-word; /* Break long words */
-  margin-bottom: 50px; /* Space between items */
+  margin-bottom: 20px; /* Space between items */
 }
 .home-page-text04 {
   font-size: 36px; /* Adjusted font size */
@@ -230,30 +230,55 @@
   line-height: normal;
   font-stretch: normal;
   text-decoration: none;
-} */ 
-
-
-
-.home-page-text10 {
+} */
+ 
+.animated_text{
   top: 90px;
   left: 509px;
-  /* color: rgb(0, 0, 0); */
   width: 687px;
-  height: auto;
   position: absolute;
-  font-size: 50px;
-  font-style: Regular;
   text-align: center;
-  font-family: Monoton;
-  font-weight: 400;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
+}
+
+.home-page-text10 {
+  font-size: 60px;
+  font-style: italic;
+  font-family: 'Goldplay Semi Bold';
+  font-weight: bold;
   background: linear-gradient(90deg, #15CC5E 0%, #813E99 48.5%, #5DD2EB 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+  opacity: 0;
+  animation: appear 0.5s forwards;
+  margin: 0 10px; /* Space between words */
+}
+
+/* Keyframe animation */
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation delays for each word */
+.home-page-text10:nth-child(1) {
+  animation-delay: 0s;
+}
+.home-page-text10:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.home-page-text10:nth-child(3) {
+  animation-delay: 1s;
+}
+.home-page-text10:nth-child(4) {
+  animation-delay: 1.5s;
 }
 
 .home-page-rectangle7 {
@@ -340,7 +365,9 @@
   height: 36px;
   border-radius: 10px;
   background-color: rgb(93, 210, 235);
+  font-family: Spinnaker;
 }
+
 
 .home-page-group14 {
   display: flex;
@@ -443,25 +470,29 @@
   width: 169px;
   height: 60px;
   position: absolute;
-  border-radius: 10px;
-  /* width: 195px;
-  height: 36px;
-  position: absolute;
-  border-radius: 10px; */
-  background-color:rgb(105, 155, 247);
-
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow */
+  background-color: #0056b3; /* Dark Blue */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.3s;
 }
 .home-page-text24 {
-  top: 19px;
-  left: 20px;
+  top: 23px;
+  left: 23px;
   color: rgb(249, 248, 248);
   height: auto;
   position: absolute;
   font-size: 18px;
   font-style: Regular;
   text-align: center;
-  font-family: Montserrat;
+  font-family: Spinnaker;
   font-weight: 400;
   line-height: normal;
   font-stretch: normal;
@@ -608,7 +639,7 @@
   font-size: 20px;
   font-style: Regular;
   text-align: center;
-  font-family: "Space Mono";
+  font-family: Spinnaker;
   font-weight: 550;
   line-height: normal;
   font-stretch: normal;
@@ -643,6 +674,8 @@
   position: absolute;
   border-radius: 10px;
   background-color:rgb(93, 210, 235);
+  text-align: center;
+  font-family: Spinnaker;
 }
 
 .home-page-text51 {

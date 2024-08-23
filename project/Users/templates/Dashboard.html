@@ -473,7 +473,6 @@
                         </div>
                     </div>
     
-                    
                     <!-- main page -->
                     <!-- Grey vertical rectangle left of "Settings" text-->
                     <img src="{% static 'asset/rectangle41229-04z-200w.png' %}" alt="Rectangle41229"
@@ -482,7 +481,7 @@
                         <span>Dashboard</span>
                     </span>
 
-                    <h1 class="adminuserdatabase-page-text01">Welcome to the Dashboard, {{ user.username }}</h1>
+                    <h1 class="adminuserdatabase-page-text01">{{ user.username }}'s Dashboard</h1>
 
                  
                 <!-- <h2 class="adminuserdatabase-page-text02">Real-time Average Status by Country</h2>
@@ -589,7 +588,6 @@
                 // Update chart every 30 seconds
                 setInterval(updateChart1, 30000);
                 </script>
-        
             </div>
         </div>
         
