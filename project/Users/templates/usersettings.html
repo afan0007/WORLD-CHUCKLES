@@ -591,7 +591,7 @@
                                     <!-- <br>
                                     <span class="value">Currently: {{ user.profile_image.url }}</span>
                                     <br> -->
-                                    <img src="{{ user.profile_image.url }}" alt="Profile Image" width="100">
+                                    <img src="{{ user.profile_image.url }}" alt="Profile Image" width="70">
                                     <br>
                                 {% endif %}
                                 {{ field }}
@@ -659,18 +659,7 @@
                     });
                 </script>
                 <style>
-                    .removebtn {
-                        background-color: #ff4c4c;
-                        color: white;
-                        border: none;
-                        padding: 10px 20px;
-                        text-align: center;
-                        text-decoration: none;
-                        display: inline-block;
-                        font-size: 16px;
-                        margin-top: 10px;
-                        cursor: pointer;
-                    }                    
+                                
 
 
                     @import url('https://fonts.googleapis.com/css?family=Lobster|Monoton|Truculenta|Turret+Road|Space+Mono|Stalinist+One|VT323');  
@@ -694,7 +683,7 @@
                         /* position:absolute;
                         top: 20px; */
                         background-color: #B6F2FF;
-                        margin: 20px auto;
+                        margin: 15px auto;
                         padding: 20px;
                         border: 1px solid #888;
                         width: 80%;
@@ -820,6 +809,30 @@
 
                         
                     }
+                    .removebtn {
+                        background-color: #ff4c4c;
+                        color: white;
+                        border: none;
+                        padding: 10px 20px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 16px;
+                        margin-top: 10px;
+                        cursor: pointer;
+                        border-radius: 10px;
+                    }   
+                    .removebtn:hover,
+                    .removebtn:focus {
+                        /* color: black;
+                        text-decoration: none;
+                        cursor: pointer; */
+                        background-color: #912525; /* Slightly darker shade on hover/focus */
+                        color: white; /* Keep text color white */
+                        text-decoration: none; /* Remove text decoration */
+
+                        
+                    }    
                 </style>
 
 
