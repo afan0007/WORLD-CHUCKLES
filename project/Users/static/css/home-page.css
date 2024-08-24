@@ -232,7 +232,7 @@
   text-decoration: none;
 } */
  
-.animated_text{
+/* .animated_text {
   top: 90px;
   left: 509px;
   width: 687px;
@@ -243,43 +243,116 @@
 .home-page-text10 {
   font-size: 60px;
   font-style: italic;
-  font-family: 'Goldplay Semi Bold';
-  font-weight: bold;
+  font-family: Monoton;
+  font-weight: 900px;
   background: linear-gradient(90deg, #15CC5E 0%, #813E99 48.5%, #5DD2EB 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+  position: relative;
+}
+
+.home-page-text10::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
   opacity: 0;
-  animation: appear 0.5s forwards;
-  margin: 0 10px; /* Space between words */
+  animation: reveal 1.5s forwards;
+  animation-delay: 0.5s;
+  background: linear-gradient(90deg, #15CC5E 0%, #813E99 48.5%, #5DD2EB 100%);
+  -webkit-text-fill-color: transparent;
+}
+
+.home-page-text10::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: reveal-char 2s steps(12) forwards;
+  background: linear-gradient(90deg, #15CC5E 0%, #813E99 48.5%, #5DD2EB 100%);
+  -webkit-text-fill-color: transparent;
 }
 
 /* Keyframe animation */
-@keyframes appear {
+/* @keyframes reveal {
   from {
     opacity: 0;
-    transform: translateY(20px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
+} */
+
+/* Animation for revealing each character */
+/* @keyframes reveal-char {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+} */ 
+.logo {
+  position: absolute;
+  top: 90px;
+  left: 57%;
+  width: 100px;
+}
+.animated_text {
+  /* top: 90px; */
+  top: 200px;
+  left: 509px;
+  /* width: 687px; */
+  width: 750px;
+  position: absolute;
+  text-align: center;
 }
 
-/* Animation delays for each word */
-.home-page-text10:nth-child(1) {
-  animation-delay: 0s;
+.home-page-text10 {
+  font-size: 60px;
+  font-style: italic;
+  font-family: Monoton;
+  font-weight: 900px;
+  background: linear-gradient(90deg, #14a84f 0%, #813E99 48.5%,  #9b368a 48.5%,#5DD2EB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  opacity: 0;
+  display: inline-block;
+  animation: appear-text 3s forwards;
 }
-.home-page-text10:nth-child(2) {
-  animation-delay: 0.5s;
+
+/* Keyframe animation for character-by-character appearance */
+@keyframes appear-text {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
-.home-page-text10:nth-child(3) {
-  animation-delay: 1s;
+
+/* Animate each character with delay */
+.home-page-text10::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: reveal 3s steps(10, end) forwards;
 }
-.home-page-text10:nth-child(4) {
-  animation-delay: 1.5s;
+
+@keyframes reveal {
+  from { width: 0; }
+  to { width: 100%; }
 }
+
+
 
 .home-page-rectangle7 {
   top: 200px;
@@ -292,7 +365,8 @@
 }
 .text-bubble-container {
   position: absolute;
-  top: 200px; /* Adjust as needed */
+  /* top: 200px;  */
+  top: 280px;
   left: 327px; /* Adjust as needed */
   /* width: auto;
   max-width: 1091px;  */
