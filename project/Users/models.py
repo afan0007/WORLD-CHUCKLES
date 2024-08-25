@@ -15,7 +15,7 @@ GENDER_CHOICES = [
     ]
 # Create your models here.
 class User(models.Model):
-    username = models.CharField(max_length=150, unique=True, null=False, blank=False)
+    username = models.CharField(max_length=7, unique=True, null=False, blank=False)
     password = models.CharField(max_length=128, null=False, blank=False)
     country = models.CharField(max_length=20, choices=COUNTRY_CHOICES, null=False, blank=False)
     age = models.PositiveIntegerField()
