@@ -89,6 +89,13 @@
   font-weight: 400;
   margin-bottom: 5px;
 }
+.error {
+  color: red;
+  /* font-size: 18px; */
+  font-style: Regular;
+  text-align: left;
+  font-family: Spinnaker;
+}
 
 .sign-up-page-btn {
   width: 100%;
