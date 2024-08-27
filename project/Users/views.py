@@ -297,7 +297,17 @@ def dashboard(request):
 
 def get_country_status_data(request):
 
-    country_status = History.objects.annotate(trimmed_country=Trim('country')).values('trimmed_country').annotate(avg_status=Avg('status')).order_by('trimmed_country')
+    # country_status = History.objects.annotate(trimmed_country=Trim('country')).values('trimmed_country').annotate(avg_status=Avg('status')).order_by('trimmed_country')
+    
+    # data = {
+    #     'countries': [item['trimmed_country'] for item in country_status],
+    #     'avg_statuses': [item['avg_status'] for item in country_status],
+    # }
+    country_status = History.objects.filter(status__gt=0).annotate(
+        trimmed_country=Trim('country')
+    ).values('trimmed_country').annotate(
+        avg_status=Avg('status')
+    ).order_by('trimmed_country')
     
     data = {
         'countries': [item['trimmed_country'] for item in country_status],
