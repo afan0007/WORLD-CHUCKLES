@@ -14,7 +14,8 @@ import os
 
 
 def moreinfo(request, history_id):
-    history = get_object_or_404(History, id=history_id)
+    user_id1 = request.session.get('user_id')
+    history = History.objects.filter(id=history_id, user_id=user_id1).first()
     return render(request, 'more-infopopup.html', {'history': history})
 
 

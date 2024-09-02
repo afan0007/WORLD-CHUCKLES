@@ -423,6 +423,7 @@
 </head>
 
 <body>
+  {% if history %}
   <link rel="stylesheet" href="{% static 'css/style.css' %}" />
   <div>
     <link href="{% static 'css/more-infopopup.css' %}" rel="stylesheet" />
@@ -543,6 +544,10 @@
       </div>
     </div>
   </div>
+  
+  {% else %}
+  <p>The requested history record doesn't belong to you.</p>
+  {% endif %}
 </body>
 
 </html>
