@@ -30,6 +30,10 @@ urlpatterns = [
     path('dashboard/', views.dashboard, name='dashboard'),
     path('api/country-status/', views.get_country_status_data, name='country_status_data'),
     path('api/offensive-status/', views.get_offensive_status_data, name='offensive_status_data'),
+    
+    
+    path('word-frequency-data/', views.word_frequency_data, name='word_frequency_data'),  # URL for fetching word frequency data
+
 
 
 

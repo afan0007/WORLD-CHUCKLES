@@ -1,8 +1,8 @@
 # views.py
-from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
+from django.shortcuts import render, redirect
+from django.contrib.auth import login as auth_login, logout as auth_logout
 from .forms import SignUpForm, AuthenticationForm, UserUpdateForm
-from .models import User, History
+from .models import User, History, WordFrequency
 from .nlpmodel import dummy
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
@@ -335,3 +335,16 @@ def get_offensive_status_data(request):
     except Exception as e:
         print("Error occurred:", e)  # Debugging line
         return JsonResponse({'error': 'An error occurred'}, status=500)
+    
+def word_frequency_data(request):
+    """Fetch word frequency data for the word cloud."""
+    word_frequencies = WordFrequency.objects.all()
+    
+    # Prepare data for Chart.js
+    data = {
+        'words': [entry.word for entry in word_frequencies],
+        'frequencies': [entry.frequency for entry in word_frequencies]
+    }
+    #print(data)
+
+    return JsonResponse(data)
