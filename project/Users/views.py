@@ -176,6 +176,13 @@ def delete_user(request):
         
         try:
             user_to_delete = User.objects.get(username=username_to_delete)
+
+             # Delete the user's profile image if it exists and is not the default image
+            if user_to_delete.profile_image != 'images/profilepic.jpg':
+                image_path = user_to_delete.profile_image.path
+                if os.path.exists(image_path):
+                    os.remove(image_path)
+                    
             user_to_delete.delete()
             return JsonResponse({'message': f'User {username_to_delete} deleted successfully!'})
         except User.DoesNotExist:
