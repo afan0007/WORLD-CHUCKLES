@@ -264,14 +264,15 @@ canvas {
   color: rgba(0, 0, 0, 1);
 }
 
-.chart-container3{
-  position: absolute;
-  top: 650px;
-  left: 321px;
+.chart-container3 {
+  position: relative; /* or keep absolute and set a fixed height */
+  /* top: 650px; remove this if using relative positioning */
+  /* left: 321px; remove this if using relative positioning */
   width: 40%;
   margin: 20px;
   padding: 20px;
   background-color: #acdef4;
   border-radius: 10px;
-  height: auto; /* Set the same fixed height as the bar chart container */
+  height: 500px; /* Set a fixed height, adjust as needed */
+  overflow: hidden; /* Hide any overflow */
 }

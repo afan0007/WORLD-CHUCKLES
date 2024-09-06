@@ -507,11 +507,16 @@
                     <canvas class="offensiveStatusChart2" id="offensiveStatusChart"></canvas>
                 </div>
 
+
                 <div class="chart-container3">
-                <h2 class="word-cloud-label">Real-time Word Cloud</h2>
-                <canvas id="wordCloud" width="400" height="400"></canvas>
+                    <h2 class="word-cloud-label">Real-time Word Cloud</h2>
+                    <canvas id="wordCloud" width="100%" height="100%"></canvas>
+                </div>
 
                 <script>
+                    const canvas = document.getElementById('wordCloud');
+                    canvas.width = canvas.offsetWidth;
+                    canvas.height = canvas.offsetHeight;
                     // Setup the chart
                     const ctx = document.getElementById('countryStatusChart').getContext('2d');
                     const countryStatusChart = new Chart(ctx, {
@@ -664,7 +669,7 @@
                     // Initialize the word cloud
                     updateWordCloud();
                 </script>
-                </div>
+                
             </div>
         </div>
 
