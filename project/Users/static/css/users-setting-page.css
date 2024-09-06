@@ -496,3 +496,30 @@
   font-stretch: normal;
   text-decoration: none;
 }
+
+.error-message{
+  position: absolute;
+  top: 50px;
+  left: 700px;
+  color: #b30000; /* Error text color */
+  background-color: #f8d7da; /* Light red background */
+  border: 1px solid #f5c2c7; /* Light red border */
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  text-align: left;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  animation: fadeOut 2s forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}

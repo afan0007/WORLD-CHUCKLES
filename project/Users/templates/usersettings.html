@@ -611,7 +611,7 @@
                 <div class="errorlist">
                     {% for field in form %}
                         {% if field.errors %}
-                            <div class="error">{{ field.label }}: {{ field.errors }}</div>
+                            <div class="error-message">{{ field.label }}: {{ field.errors }}</div>
                         {% endif %}
                     {% endfor %}
                 </div>
