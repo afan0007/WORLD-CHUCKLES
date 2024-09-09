@@ -456,7 +456,7 @@
                     </span>
 
                     <!-- logout -->
-                    <div class="history-page-group13" onclick="confirmLogout()">
+                    <div class="history-page-group13" onclick="showLogoutAlert()">
                         <img src="{% static 'asset/rectangle491212-jvu.svg' %}" alt="Rectangle491212"
                             class="history-page-rectangle49" />
                         <img src="{% static 'asset/logout041212-f2ko.svg' %}" alt="logout041212"
@@ -464,7 +464,24 @@
                         <span class="history-page-text36">
                             <a href="{% url 'logout' %}">Logout</a>
                         </span>
-                        <script src="{% static 'js/history.js' %}"></script>
+                        <script>
+                            function showLogoutAlert() {
+                                // Prevent default action of the div click
+                                event.preventDefault();
+                        
+                                // Show the confirmation dialog
+                                var userConfirmed = confirm("Are you sure you want to logout?");
+                        
+                                // If user confirms, redirect to the logout URL
+                                if (userConfirmed) {
+                                    window.location.href = "{% url 'logout' %}";
+                                }
+                                else{
+                                    window.location.href = "{% url 'history' %}";
+                                }
+                        }
+                        </script>
+
                     </div>
                 </div>
 

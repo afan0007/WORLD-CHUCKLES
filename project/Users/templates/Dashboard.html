@@ -465,7 +465,7 @@
 
 
                     <!-- logout -->
-                    <div class="adminuserdatabase-page-group13" onclick="confirmLogout()">
+                    <div class="adminuserdatabase-page-group13" onclick="showLogoutAlert()">
                         <img src="{% static 'asset/rectangle491120-12xe.svg' %}" alt="Rectangle491120"
                             class="adminuserdatabase-page-rectangle49" />
                         <img src="{% static 'asset/logout041120-erbh.svg' %}" alt="logout041120"
@@ -473,7 +473,24 @@
                         <span class="adminuserdatabase-page-text42">
                             <a href="{% url 'logout' %}">Logout</a>
                         </span>
-                        <script src="{% static 'js/admindatabase.js' %}"></script>
+                        <script>
+                            function showLogoutAlert() {
+                                // Prevent default action of the div click
+                                event.preventDefault();
+                        
+                                // Show the confirmation dialog
+                                var userConfirmed = confirm("Are you sure you want to logout?");
+                        
+                                // If user confirms, redirect to the logout URL
+                                if (userConfirmed) {
+                                    window.location.href = "{% url 'logout' %}";
+                                }
+                                else{
+                                    window.location.href = "{% url 'dashboard' %}";
+                                }
+                        }
+                        </script>
+
                     </div>
                 </div>
 

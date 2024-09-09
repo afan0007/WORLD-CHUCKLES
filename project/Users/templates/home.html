@@ -459,7 +459,7 @@
                     </span>
 
                     <!-- Logout button -->
-                    <div class="home-page-group13" onclick="confirmLogout()">
+                    <div class="home-page-group13" onclick="showLogoutAlert()">
                         <img src="{% static 'asset/rectangle491125-hq87.svg' %}" alt="Rectangle491125"
                             class="home-page-rectangle49" />
                         <img src="{% static 'asset/logout041125-yt97.svg' %}" alt="logout041125"
@@ -467,8 +467,24 @@
                         <span class="home-page-text22">
                             <a href="{% url 'logout' %}" id="logout-link">Logout</a>
                         </span>
+                        <script>
+                            function showLogoutAlert() {
+                                // Prevent default action of the div click
+                                event.preventDefault();
+                        
+                                // Show the confirmation dialog
+                                var userConfirmed = confirm("Are you sure you want to logout?");
+                        
+                                // If user confirms, redirect to the logout URL
+                                if (userConfirmed) {
+                                    window.location.href = "{% url 'logout' %}";
+                                }
+                                else{
+                                    window.location.href = "{% url 'index' %}";
+                                }
+                        }
+                        </script>
 
-                        <script src="{% static 'js/home-page.js' %}"></script>
                     </div>
                 </div>
 

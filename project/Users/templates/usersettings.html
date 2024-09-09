@@ -454,7 +454,7 @@
                     <span class="users-setting-page-text08"><a href="{% url 'usersettings' %}">Settings</a></span>
                     
                     <!-- Logout button -->
-                    <div class="users-setting-page-group13">
+                    <div class="users-setting-page-group13" onclick="showLogoutAlert()">
                         <img src="{% static 'asset/rectangle491254-i82j.svg' %}" alt="Rectangle491254"
                             class="users-setting-page-rectangle49" />
                         <img src="{% static 'asset/logout041255-hd.svg' %}" alt="logout041255"
@@ -463,11 +463,24 @@
                             <a href="{% url 'logout' %}">Logout</a>
                         </span>
                         
-                        <!-- {% if user.is_admin %}
-                        <span class="admin-setting-page-text28">
-                            <a href="{% url 'user_database' %}">user database</a>
-                        </span>
-                        {% endif %} -->
+                        <script>
+                            function showLogoutAlert() {
+                                // Prevent default action of the div click
+                                event.preventDefault();
+                        
+                                // Show the confirmation dialog
+                                var userConfirmed = confirm("Are you sure you want to logout?");
+                        
+                                // If user confirms, redirect to the logout URL
+                                if (userConfirmed) {
+                                    window.location.href = "{% url 'logout' %}";
+                                }
+                                else{
+                                    window.location.href = "{% url 'usersettings' %}";
+                                }
+                        }
+                        </script>
+
                     </div>
 
                 </div>
