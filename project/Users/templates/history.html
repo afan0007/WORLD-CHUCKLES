@@ -507,9 +507,9 @@
 
                 <!-- Search bar -->
                 <div class="history-page-search">
-                    <input type="search" id="search-bar" class="search-bar" placeholder="Search..."
-                        oninput="filterJokes()">
+                    <input type="search" id="search-bar" class="search-bar" placeholder="Search...">
                     <button class="search-button">Search</button>
+                    <div id="loading-spinner" style="display: none;">🔄</div> <!-- Placeholder for loading spinner -->
                 </div>
 
 
@@ -565,14 +565,34 @@
                     {% endfor %} -->
                 </table>
                 <script>
+                    let searchTimeout; // Timeout variable to debounce search input
+
+                    document.getElementById('search-bar').addEventListener('input', function() {
+                        clearTimeout(searchTimeout); // Clear the previous timeout
+                        document.getElementById('loading-spinner').style.display = 'none'; // Hide the spinner initially
+
+    // Set a timeout to delay the search function call by 2 seconds
+                        searchTimeout = setTimeout(() => {
+                            filterJokes();
+                        }, 2000);
+});
                     function filterJokes() {
                         const query = document.getElementById('search-bar').value.trim();
+                        document.getElementById('loading-spinner').style.display = 'inline-block'; // Show spinner
+                        document.getElementById('search-bar').disabled = true; // Disable the input field
+
                         fetch(`/search-jokes/?q=${encodeURIComponent(query)}`)
                             .then(response => response.json())
                             .then(data => {
                                 updateHistoryTable(data.histories);
+                                document.getElementById('loading-spinner').style.display = 'none';
+                                document.getElementById('search-bar').disabled = false; // Re-enable input field
                             })
-                            .catch(error => console.error('Error:', error));
+                            .catch(error => {
+                                console.error('Error:', error);
+                                document.getElementById('loading-spinner').style.display = 'none';
+                                document.getElementById('search-bar').disabled = false; // Re-enable input field
+                            });
                     }
 
                     function updateHistoryTable(histories) {

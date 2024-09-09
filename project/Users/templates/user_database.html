@@ -512,9 +512,9 @@
                     <button class="search-button">Search</button>
                 </div> -->
                 <div class="database-page-search">
-                    <input type="search" id="search-bar" class="search-bar" placeholder="Search..."
-                        oninput="filterUsers()">
+                    <input type="search" id="search-bar" class="search-bar" placeholder="Search...">
                     <button class="search-button" onclick="searchUser()">Search</button>
+                    <div id="loading-spinner" style="display: none;">🔄</div>
                 </div>
 
                 <!-- Container for displaying search results -->
@@ -664,40 +664,39 @@
                 </table>
                 <script>
                     const loggedInUsername = '{{ user.username }}';
+                    let searchTimeout; // Timeout variable to debounce search input
+
+                    document.getElementById('search-bar').addEventListener('input', function() {
+                        clearTimeout(searchTimeout); // Clear the previous timeout
+                        document.getElementById('loading-spinner').style.display = 'none'; // Hide the spinner initially
+
+    // Set a timeout to delay the search function call by 2 seconds
+                        searchTimeout = setTimeout(() => {
+                            filterUsers();
+                        }, 2000);
+                    });
                     function filterUsers() {
                         const query = document.getElementById('search-bar').value.trim();
+                        document.getElementById('loading-spinner').style.display = 'inline-block'; // Show spinner
+                        document.getElementById('search-bar').disabled = true; // Disable the input field
+
                         fetch(`/search-users/?q=${encodeURIComponent(query)}`)
                             .then(response => response.json())
                             .then(data => {
                                 updateUserTable(data.users);
+                                document.getElementById('loading-spinner').style.display = 'none'; // Hide spinner after response
+                                document.getElementById('search-bar').disabled = false;
                             })
-                            .catch(error => console.error('Error:', error));
+                            .catch(error => {
+                                console.error('Error:', error);
+                                document.getElementById('loading-spinner').style.display = 'none'; // Hide spinner after response
+                                document.getElementById('search-bar').disabled = false;
+
+
+                            });
                     }
 
-                    // function updateUserTable(users) {
-                    //     // Sort users alphabetically by username
-                    //     users.sort((a, b) => a.username.localeCompare(b.username));
 
-                    //     const userTable = document.querySelector('.user-info-table tbody');
-                    //     userTable.innerHTML = ''; // Clear current table content
-
-                    //     if (users.length === 0) {
-                    //         userTable.innerHTML = '<tr><td colspan="5">No users found.</td></tr>'; // Adjust colspan if necessary
-                    //     } else {
-                    //         users.forEach(user => {
-                    //             const row = document.createElement('tr');
-                    //             row.className = "user-info-row";
-                    //             row.innerHTML = `
-                    //                 <td>${user.username}</td>
-                    //                 <td>${user.country}</td>
-                    //                 <td>${user.age}</td>
-                    //                 <td>${user.gender}</td>
-                    //                  ${user.username !== loggedInUsername ? `<td><button class="delete-button" data-username="${user.username}">Remove</button></td>` : ''}
-                    //              `;
-                    //             userTable.appendChild(row);
-                    //         });
-                    //     }
-                    // }
                     function updateUserTable(users) {
                         // Separate the logged-in user from the rest
                         const loggedInUser = users.find(user => user.username === loggedInUsername);
