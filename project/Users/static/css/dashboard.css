@@ -260,13 +260,13 @@ canvas {
   font-family: Spinnaker;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   color: rgba(0, 0, 0, 1);
 }
 
 .chart-container3 {
   position: absolute; /* or keep absolute and set a fixed height */
-  top: 650px; /*remove this if using relative positioning */
+  top: 600px; /*remove this if using relative positioning */
   left: 321px; /*remove this if using relative positioning */
   width: 40%;
   margin: 20px;

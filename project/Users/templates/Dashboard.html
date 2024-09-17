@@ -622,9 +622,24 @@
                     // Update chart every 30 seconds
                     setInterval(updateChart1, 30000);
 
-                    // Set up the context for the canvas
-                    const ctx3 = document.getElementById('wordCloud').getContext('2d');
+                    // List of common stop words
+                    // const stopWords = ["the", "and", "is", "in", "of", "to", "it", "on", "with", "at", "by", "for", "a", "an"];
+                    const stopWords = ["the", "and", "is", "in", "of", "to", "it", "on", "with", "at", "by", "for", "a", "an",
+                                        "are", "i", "you", "we", "me", "my", "your", "us", "he", "she", "it", "is", "was", "because", "[inst]", "generator", "generated", "generator.",
+                                        "go", "out", "why", "quality", "offensive"]
+                    // Function to filter out stop words
+                    function filterStopWords(words, frequencies) {
+                        const filteredData = words.reduce((acc, word, index) => {
+                            if (!stopWords.includes(word.toLowerCase())) {
+                                acc.words.push(word);
+                                acc.frequencies.push(frequencies[index]);
+                            }
+                            return acc;
+                        }, { words: [], frequencies: [] });
 
+                        return filteredData;
+                    }
+                    const ctx3 = document.getElementById('wordCloud').getContext('2d');
                     // Function to fetch word frequency data from the backend
                     async function fetchWordFrequencyData() {
                         try {
@@ -640,22 +655,31 @@
                         }
                     }
 
-                    // Function to initialize and update the word cloud
+                    // Modify your updateWordCloud function to include stop word filtering
                     async function updateWordCloud() {
                         const data = await fetchWordFrequencyData();
 
-                        // Prepare the dataset for the word cloud
+                        // Filter out stop words
+                        const filteredData = filterStopWords(data.words, data.frequencies);
+
+                        // Sort the words by frequency and take the top N words
+                        const topN = 40;
+                        const sortedData = filteredData.words
+                            .map((word, index) => ({ word, frequency: filteredData.frequencies[index] }))
+                            .sort((a, b) => b.frequency - a.frequency)
+                            .slice(0, topN);
+
                         const wordCloudData = {
-                            labels: data.words,
+                            labels: sortedData.map(d => d.word),
                             datasets: [{
                                 label: 'Word Frequencies',
-                                data: data.frequencies
+                                data: sortedData.map(d => d.frequency)
                             }]
                         };
 
                         // Create the chart
                         const wordCloudChart = new Chart(ctx3, {
-                            type: 'wordCloud', // Use the 'wordCloud' type
+                            type: 'wordCloud',
                             data: wordCloudData,
                             options: {
                                 plugins: {
@@ -674,17 +698,87 @@
                         // Update the word cloud every 5 seconds
                         setInterval(async () => {
                             const newData = await fetchWordFrequencyData();
-                            if (newData.words.length === 0) {
-                                console.warn('No new data available for the word cloud.');
-                                return;
-                            }
-                            wordCloudChart.data.labels = newData.words;
-                            wordCloudChart.data.datasets[0].data = newData.frequencies;
+                            const newFilteredData = filterStopWords(newData.words, newData.frequencies);
+
+                            // Sort and take top N words
+                            const sortedNewData = newFilteredData.words
+                                .map((word, index) => ({ word, frequency: newFilteredData.frequencies[index] }))
+                                .sort((a, b) => b.frequency - a.frequency)
+                                .slice(0, topN);
+
+                            wordCloudChart.data.labels = sortedNewData.map(d => d.word);
+                            wordCloudChart.data.datasets[0].data = sortedNewData.map(d => d.frequency);
                             wordCloudChart.update();
                         }, 5000); // Refresh every 5 seconds
                     }
+
                     // Initialize the word cloud
                     updateWordCloud();
+
+                    //*************************below commented code here is the copy of js code of original word cloud 
+                    // // Set up the context for the canvas
+                    // const ctx3 = document.getElementById('wordCloud').getContext('2d');
+
+                    // // Function to fetch word frequency data from the backend
+                    // async function fetchWordFrequencyData() {
+                    //     try {
+                    //         const response = await fetch('{% url "word_frequency_data" %}');
+                    //         if (!response.ok) {
+                    //             throw new Error('Network response was not ok.');
+                    //         }
+                    //         const data = await response.json();
+                    //         return data;
+                    //     } catch (error) {
+                    //         console.error('Error fetching data:', error);
+                    //         return { words: [], frequencies: [] }; // Return empty data on error
+                    //     }
+                    // }
+
+                    // // Function to initialize and update the word cloud
+                    // async function updateWordCloud() {
+                    //     const data = await fetchWordFrequencyData();
+
+                    //     // Prepare the dataset for the word cloud
+                    //     const wordCloudData = {
+                    //         labels: data.words,
+                    //         datasets: [{
+                    //             label: 'Word Frequencies',
+                    //             data: data.frequencies
+                    //         }]
+                    //     };
+
+                    //     // Create the chart
+                    //     const wordCloudChart = new Chart(ctx3, {
+                    //         type: 'wordCloud', // Use the 'wordCloud' type
+                    //         data: wordCloudData,
+                    //         options: {
+                    //             plugins: {
+                    //                 legend: {
+                    //                     display: false
+                    //                 },
+                    //                 wordCloud: {
+                    //                     rotate: 0,
+                    //                     minFontSize: 10,
+                    //                     maxFontSize: 60
+                    //                 }
+                    //             }
+                    //         }
+                    //     });
+
+                    //     // Update the word cloud every 5 seconds
+                    //     setInterval(async () => {
+                    //         const newData = await fetchWordFrequencyData();
+                    //         if (newData.words.length === 0) {
+                    //             console.warn('No new data available for the word cloud.');
+                    //             return;
+                    //         }
+                    //         wordCloudChart.data.labels = newData.words;
+                    //         wordCloudChart.data.datasets[0].data = newData.frequencies;
+                    //         wordCloudChart.update();
+                    //     }, 5000); // Refresh every 5 seconds
+                    // }
+                    // // Initialize the word cloud
+                    // updateWordCloud();
                 </script>
                 
             </div>
