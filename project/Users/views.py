@@ -262,18 +262,18 @@ def search_users(request):
 def search_jokes(request):
     query = request.GET.get('q', '')
     user_id = request.session.get('user_id')
-    histories = History.objects.filter(user_id=user_id)
+    #histories = History.objects.filter(user_id=user_id)
     
     if query:
-        histories = History.objects.filter(user_id=user_id, description__icontains=query)
+        histories = History.objects.filter(user_id=user_id, description__icontains=query).values('id', 'description')
     else:
-        histories = History.objects.filter(user_id=user_id) # Return all histories if query is empty
-
-    results = [{
-        'id': history.id,
-        'description': history.description,
-    } for history in histories]
-    print(results)
+        histories = History.objects.filter(user_id=user_id).values('id', 'description') # Return all histories if query is empty
+    results = list(histories)
+    # results = [{
+    #     'id': history.id,
+    #     'description': history.description,
+    # } for history in histories]
+    # print(results)
 
     return JsonResponse({'histories': results})
 

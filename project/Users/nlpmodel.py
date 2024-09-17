@@ -1,5 +1,8 @@
 
 import requests
+import openai
+
+
 
 API_URL = "https://a6g4w0nkhxi9aat9.us-east-1.aws.endpoints.huggingface.cloud"
 headers = {
@@ -25,6 +28,7 @@ def query(payload):
 # 	print(output)
 # 	return str(output)
 
+#function 1 llama
 def dummy(country, keyword="dummy no keyword"):
     # Simulated output from  query function
     output = query({
@@ -47,6 +51,21 @@ def dummy(country, keyword="dummy no keyword"):
 
 # Test the function
 # dummy("India")
+
+#function 2 gpt
+def dummy(country):
+    response = openai.ChatCompletion.create(
+        model="ft:gpt-3.5-turbo-0125:personal:msia-jokes:A8AJXqTB",
+        messages=[
+            {"role": "system", "content": "You are a joke generator and make it related to the country mentioned."},  # Optionally customize this
+            {"role": "user", "content": f"Write a funny joke about {country}. It can relate in terms of landmark or food. Only one"}
+        ],
+        max_tokens=2048
+    )
+
+# Print the generated joke
+    return response['choices'][0]['message']['content'].strip())
+      
 
 
 
