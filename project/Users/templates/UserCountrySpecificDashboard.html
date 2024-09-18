@@ -504,285 +504,32 @@
 
                 <h1 class="adminuserdatabase-page-text01">{{ user.username }}'s Dashboard</h1>
 
-
-                <!-- <h2 class="adminuserdatabase-page-text02">Real-time Average Status by Country</h2>
-                <canvas id="countryStatusChart"></canvas>
-        
-                
-                <h2 class="adminuserdatabase-page-text03">Joke Sensitivity Distribution</h2>
-                <canvas id="offensiveStatusChart"></canvas> -->
-
-
-                <div class="chart-container">
-                    <h2 class="chart-label">Average Joke Ratings by Country</h2>
-                    <canvas class="countryStatusChart1" id="countryStatusChart"></canvas>
+                <div id="averageStatusDisplay">
+                    <!-- The average status will be displayed here -->
                 </div>
-
-
-                <div class="chart-container2">
-                    <h2 class="chart-label">Joke Sensitivity Distribution</h2>
-                    <canvas class="offensiveStatusChart2" id="offensiveStatusChart"></canvas>
-                </div>
-
-
-                <div class="chart-container3">
-                    <h2 class="word-cloud-label">Real-time Word Cloud</h2>
-                    <canvas id="wordCloud" width="100%" height="100%"></canvas>
-                </div>
-
                 <script>
-                    const canvas = document.getElementById('wordCloud');
-                    canvas.width = canvas.offsetWidth;
-                    canvas.height = canvas.offsetHeight;
-                    // Setup the chart
-                    const ctx = document.getElementById('countryStatusChart').getContext('2d');
-                    const countryStatusChart = new Chart(ctx, {
-                        type: 'bar',
-                        data: {
-                            labels: [], // Country labels
-                            datasets: [{
-                                label: 'Average Status',
-                                data: [], // Status data
-                                backgroundColor: 'blue',
-                            }]
-                        },
-                        options: {
-                            scales: {
-                                y: {
-                                    beginAtZero: true,
-                                    max: 5.0
-                                }
-                            }
-                        }
-                    });
-
-                    // Function to fetch and update the chart data
-                    function updateChart() {
-                        fetch('/api/country-status/')
+                    function fetchAverageStatus() {
+                        fetch('/dashboard/api/average-status/')
                             .then(response => response.json())
                             .then(data => {
-                                // Update chart labels and data
-                                countryStatusChart.data.labels = data.countries;
-                                countryStatusChart.data.datasets[0].data = data.avg_statuses;
-
-                                // Re-render the chart with new data
-                                countryStatusChart.update();
+                                if (data.error) {
+                                    console.error(data.error);
+                                } else {
+                                    document.getElementById('averageStatusDisplay').innerHTML = `<p>Average Status: ${data.average_status}</p>`;
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Error fetching average status:', error);
                             });
                     }
-
-                    // Update the chart every 5 seconds
-                    setInterval(updateChart, 5000);
-
-                    // Initial chart load
-                    updateChart();
-
-                    // Initialize Chart.js
-                    const ctx1 = document.getElementById('offensiveStatusChart').getContext('2d');
-                    const chart = new Chart(ctx1, {
-                        type: 'pie',
-                        data: {
-                            labels: [],  // Labels will be updated later
-                            datasets: [{
-                                label: 'Jokes Status',
-                                data: [],  // Data will be updated later
-                                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
-                            }]
-                        },
-                        options: {
-                            responsive: true,
-                            plugins: {
-                                legend: {
-                                    position: 'top',
-                                },
-                                tooltip: {
-                                    callbacks: {
-                                        label: function (tooltipItem) {
-                                            return `${tooltipItem.label}: ${tooltipItem.raw}`;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    });
-
-                    function updateChart1() {
-                        fetch('/api/offensive-status/')
-                            .then(response => response.json())
-                            .then(data => {
-                                chart.data.labels = data.categories;
-                                chart.data.datasets[0].data = data.counts;
-                                chart.update();
-                            })
-                            .catch(error => console.error('Error fetching data:', error));
-                    }
-
-                    // Initial chart update
-                    updateChart1();
-
-                    // Update chart every 30 seconds
-                    setInterval(updateChart1, 30000);
-
-                    // List of common stop words
-                    // const stopWords = ["the", "and", "is", "in", "of", "to", "it", "on", "with", "at", "by", "for", "a", "an"];
-                    const stopWords = ["the", "and", "is", "in", "of", "to", "it", "on", "with", "at", "by", "for", "a", "an",
-                                        "are", "i", "you", "we", "me", "my", "your", "us", "he", "she", "it", "is", "was", "because", "[inst]", "generator", "generated", "generator.",
-                                        "go", "out", "why", "quality", "offensive"]
-                    // Function to filter out stop words
-                    function filterStopWords(words, frequencies) {
-                        const filteredData = words.reduce((acc, word, index) => {
-                            if (!stopWords.includes(word.toLowerCase())) {
-                                acc.words.push(word);
-                                acc.frequencies.push(frequencies[index]);
-                            }
-                            return acc;
-                        }, { words: [], frequencies: [] });
-
-                        return filteredData;
-                    }
-                    const ctx3 = document.getElementById('wordCloud').getContext('2d');
-                    // Function to fetch word frequency data from the backend
-                    async function fetchWordFrequencyData() {
-                        try {
-                            const response = await fetch('{% url "word_frequency_data" %}');
-                            if (!response.ok) {
-                                throw new Error('Network response was not ok.');
-                            }
-                            const data = await response.json();
-                            return data;
-                        } catch (error) {
-                            console.error('Error fetching data:', error);
-                            return { words: [], frequencies: [] }; // Return empty data on error
-                        }
-                    }
-
-                    // Modify your updateWordCloud function to include stop word filtering
-                    async function updateWordCloud() {
-                        const data = await fetchWordFrequencyData();
-
-                        // Filter out stop words
-                        const filteredData = filterStopWords(data.words, data.frequencies);
-
-                        // Sort the words by frequency and take the top N words
-                        const topN = 40;
-                        const sortedData = filteredData.words
-                            .map((word, index) => ({ word, frequency: filteredData.frequencies[index] }))
-                            .sort((a, b) => b.frequency - a.frequency)
-                            .slice(0, topN);
-
-                        const wordCloudData = {
-                            labels: sortedData.map(d => d.word),
-                            datasets: [{
-                                label: 'Word Frequencies',
-                                data: sortedData.map(d => d.frequency)
-                            }]
-                        };
-
-                        // Create the chart
-                        const wordCloudChart = new Chart(ctx3, {
-                            type: 'wordCloud',
-                            data: wordCloudData,
-                            options: {
-                                plugins: {
-                                    legend: {
-                                        display: false
-                                    },
-                                    wordCloud: {
-                                        rotate: 0,
-                                        minFontSize: 10,
-                                        maxFontSize: 60
-                                    }
-                                }
-                            }
-                        });
-
-                        // Update the word cloud every 5 seconds
-                        setInterval(async () => {
-                            const newData = await fetchWordFrequencyData();
-                            const newFilteredData = filterStopWords(newData.words, newData.frequencies);
-
-                            // Sort and take top N words
-                            const sortedNewData = newFilteredData.words
-                                .map((word, index) => ({ word, frequency: newFilteredData.frequencies[index] }))
-                                .sort((a, b) => b.frequency - a.frequency)
-                                .slice(0, topN);
-
-                            wordCloudChart.data.labels = sortedNewData.map(d => d.word);
-                            wordCloudChart.data.datasets[0].data = sortedNewData.map(d => d.frequency);
-                            wordCloudChart.update();
-                        }, 5000); // Refresh every 5 seconds
-                    }
-
-                    // Initialize the word cloud
-                    updateWordCloud();
-
-                    //*************************below commented code here is the copy of js code of original word cloud 
-                    // // Set up the context for the canvas
-                    // const ctx3 = document.getElementById('wordCloud').getContext('2d');
-
-                    // // Function to fetch word frequency data from the backend
-                    // async function fetchWordFrequencyData() {
-                    //     try {
-                    //         const response = await fetch('{% url "word_frequency_data" %}');
-                    //         if (!response.ok) {
-                    //             throw new Error('Network response was not ok.');
-                    //         }
-                    //         const data = await response.json();
-                    //         return data;
-                    //     } catch (error) {
-                    //         console.error('Error fetching data:', error);
-                    //         return { words: [], frequencies: [] }; // Return empty data on error
-                    //     }
-                    // }
-
-                    // // Function to initialize and update the word cloud
-                    // async function updateWordCloud() {
-                    //     const data = await fetchWordFrequencyData();
-
-                    //     // Prepare the dataset for the word cloud
-                    //     const wordCloudData = {
-                    //         labels: data.words,
-                    //         datasets: [{
-                    //             label: 'Word Frequencies',
-                    //             data: data.frequencies
-                    //         }]
-                    //     };
-
-                    //     // Create the chart
-                    //     const wordCloudChart = new Chart(ctx3, {
-                    //         type: 'wordCloud', // Use the 'wordCloud' type
-                    //         data: wordCloudData,
-                    //         options: {
-                    //             plugins: {
-                    //                 legend: {
-                    //                     display: false
-                    //                 },
-                    //                 wordCloud: {
-                    //                     rotate: 0,
-                    //                     minFontSize: 10,
-                    //                     maxFontSize: 60
-                    //                 }
-                    //             }
-                    //         }
-                    //     });
-
-                    //     // Update the word cloud every 5 seconds
-                    //     setInterval(async () => {
-                    //         const newData = await fetchWordFrequencyData();
-                    //         if (newData.words.length === 0) {
-                    //             console.warn('No new data available for the word cloud.');
-                    //             return;
-                    //         }
-                    //         wordCloudChart.data.labels = newData.words;
-                    //         wordCloudChart.data.datasets[0].data = newData.frequencies;
-                    //         wordCloudChart.update();
-                    //     }, 5000); // Refresh every 5 seconds
-                    // }
-                    // // Initialize the word cloud
-                    // updateWordCloud();
-                </script>
                 
-            </div>
-        </div>
+                    // Fetch average status every 5 seconds
+                    setInterval(fetchAverageStatus, 5000);
+                
+                    // Initial fetch
+                    fetchAverageStatus();
+                </script>
+
 
     </div>
     <!-- Add more dashboard content here -->

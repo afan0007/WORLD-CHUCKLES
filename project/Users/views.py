@@ -1,8 +1,8 @@
 # views.py
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login as auth_login, logout as auth_logout
 from .forms import SignUpForm, AuthenticationForm, UserUpdateForm
-from .models import User, History, WordFrequency
+from .models import User, History, WordFrequency, HistoryMy, HistoryCn, HistoryIn, HistoryKr, HistoryQa
 from .nlpmodel import dummy
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
@@ -360,3 +360,36 @@ def word_frequency_data(request):
     #print(data)
 
     return JsonResponse(data)
+
+def get_average_status(request):
+    user_id = request.session.get('user_id')
+    if not user_id:
+        return JsonResponse({'error': 'User not logged in'}, status=401)
+
+    user = get_object_or_404(User, id=user_id)
+    country = user.country
+
+    history_model = {
+        'MY': HistoryMy,
+        'CN': HistoryCn,
+        'IN': HistoryIn,
+        'KR': HistoryKr,
+        'QA': HistoryQa
+    }.get(country)
+
+    if not history_model:
+        return JsonResponse({'error': 'Invalid country'}, status=400)
+
+    # Calculate the average status excluding 0
+    total_status = 0
+    count = 0
+
+    for record in history_model.objects.exclude(status=0):
+        total_status += record.status
+        count += 1
+
+    if count == 0:
+        return JsonResponse({'average_status': 0})
+
+    average_status = total_status / count
+    return JsonResponse({'average_status': average_status})
