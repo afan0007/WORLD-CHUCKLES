@@ -65,7 +65,7 @@ def generate_sentence(request):
         #History.objects.create(user=usr_obj, description=sentence, keyword="No keyword",country = Country,offensive=None, status=0).save() 
         # return JsonResponse({'sentence': sentence})
         newhistory = History.objects.create(user=usr_obj, description=sentence, keyword="No keyword",country = Country,offensive=None, status=0)
-        
+
         return JsonResponse({'sentence': sentence, 'id': newhistory.id})
     else:
         return JsonResponse({'error': 'Method not allowed'}, status=405)
@@ -294,12 +294,16 @@ def update_offensive(request):
         return JsonResponse({'message': str(e)}, status=500)
     
 
-    
-
 def dashboard(request):
     user_id = request.session.get('user_id')
     if user_id:
         user = User.objects.get(id=user_id)
+        if user.is_admin:
+                # User is an admin, render the admin dashboard
+            return render(request, 'Dashboard.html', {'user': user})
+        else:
+                # User is not an admin, render the user-specific dashboard
+            return render(request, 'UserCountrySpecificDashboard.html', {'user': user})
     else:
         user = None
     return render(request, 'Dashboard.html', {'user': user})
