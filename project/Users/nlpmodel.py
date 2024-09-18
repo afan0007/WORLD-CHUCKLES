@@ -27,43 +27,45 @@ def query(payload):
 # 	print(output)
 # 	return str(output)
 
+#function 0 fake
+def dummy(country):
+    return country
+
 #function 1 llama
-def dummy(country, keyword="dummy no keyword"):
-    # Simulated output from  query function
-    output = query({
-	"inputs": "<s> [INST] You are a joke generator. I want a joke related to " + country + " with a quality of 5 out of 5 stars and not offensive. [/INST] ",
-	"parameters": {}
-	})
+# def dummy(country, keyword="dummy no keyword"):
+#     # Simulated output from  query function
+#     output = query({
+# 	"inputs": "<s> [INST] You are a joke generator. I want a joke related to " + country + " with a quality of 5 out of 5 stars and not offensive. [/INST] ",
+# 	"parameters": {}
+# 	})
 
-    # Extract the generated text
-    generated_text = output[0]['generated_text']
+#     # Extract the generated text
+#     generated_text = output[0]['generated_text']
 
-    # Find the start and end of the joke
-    start = generated_text.find('[/INST] ') + len('[/INST] ')
-    end = generated_text.find('</s>')
+#     # Find the start and end of the joke
+#     start = generated_text.find('[/INST] ') + len('[/INST] ')
+#     end = generated_text.find('</s>')
 
-    # Extract the joke
-    joke = generated_text[start:end].strip()
+#     # Extract the joke
+#     joke = generated_text[start:end].strip()
 
-    print(joke+"hihi")
-    return joke
+#     print(joke+"hihi")
+#     return joke
 
-# Test the function
-# dummy("India")
 
 #function 2 gpt
-def dummy(country):
-    response = openai.ChatCompletion.create(
-        model="ft:gpt-3.5-turbo-0125:personal:msia-jokes:A8AJXqTB",
-        messages=[
-            {"role": "system", "content": "You are a joke generator and make it related to the country mentioned."},  # Optionally customize this
-            {"role": "user", "content": f"Write a funny joke about {country}. It can relate in terms of landmark or food. Only one"}
-        ],
-        max_tokens=2048
-    )
+# def dummy(country):
+#     response = openai.ChatCompletion.create(
+#         model="ft:gpt-3.5-turbo-0125:personal:msia-jokes:A8AJXqTB",
+#         messages=[
+#             {"role": "system", "content": "You are a joke generator and make it related to the country mentioned."},  # Optionally customize this
+#             {"role": "user", "content": f"Write a funny joke about {country}. It can relate in terms of landmark or food. Only one"}
+#         ],
+#         max_tokens=2048
+#     )
 
-# Print the generated joke
-    return response['choices'][0]['message']['content'].strip()
+# # Print the generated joke
+#     return response['choices'][0]['message']['content'].strip()
       
 
 

@@ -71,74 +71,84 @@ class HistoryKr(BaseHistory):
 
 class HistoryQa(BaseHistory):
     country = models.CharField(max_length=20, default='QA')
-    
+
+COUNTRY_MAPPING = {
+    'Malaysia': 'MY',
+    'China': 'CN',
+    'India': 'IN',
+    'South Korea': 'KR',
+    'Qatar': 'QA',
+}
+
 @receiver(post_save, sender=History)
 def create_or_update_country_specific_history(sender, instance, **kwargs):
     """
     Post-save signal to handle creation or updating of country-specific history tables
     using realhistoryid as the identifier.
     """
-    country = instance.country
+    country = COUNTRY_MAPPING.get(instance.country.strip())
     realhistoryid = instance.id  # Using History's ID as the realhistoryid
     description = instance.description
     offensive = instance.offensive
     status = instance.status
+    user_country = instance.user.country 
 
     # Depending on the country, create or update the corresponding history record
-    if country == 'Malaysia':
-        history_record, created = HistoryMy.objects.get_or_create(
-            realhistoryid=realhistoryid,
-            defaults={'description': description, 'offensive': offensive, 'status': status}
-        )
-        if not created:
-            history_record.description = description
-            history_record.offensive = offensive
-            history_record.status = status
-            history_record.save()
-    
-    elif country == 'China':
-        history_record, created = HistoryCn.objects.get_or_create(
-            realhistoryid=realhistoryid,
-            defaults={'description': description, 'offensive': offensive, 'status': status}
-        )
-        if not created:
-            history_record.description = description
-            history_record.offensive = offensive
-            history_record.status = status
-            history_record.save()
+    if country == user_country:
+        if country == 'MY':
+            history_record, created = HistoryMy.objects.get_or_create(
+                realhistoryid=realhistoryid,
+                defaults={'description': description, 'offensive': offensive, 'status': status}
+            )
+            if not created:
+                history_record.description = description
+                history_record.offensive = offensive
+                history_record.status = status
+                history_record.save()
+        
+        elif country == 'CN':
+            history_record, created = HistoryCn.objects.get_or_create(
+                realhistoryid=realhistoryid,
+                defaults={'description': description, 'offensive': offensive, 'status': status}
+            )
+            if not created:
+                history_record.description = description
+                history_record.offensive = offensive
+                history_record.status = status
+                history_record.save()
 
-    elif country == 'India':
-        history_record, created = HistoryIn.objects.get_or_create(
-            realhistoryid=realhistoryid,
-            defaults={'description': description, 'offensive': offensive, 'status': status}
-        )
-        if not created:
-            history_record.description = description
-            history_record.offensive = offensive
-            history_record.status = status
-            history_record.save()
+        elif country == 'IN':
+            history_record, created = HistoryIn.objects.get_or_create(
+                realhistoryid=realhistoryid,
+                defaults={'description': description, 'offensive': offensive, 'status': status}
+            )
+            if not created:
+                history_record.description = description
+                history_record.offensive = offensive
+                history_record.status = status
+                history_record.save()
 
-    elif country == 'South Korea':
-        history_record, created = HistoryKr.objects.get_or_create(
-            realhistoryid=realhistoryid,
-            defaults={'description': description, 'offensive': offensive, 'status': status}
-        )
-        if not created:
-            history_record.description = description
-            history_record.offensive = offensive
-            history_record.status = status
-            history_record.save()
+        elif country == 'KR':
+            history_record, created = HistoryKr.objects.get_or_create(
+                realhistoryid=realhistoryid,
+                defaults={'description': description, 'offensive': offensive, 'status': status}
+            )
+            if not created:
+                history_record.description = description
+                history_record.offensive = offensive
+                history_record.status = status
+                history_record.save()
 
-    elif country == 'Qatar':
-        history_record, created = HistoryQa.objects.get_or_create(
-            realhistoryid=realhistoryid,
-            defaults={'description': description, 'offensive': offensive, 'status': status}
-        )
-        if not created: #already exists
-            history_record.description = description
-            history_record.offensive = offensive
-            history_record.status = status
-            history_record.save()
+        elif country == 'QA':
+            history_record, created = HistoryQa.objects.get_or_create(
+                realhistoryid=realhistoryid,
+                defaults={'description': description, 'offensive': offensive, 'status': status}
+            )
+            if not created: #already exists
+                history_record.description = description
+                history_record.offensive = offensive
+                history_record.status = status
+                history_record.save()
 
 
 class WordFrequency(models.Model):
