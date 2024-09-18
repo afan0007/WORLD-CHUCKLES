@@ -393,3 +393,34 @@ def get_average_status(request):
 
     average_status = total_status / count
     return JsonResponse({'average_status': average_status})
+
+def get_user_history(request):
+    user_id = request.session.get('user_id')
+    user = get_object_or_404(User, id=user_id)
+    country = user.country
+
+    history_model = {
+        'MY': HistoryMy,
+        'CN': HistoryCn,
+        'IN': HistoryIn,
+        'KR': HistoryKr,
+        'QA': HistoryQa
+    }.get(country)
+
+    if not history_model:
+        return JsonResponse({'error': 'Invalid country'}, status=400)
+
+    history_records = history_model.objects.all().order_by('-status', '-id')
+
+    data = [
+        {
+            'id': record.id,
+            'realhistoryid': record.realhistoryid,
+            'description': record.description,
+            'offensive': record.offensive,
+            'status': record.status
+        }
+        for record in history_records
+    ]
+
+    return JsonResponse({'history': data})

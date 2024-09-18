@@ -35,6 +35,7 @@ urlpatterns = [
     path('word-frequency-data/', views.word_frequency_data, name='word_frequency_data'),  # URL for fetching word frequency data
 
     path('dashboard/api/average-status/', views.get_average_status, name='get_average_status'),
+    path('dashboard/api/user-history/', views.get_user_history, name='get_user_history'),
 
 
 

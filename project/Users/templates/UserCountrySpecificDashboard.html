@@ -477,18 +477,18 @@
                             function showLogoutAlert() {
                                 // Prevent default action of the div click
                                 event.preventDefault();
-                        
+
                                 // Show the confirmation dialog
                                 var userConfirmed = confirm("Are you sure you want to logout?");
-                        
+
                                 // If user confirms, redirect to the logout URL
                                 if (userConfirmed) {
                                     window.location.href = "{% url 'logout' %}";
                                 }
-                                else{
+                                else {
                                     window.location.href = "{% url 'dashboard' %}";
                                 }
-                        }
+                            }
                         </script>
 
                     </div>
@@ -503,10 +503,19 @@
                 </span>
 
                 <h1 class="adminuserdatabase-page-text01">{{ user.username }}'s Dashboard</h1>
+                <h1>{{ user.country }}'s History</h1>
+                <div id="historyTable"></div>
 
                 <div id="averageStatusDisplay">
                     <!-- The average status will be displayed here -->
                 </div>
+
+
+
+
+
+
+
                 <script>
                     function fetchAverageStatus() {
                         fetch('/dashboard/api/average-status/')
@@ -522,21 +531,70 @@
                                 console.error('Error fetching average status:', error);
                             });
                     }
-                
+
                     // Fetch average status every 5 seconds
                     setInterval(fetchAverageStatus, 5000);
-                
+
                     // Initial fetch
                     fetchAverageStatus();
+
+                    function fetchUserHistory() {
+                        fetch('/dashboard/api/user-history/')
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.error) {
+                                    console.error(data.error);
+                                } else {
+                                    displayHistory(data.history);
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Error fetching user history:', error);
+                            });
+                    }
+
+                    function displayHistory(history) {
+                        const tableHtml = `
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Real History ID</th>
+                            <th>Description</th>
+                            <th>Offensive</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${history.map(record => `
+                            <tr>
+                                <td>${record.id}</td>
+                                <td>${record.realhistoryid}</td>
+                                <td>${record.description}</td>
+                                <td>${record.offensive}</td>
+                                <td>${record.status}</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            `;
+                        document.getElementById('historyTable').innerHTML = tableHtml;
+                    }
+
+                    fetchUserHistory();
+                    setInterval(fetchUserHistory, 5000);
+
+
+
                 </script>
 
 
-    </div>
-    <!-- Add more dashboard content here -->
-    {% else %}
-    <h1>You are not logged in</h1>
-    <p>Please log in to access the dashboard.</p>
-    {% endif %}
+            </div>
+            <!-- Add more dashboard content here -->
+            {% else %}
+            <h1>You are not logged in</h1>
+            <p>Please log in to access the dashboard.</p>
+            {% endif %}
 </body>
 
 </html>
