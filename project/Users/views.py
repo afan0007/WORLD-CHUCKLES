@@ -65,6 +65,7 @@ def generate_sentence(request):
         #History.objects.create(user=usr_obj, description=sentence, keyword="No keyword",country = Country,offensive=None, status=0).save() 
         # return JsonResponse({'sentence': sentence})
         newhistory = History.objects.create(user=usr_obj, description=sentence, keyword="No keyword",country = Country,offensive=None, status=0)
+        
         return JsonResponse({'sentence': sentence, 'id': newhistory.id})
     else:
         return JsonResponse({'error': 'Method not allowed'}, status=405)

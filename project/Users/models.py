@@ -43,6 +43,104 @@ class History(models.Model):
     def __str__(self):
         return f"History for {self.user.username}"
     
+# Base History table that other models will inherit from
+class BaseHistory(models.Model):
+    realhistoryid = models.PositiveIntegerField(default=0)
+    description = models.CharField(max_length=500, default='No description')
+    offensive = models.BooleanField(null=True, default=None) 
+    status = models.PositiveIntegerField(default=0)
+    
+    class Meta:
+        abstract = True  # This will not create a table
+
+    def __str__(self):
+        return f"History for {self.user.username}"
+
+# Specific history tables for each country
+class HistoryMy(BaseHistory):
+    country = models.CharField(max_length=20, default='MY')
+
+class HistoryCn(BaseHistory):
+    country = models.CharField(max_length=20, default='CN')
+
+class HistoryIn(BaseHistory):
+    country = models.CharField(max_length=20, default='IN')
+
+class HistoryKr(BaseHistory):
+    country = models.CharField(max_length=20, default='KR')
+
+class HistoryQa(BaseHistory):
+    country = models.CharField(max_length=20, default='QA')
+    
+@receiver(post_save, sender=History)
+def create_or_update_country_specific_history(sender, instance, **kwargs):
+    """
+    Post-save signal to handle creation or updating of country-specific history tables
+    using realhistoryid as the identifier.
+    """
+    country = instance.country
+    realhistoryid = instance.id  # Using History's ID as the realhistoryid
+    description = instance.description
+    offensive = instance.offensive
+    status = instance.status
+
+    # Depending on the country, create or update the corresponding history record
+    if country == 'Malaysia':
+        history_record, created = HistoryMy.objects.get_or_create(
+            realhistoryid=realhistoryid,
+            defaults={'description': description, 'offensive': offensive, 'status': status}
+        )
+        if not created:
+            history_record.description = description
+            history_record.offensive = offensive
+            history_record.status = status
+            history_record.save()
+    
+    elif country == 'China':
+        history_record, created = HistoryCn.objects.get_or_create(
+            realhistoryid=realhistoryid,
+            defaults={'description': description, 'offensive': offensive, 'status': status}
+        )
+        if not created:
+            history_record.description = description
+            history_record.offensive = offensive
+            history_record.status = status
+            history_record.save()
+
+    elif country == 'India':
+        history_record, created = HistoryIn.objects.get_or_create(
+            realhistoryid=realhistoryid,
+            defaults={'description': description, 'offensive': offensive, 'status': status}
+        )
+        if not created:
+            history_record.description = description
+            history_record.offensive = offensive
+            history_record.status = status
+            history_record.save()
+
+    elif country == 'South Korea':
+        history_record, created = HistoryKr.objects.get_or_create(
+            realhistoryid=realhistoryid,
+            defaults={'description': description, 'offensive': offensive, 'status': status}
+        )
+        if not created:
+            history_record.description = description
+            history_record.offensive = offensive
+            history_record.status = status
+            history_record.save()
+
+    elif country == 'Qatar':
+        history_record, created = HistoryQa.objects.get_or_create(
+            realhistoryid=realhistoryid,
+            defaults={'description': description, 'offensive': offensive, 'status': status}
+        )
+        if not created: #already exists
+            history_record.description = description
+            history_record.offensive = offensive
+            history_record.status = status
+            history_record.save()
+
+
 class WordFrequency(models.Model):
     word = models.CharField(max_length=100, unique=True)
     frequency = models.PositiveIntegerField(default=0)

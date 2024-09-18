@@ -3,7 +3,6 @@ import requests
 import openai
 
 
-
 API_URL = "https://a6g4w0nkhxi9aat9.us-east-1.aws.endpoints.huggingface.cloud"
 headers = {
 	"Accept" : "application/json",
@@ -64,7 +63,7 @@ def dummy(country):
     )
 
 # Print the generated joke
-    return response['choices'][0]['message']['content'].strip())
+    return response['choices'][0]['message']['content'].strip()
       
 
 
