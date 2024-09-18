@@ -1,7 +1,5 @@
-
 import requests
 import openai
-
 
 API_URL = "https://a6g4w0nkhxi9aat9.us-east-1.aws.endpoints.huggingface.cloud"
 headers = {
@@ -13,23 +11,10 @@ def query(payload):
 	response = requests.post(API_URL, headers=headers, json=payload)
 	return response.json()
 
-# output = query({
-# 	"inputs": "Can you please let us know more details about your ",
-# 	"parameters": {}
-# })
-
-# The below dummy function is calling deployed model and generate an output joke
-# def dummy(country, keyword="dummy no keyword"):
-# 	output = query({
-# 	"inputs": "<s> [INST] You are a joke generator. I want a joke related to " + country + " with a quality of 5 out of 5 stars and not offensive. [/INST] ",
-# 	"parameters": {}
-# 	})
-# 	print(output)
-# 	return str(output)
-
 #function 0 fake
 def dummy(country):
     return country
+#end of function 0
 
 #function 1 llama
 # def dummy(country, keyword="dummy no keyword"):
@@ -51,7 +36,7 @@ def dummy(country):
 
 #     print(joke+"hihi")
 #     return joke
-
+#end of function 1
 
 #function 2 gpt
 # def dummy(country):
@@ -66,7 +51,7 @@ def dummy(country):
 
 # # Print the generated joke
 #     return response['choices'][0]['message']['content'].strip()
-      
+# end of function 2     
 
 
 
