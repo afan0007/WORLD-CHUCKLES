@@ -276,3 +276,68 @@ canvas {
   height: 500px; /* Set a fixed height, adjust as needed */
   overflow: hidden; /* Hide any overflow */
 }
+
+.chart-container-top-jokes {
+  position: absolute;
+  top: 174px;
+  left: 321px;
+  width: 600px; /* Fixed width, you can adjust this value else use "auto"*/
+  margin: 20px;
+  padding: 20px;
+  background-color: #acdef4;
+  border-radius: 10px;
+  height: auto; /* Set a fixed height for the bar chart container */
+}
+.table-row-bubble {
+  background-color: rgb(238, 248, 252);
+  color: black;
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+}
+
+.table-row-bubble-wrapper {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.table-description, .table-header-description {
+  width: 70%; /* Same width for header and data cells */
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.table-offensive, .table-header-offensive,
+.table-status, .table-header-status {
+  width: 10%; /* Same width for header and data cells */
+  text-align: center;
+}
+.top-rated-jokes-label {
+  font-size: 20px;
+  font-family: Spinnaker;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+  color: rgb(7, 42, 138);
+  text-decoration: underline;
+}
+.users-country{
+  top: 130px;
+  left: 354px;
+  color: rgb(207, 49, 207);
+  width: 1091px;
+  height: auto;
+  position: absolute;
+  font-size: 33px;
+  font-style: italic;
+  text-align: center;
+  font-family: Spinnaker;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+}

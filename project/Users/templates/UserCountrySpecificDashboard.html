@@ -503,8 +503,27 @@
                 </span>
 
                 <!-- <h1 class="adminuserdatabase-page-text01">{{ user.username }}'s Dashboard</h1> -->
-                <h1>{{ user.country }}'s History</h1>
-                <div id="historyTable"></div>
+                <!-- <h1 class="users-country">{{ user.country }}'s History</h1> -->
+                <h1 class="users-country">
+                {% if user.country == "MY" %}
+                    Malaysia
+                {% elif user.country == "CN" %}
+                    China
+                {% elif user.country == "IN" %}
+                    India
+                {% elif user.country == "KR" %}
+                    South Korea
+                {% elif user.country == "QA" %}
+                    Qatar
+                {% else %}
+                    {{ user.country }}
+                {% endif %}
+                's Generated Joke Statistics</h1>
+
+                <div class="chart-container-top-jokes">
+                    <h2 class="top-rated-jokes-label">Top Rated Jokes</h2>
+                    <div id="historyTable"></div>
+                </div>
 
                 <div id="averageStatusDisplay">
                     <!-- The average status will be displayed here -->
@@ -553,28 +572,59 @@
                             });
                     }
 
-                    function displayHistory(history) {
+            //         function displayHistory(history) {
+            //             const filteredHistory = history.filter(record => record.status === 5);
+            //             const tableHtml = `
+            //     <table>
+            //         <thead>
+            //             <tr>
+            //                 <th>ID</th>
+            //                 <th>Real History ID</th>
+            //                 <th>Description</th>
+            //                 <th>Offensive</th>
+            //                 <th>Status</th>
+            //             </tr>
+            //         </thead>
+            //         <tbody>
+            //             ${filteredHistory.map(record => `
+            //                 <tr>
+            //                     <td>${record.id}</td>
+            //                     <td>${record.realhistoryid}</td>
+            //                     <td>${record.description}</td>
+            //                     <td>${record.offensive}</td>
+            //                     <td>${record.status}</td>
+            //                 </tr>
+            //             `).join('')}
+            //         </tbody>
+            //     </table>
+            // `;
+            //             document.getElementById('historyTable').innerHTML = tableHtml;
+            //         }
+
+            function displayHistory(history) {
                         const filteredHistory = history.filter(record => record.status === 5);
+                        // const limitedHistory = filteredHistory.slice(0, 5); // Limit to first 5 rows
                         const tableHtml = `
                 <table>
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Real History ID</th>
-                            <th>Description</th>
-                            <th>Offensive</th>
-                            <th>Status</th>
+                           
+                            <th class="table-header-description">Description</th>
+                            <th class="table-header-offensive">Offensive</th>
+                            <th class="table-header-status">Status</th>
                         </tr>
                     </thead>
                     <tbody>
                         ${filteredHistory.map(record => `
                             <tr>
-                                <td>${record.id}</td>
-                                <td>${record.realhistoryid}</td>
-                                <td>${record.description}</td>
-                                <td>${record.offensive}</td>
-                                <td>${record.status}</td>
-                            </tr>
+                            <td colspan="3">
+                                <div class="table-row-bubble">
+                                    <div class="table-description">${record.description}</div>
+                                    <div class="table-offensive">${record.offensive}</div>
+                                    <div class="table-status">${record.status}</div>
+                                </div>
+                            </td>
+                        </tr>
                         `).join('')}
                     </tbody>
                 </table>
