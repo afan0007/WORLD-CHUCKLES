@@ -312,9 +312,14 @@ canvas {
   white-space: normal;
 }
 
-.table-offensive, .table-header-offensive,
+.table-offensive, .table-header-offensive
+ {
+  width: 15%; /* Same width for header and data cells */
+  text-align: left;
+}
+
 .table-status, .table-header-status {
-  width: 10%; /* Same width for header and data cells */
+  width: 5%; /* Same width for header and data cells */
   text-align: center;
 }
 .top-rated-jokes-label {

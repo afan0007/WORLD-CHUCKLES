@@ -620,7 +620,11 @@
                             <td colspan="3">
                                 <div class="table-row-bubble">
                                     <div class="table-description">${record.description}</div>
-                                    <div class="table-offensive">${record.offensive}</div>
+                                    <div class="table-offensive">
+                                    ${record.offensive === null ? '-' :
+                                      record.offensive === true ? 'Offensive' :
+                                      'Not Offensive'}
+                                    </div>
                                     <div class="table-status">${record.status}</div>
                                 </div>
                             </td>
