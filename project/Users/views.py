@@ -410,7 +410,7 @@ def get_user_history(request):
     if not history_model:
         return JsonResponse({'error': 'Invalid country'}, status=400)
 
-    history_records = history_model.objects.all().order_by('-status', '-id')
+    history_records = history_model.objects.filter(status=5).order_by('-id')
 
     data = [
         {
