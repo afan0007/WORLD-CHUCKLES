@@ -502,7 +502,7 @@
                     <span>Normal user's Dashboard</span>
                 </span>
 
-                <h1 class="adminuserdatabase-page-text01">{{ user.username }}'s Dashboard</h1>
+                <!-- <h1 class="adminuserdatabase-page-text01">{{ user.username }}'s Dashboard</h1> -->
                 <h1>{{ user.country }}'s History</h1>
                 <div id="historyTable"></div>
 
@@ -554,6 +554,7 @@
                     }
 
                     function displayHistory(history) {
+                        const filteredHistory = history.filter(record => record.status === 5);
                         const tableHtml = `
                 <table>
                     <thead>
@@ -566,7 +567,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        ${history.map(record => `
+                        ${filteredHistory.map(record => `
                             <tr>
                                 <td>${record.id}</td>
                                 <td>${record.realhistoryid}</td>
