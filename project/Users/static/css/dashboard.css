@@ -81,7 +81,7 @@
   font-size: 31px;
   color: #2E2E2E; /* Adjusted color */
   text-align: left;
-  font-family: "Century Schoolbook";
+  font-family: Turret Road;
   font-weight: 400;
   line-height: normal;
   text-decoration: none;
@@ -200,7 +200,7 @@
 .adminuserdatabase-page-text01{
     top: 130px;
     left: 354px;
-    color: rgb(207, 49, 207);
+    color: rgb(68, 49, 207);
     width: 1091px;
     height: auto;
     position: absolute;
@@ -216,12 +216,12 @@
 /* Container for the bar chart and its label */
 .chart-container {
   position: absolute;
-  top: 234px;
+  top: 194px;
   left: 321px;
   width: 40%;
   margin: 20px;
   padding: 20px;
-  background-color: #acdef4;
+  background-color: #bce7f5;
   border-radius: 10px;
   height: auto; /* Set a fixed height for the bar chart container */
 }
@@ -229,19 +229,19 @@
 /* Container for the pie chart and its label */
 .chart-container2 {
   position: absolute;
-  top: 234px;
+  top: 194px;
   left: calc(321px + 40% + 40px);
   width: 30%;
   margin: 20px;
   padding: 20px;
-  background-color: #acdef4;
+  background-color: #bce7f5;
   border-radius: 10px;
   height: auto; /* Set the same fixed height as the bar chart container */
 }
 
 /* Label for each chart */
 .chart-label {
-  font-size: 24px;
+  font-size: 22px;
   font-family: Spinnaker;
   font-weight: bold;
   text-align: center;
@@ -256,7 +256,7 @@ canvas {
 }
 
 .word-cloud-label{
-  font-size: 24px;
+  font-size: 22px;
   font-family: Spinnaker;
   font-weight: bold;
   text-align: center;
@@ -266,15 +266,16 @@ canvas {
 
 .chart-container3 {
   position: absolute; /* or keep absolute and set a fixed height */
-  top: 600px; /*remove this if using relative positioning */
+  top: 560px; /*remove this if using relative positioning */
   left: 321px; /*remove this if using relative positioning */
   width: 40%;
   margin: 20px;
   padding: 20px;
-  background-color: #acdef4;
+  background-color: #bce7f5;
   border-radius: 10px;
-  height: 500px; /* Set a fixed height, adjust as needed */
+  height: 500px; /* old: 500px , Set a fixed height, adjust as needed */
   overflow: hidden; /* Hide any overflow */
+  
 }
 
 .chart-container-top-jokes {
@@ -283,11 +284,18 @@ canvas {
   left: 321px;
   width: 600px; /* Fixed width, you can adjust this value else use "auto"*/
   margin: 20px;
-  padding: 20px;
-  background-color: #acdef4;
+  padding: 30px;
+  background-color: #bce7f5;
   border-radius: 10px;
   height: auto; /* Set a fixed height for the bar chart container */
 }
+/* having wordcloud to have white background within the blue widget container  */
+/* #wordCloud {
+  background-color: white; 
+  width: 80%; 
+  height: 80%; 
+  border-radius: 20px;
+} */
 .table-row-bubble {
   background-color: rgb(238, 248, 252);
   color: black;
@@ -310,6 +318,10 @@ canvas {
   width: 70%; /* Same width for header and data cells */
   word-wrap: break-word;
   white-space: normal;
+  text-align: left;
+}
+.table-header-description{
+  font-size: 18px;
 }
 
 .table-offensive, .table-header-offensive
@@ -318,23 +330,26 @@ canvas {
   text-align: left;
 }
 
+.table-header-offensive{
+  font-size: 18px;
+}
 .table-status, .table-header-status {
   width: 5%; /* Same width for header and data cells */
   text-align: center;
 }
 .top-rated-jokes-label {
-  font-size: 20px;
+  font-size: 22px;
   font-family: Spinnaker;
   font-weight: bold;
   text-align: center;
   margin-bottom: 10px;
   color: rgb(7, 42, 138);
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 .users-country{
   top: 130px;
   left: 354px;
-  color: rgb(207, 49, 207);
+  color: rgb(68, 49, 207);
   width: 1091px;
   height: auto;
   position: absolute;
@@ -346,6 +361,7 @@ canvas {
   line-height: normal;
   font-stretch: normal;
 }
+
 
 /* Styling for the average status display */
 #averageStatusDisplay {

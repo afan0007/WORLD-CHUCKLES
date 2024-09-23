@@ -82,7 +82,7 @@
   font-size: 31px;
   color: #2E2E2E; /* Adjusted color */
   text-align: left;
-  font-family: "Century Schoolbook";
+  font-family: Turret Road;
   font-weight: 400;
   line-height: normal;
   text-decoration: none;
@@ -267,7 +267,7 @@
   font-size: 20px;
   font-style: Regular;
   text-align: center;
-  font-family: "Space Mono";
+  font-family: Spinnaker;
   font-weight: 800;
   line-height: normal;
   font-stretch: normal;
@@ -284,7 +284,7 @@
   font-size: 20px;
   font-style: Regular;
   text-align: center;
-  font-family: "Space Mono";
+  font-family: Spinnaker;
   font-weight: 800;
   line-height: normal;
   font-stretch: normal;
@@ -771,7 +771,7 @@
   position: relative;
   padding: 10px 20px;
   margin-bottom: 10px;
-  background-color: #9bcbfa; /* Light blue background color for the bubble */
+  background-color: #bce7f5; /* Light blue background color for the bubble */
   border-radius: 15px; /* Rounded corners for the bubble effect */
   font-family: 'Spinnaker', sans-serif;
   display: grid;
@@ -794,7 +794,7 @@
 }
 
 .more-info-button {
-  background-color: #279586; /* Green background */
+  background-color:#0056b3; /* Green background */
   border: none; /* Remove border */
   color: white; /* White text */
   padding: 10px 27px; /* Some padding */

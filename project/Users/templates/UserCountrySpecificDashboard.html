@@ -439,8 +439,8 @@
                 <div class="adminuserdatabase-page-rectangle2">
 
                     <!-- Drawback icon -->
-                    <img src="{% static 'asset/chevronleftdouble1116-ilfk.svg' %}" alt="chevronleftdouble1116"
-                        class="adminuserdatabase-page-chevronleftdouble" />
+                    <!-- <img src="{% static 'asset/chevronleftdouble1116-ilfk.svg' %}" alt="chevronleftdouble1116"
+                        class="adminuserdatabase-page-chevronleftdouble" /> -->
 
                     <!-- Current logged user profile image and username -->
                     <div class="username-container">
@@ -499,7 +499,7 @@
                 <img src="{% static 'asset/rectangle41229-04z-200w.png' %}" alt="Rectangle41229"
                     class="adminuserdatabase-rectangle4" />
                 <span class="adminuserdatabase-page-text">
-                    <span>Normal user's Dashboard</span>
+                    <span>User's Dashboard</span>
                 </span>
 
                 <!-- <h1 class="adminuserdatabase-page-text01">{{ user.username }}'s Dashboard</h1> -->
@@ -606,7 +606,7 @@
 
             function displayHistory(history) {
                         const filteredHistory = history.filter(record => record.status === 5);
-                        // const limitedHistory = filteredHistory.slice(0, 5); // Limit to first 5 rows
+                        const limitedHistory = filteredHistory.slice(0, 5); // Limit to first 5 rows
                         const tableHtml = `
                 <table>
                     <thead>
@@ -614,11 +614,11 @@
                            
                             <th class="table-header-description">Description</th>
                             <th class="table-header-offensive">Offensive</th>
-                            <th class="table-header-status">Status</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
-                        ${filteredHistory.map(record => `
+                        ${limitedHistory.map(record => `
                             <tr>
                             <td colspan="3">
                                 <div class="table-row-bubble">
@@ -628,7 +628,7 @@
                                       record.offensive === true ? 'Offensive' :
                                       'Not Offensive'}
                                     </div>
-                                    <div class="table-status">${record.status}</div>
+                                    
                                 </div>
                             </td>
                         </tr>

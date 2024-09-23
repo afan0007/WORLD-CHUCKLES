@@ -435,8 +435,8 @@
                     class="home-page-rectangle2" /> -->
                 <div class="home-page-rectangle2">
                     <!-- Drawback icon for on  Nav bar -->
-                    <img src="{% static 'asset/chevronleftdouble1122-5hd6.svg' %}" alt="chevronleftdouble1122"
-                        class="home-page-chevronleftdouble" />
+                    <!-- <img src="{% static 'asset/chevronleftdouble1122-5hd6.svg' %}" alt="chevronleftdouble1122"
+                        class="home-page-chevronleftdouble" /> -->
 
                     <!-- Current logged user profile image and username -->
                     <div class="username-container">
@@ -682,6 +682,13 @@
                             }
                         });
                     }
+                    function removefilledStarDisplay() {
+                        const stars = document.querySelectorAll('.star');
+                        stars.forEach((star, index) => {
+                                star.classList.remove('filled');
+                        });
+
+                    }
                 </script>
 
 
@@ -783,6 +790,9 @@
                         const resultDiv = document.getElementById('result');
 
                         generateButton.addEventListener('click', function () {
+                            removefilledStarDisplay();
+                            const offensiveSelect = document.getElementById('offensive-status');
+                            offensiveSelect.value = ''; // Reset to the default option "Offensive/Not Offensive"
                             const selectedCountry = document.getElementById('country').value;
                             //const selectedJokeType = document.getElementById('joke-type').value;
 
