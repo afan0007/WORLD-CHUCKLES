@@ -266,9 +266,9 @@ def search_jokes(request):
     #histories = History.objects.filter(user_id=user_id)
     
     if query:
-        histories = History.objects.filter(user_id=user_id, description__icontains=query).values('id', 'description')
+        histories = History.objects.filter(user_id=user_id, description__icontains=query).values('id', 'description').order_by('-id')
     else:
-        histories = History.objects.filter(user_id=user_id).values('id', 'description') # Return all histories if query is empty
+        histories = History.objects.filter(user_id=user_id).values('id', 'description').order_by('-id') # Return all histories if query is empty
     results = list(histories)
     # results = [{
     #     'id': history.id,
@@ -303,7 +303,16 @@ def dashboard(request):
             return render(request, 'Dashboard.html', {'user': user})
         else:
                 # User is not an admin, render the user-specific dashboard
-            return render(request, 'UserCountrySpecificDashboard.html', {'user': user})
+            user_history = History.objects.filter(user_id=user_id).exclude(status=0)
+
+            # Calculate the average status of jokes, excluding status = 0
+            average_status = user_history.aggregate(average_status=Avg('status'))['average_status']
+
+            # If no history records are found, the average will be None
+            if average_status is None:
+                average_status = 0 
+            
+            return render(request, 'UserCountrySpecificDashboard.html', {'user': user, 'average_status': average_status})
     else:
         user = None
     return render(request, 'Dashboard.html', {'user': user})

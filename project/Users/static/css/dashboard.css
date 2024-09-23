@@ -276,3 +276,149 @@ canvas {
   height: 500px; /* Set a fixed height, adjust as needed */
   overflow: hidden; /* Hide any overflow */
 }
+
+.chart-container-top-jokes {
+  position: absolute;
+  top: 174px;
+  left: 321px;
+  width: 600px; /* Fixed width, you can adjust this value else use "auto"*/
+  margin: 20px;
+  padding: 20px;
+  background-color: #acdef4;
+  border-radius: 10px;
+  height: auto; /* Set a fixed height for the bar chart container */
+}
+.table-row-bubble {
+  background-color: rgb(238, 248, 252);
+  color: black;
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+}
+
+.table-row-bubble-wrapper {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.table-description, .table-header-description {
+  width: 70%; /* Same width for header and data cells */
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.table-offensive, .table-header-offensive
+ {
+  width: 15%; /* Same width for header and data cells */
+  text-align: left;
+}
+
+.table-status, .table-header-status {
+  width: 5%; /* Same width for header and data cells */
+  text-align: center;
+}
+.top-rated-jokes-label {
+  font-size: 20px;
+  font-family: Spinnaker;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+  color: rgb(7, 42, 138);
+  text-decoration: underline;
+}
+.users-country{
+  top: 130px;
+  left: 354px;
+  color: rgb(207, 49, 207);
+  width: 1091px;
+  height: auto;
+  position: absolute;
+  font-size: 33px;
+  font-style: italic;
+  text-align: center;
+  font-family: Spinnaker;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+}
+
+/* Styling for the average status display */
+#averageStatusDisplay {
+  display: flex;
+  position: relative;
+  top: 300px;
+  left: 450px;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e0f7fa, #a7ffeb); /* Gradient background */
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background 0.3s ease;
+  margin: 20px auto;
+  width: fit-content;
+  font-family: 'Arial', sans-serif;
+  animation: pulse 2s infinite; /* Pulsing effect */
+}
+
+/* Add pulse effect to the container */
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+      transform: scale(1.03);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+      transform: scale(1);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Style for the average status text */
+#averageStatusDisplay p {
+  font-size: 22px;
+  font-weight: bold;
+  color: #00796b;
+  margin: 0;
+  transition: color 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+/* Add emoji or icon before the text */
+#averageStatusDisplay p::before {
+  content: "⭐"; /* You can change this to any emoji or icon */
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+/* Change text color smoothly when the status is updated */
+#averageStatusDisplay p.updated {
+  color: #ff5722;
+  transition: color 0.5s ease;
+}
+
+/* Styling for emphasized text */
+#averageStatusDisplay p strong {
+  color: #ff9800; /* Highlighted text color */
+  font-size: 24px;
+}
+
+/* Smooth hover effect */
+#averageStatusDisplay:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #f0f4c3, #c8e6c9);
+}
+
+/* Glow effect on hover */
+#averageStatusDisplay:hover p {
+  text-shadow: 0 0 10px rgba(255, 152, 0, 0.8);
+}
