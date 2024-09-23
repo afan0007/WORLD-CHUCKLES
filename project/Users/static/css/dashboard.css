@@ -346,3 +346,79 @@ canvas {
   line-height: normal;
   font-stretch: normal;
 }
+
+/* Styling for the average status display */
+#averageStatusDisplay {
+  display: flex;
+  position: relative;
+  top: 300px;
+  left: 450px;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e0f7fa, #a7ffeb); /* Gradient background */
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background 0.3s ease;
+  margin: 20px auto;
+  width: fit-content;
+  font-family: 'Arial', sans-serif;
+  animation: pulse 2s infinite; /* Pulsing effect */
+}
+
+/* Add pulse effect to the container */
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+      transform: scale(1.03);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+      transform: scale(1);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Style for the average status text */
+#averageStatusDisplay p {
+  font-size: 22px;
+  font-weight: bold;
+  color: #00796b;
+  margin: 0;
+  transition: color 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+/* Add emoji or icon before the text */
+#averageStatusDisplay p::before {
+  content: "⭐"; /* You can change this to any emoji or icon */
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+/* Change text color smoothly when the status is updated */
+#averageStatusDisplay p.updated {
+  color: #ff5722;
+  transition: color 0.5s ease;
+}
+
+/* Styling for emphasized text */
+#averageStatusDisplay p strong {
+  color: #ff9800; /* Highlighted text color */
+  font-size: 24px;
+}
+
+/* Smooth hover effect */
+#averageStatusDisplay:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #f0f4c3, #c8e6c9);
+}
+
+/* Glow effect on hover */
+#averageStatusDisplay:hover p {
+  text-shadow: 0 0 10px rgba(255, 152, 0, 0.8);
+}
