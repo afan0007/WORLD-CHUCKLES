@@ -8,7 +8,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 import json
 from django.views.decorators.http import require_http_methods
-from django.db.models import Avg
+from django.db.models import Avg, Count
 from django.db.models.functions import Trim
 import os
 
@@ -308,11 +308,25 @@ def dashboard(request):
             # Calculate the average status of jokes, excluding status = 0
             average_status = user_history.aggregate(average_status=Avg('status'))['average_status']
 
+            # Get the count of records where status=5
+            status_five_count = History.objects.filter(user_id=user_id, status=5).count()
+
+# Get the total count of records for the user
+            total_count = History.objects.filter(user_id=user_id).count()
+
+# Calculate the ratio
+            if total_count > 0:  # Prevent division by zero
+                ratio = status_five_count / total_count
+            else:
+                ratio = 0  # Handle case when no history records exist
+
+
+
             # If no history records are found, the average will be None
             if average_status is None:
                 average_status = 0 
             
-            return render(request, 'UserCountrySpecificDashboard.html', {'user': user, 'average_status': average_status})
+            return render(request, 'UserCountrySpecificDashboard.html', {'user': user, 'average_status': average_status, 'personal_ratio': ratio})
     else:
         user = None
     return render(request, 'Dashboard.html', {'user': user})
