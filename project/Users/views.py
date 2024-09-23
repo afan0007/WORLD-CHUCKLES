@@ -447,3 +447,44 @@ def get_user_history(request):
     ]
 
     return JsonResponse({'history': data})
+
+# COUNTRY_MAPPING from your models.py to map the country to the model
+COUNTRY_MODEL_MAPPING = {
+    'MY': HistoryMy,
+    'CN': HistoryCn,
+    'IN': HistoryIn,
+    'KR': HistoryKr,
+    'QA': HistoryQa,
+}
+
+def get_country_specific_data(request):
+    if request.method == 'GET':
+        user_id = request.session.get('user_id')
+        user = get_object_or_404(User, id=user_id)
+        user_country_code = user.country  # Get user's country code (e.g., 'MY', 'CN')
+        print(user.country)
+        # Get the corresponding country-specific history model
+        history_model = COUNTRY_MODEL_MAPPING.get(user_country_code)
+
+        if history_model:
+            # Filter history records for the user in the country table
+            user_history = history_model.objects.all()
+            
+            # Calculate the average status for the user's country
+            average_status = user_history.aggregate(average_status=Avg('status'))['average_status']
+            
+            # Calculate the personal ratio of status=5
+            total_count = user_history.count()
+            status_five_count = user_history.filter(status=5).count()
+            ratio = status_five_count / total_count if total_count > 0 else 0
+            
+            # Send the data as JSON response
+            return JsonResponse({
+                'average_country_status': average_status,
+                'country_ratio': ratio,
+                'user_country': user_country_code
+            })
+        else:
+            return JsonResponse({'error': 'No country-specific data available for this user'}, status=400)
+    else:
+        return JsonResponse({'error': 'Invalid request method'}, status=405)

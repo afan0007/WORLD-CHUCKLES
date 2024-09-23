@@ -36,6 +36,7 @@ urlpatterns = [
 
     path('dashboard/api/average-status/', views.get_average_status, name='get_average_status'),
     path('dashboard/api/user-history/', views.get_user_history, name='get_user_history'),
+    path('get-country-specific-data/', views.get_country_specific_data, name='get_country_specific_data'),
 
 
 
