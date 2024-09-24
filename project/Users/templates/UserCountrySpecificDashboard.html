@@ -535,25 +535,64 @@
                             <div class="stat-content1">
                                 <div class="stat-circle1" id="statCircle"></div>
                                 <div class="stat-average" id="statAverage">{{ average_status }}</div>
+                                
                             </div>
                         </div>
 
                     
-                        <div class="stat-card">
-                            <div class="stat-header">User Satisfaction</div>
-                            <div class="stat-content">
-                                <div class="stat-circle">
-                                    <div class="stat-average" id="statAverage">{{ personal_ratio }}</div>
+                        <div class="stat-card2">
+                            <div class="stat-header2">User Satisfaction</div>
+                            <div class="stat-content2">
+                                <div class="stat-circle2" id="personalRatioPercentage"></div>
+                                <div class="country-label-text">of the generated jokes received a 5-star rating</div>
+                                <div class = "star"> ⭐⭐⭐⭐⭐ </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
+                    <div class="container2">
+                        <h2 class = "other-jokes-label">General Visualisation</h2>
+                        <h3 class = "subhead">What do the people around you think?</h3>
+                        <!-- Row 1: Personal Jokes Average Rating and Personal Ratio of 5 Stars -->
+                        <div class="stat-card3">
+                            <div class="stat-header3">Average Rating</div>
+                            <div class="stat-content3">
+                                <!--<div class="stat-circle3" id="average_country-status"></div>-->
+                                <span id="average_country-status"></span>
+                                <!--<div class="stat-average" id="statAverage">{{ average_status }}</div>-->
+                            </div>
+                        </div>
+
+                        <div class="stat-card4">
+                            <div class="stat-header4">User Satisfaction</div>
+                            <div class="stat-content4">
+                                <div class="stat-circle4" id="country-ratio"></div>
+                                <div class="country-label-text">of the generated jokes received a 5-star rating</div>
+                                <div class = "star"> ⭐⭐⭐⭐⭐ </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                <p>your Country: <span id="user-country"></span></p>
+                <p>Average rating for your Country by your countrymen: <span id="average_country-status"></span></p>
+                <p>Your country percentage of 5 stars rated jokes by your countrymen: <span id="country-ratio"></span></p>
                 <!--<h1>personal jokes average {{ average_status }} personal ratio of 5 stars {{ personal_ratio }}</h1>
 
                 <p>your Country: <span id="user-country"></span></p>
                 <p>Average rating for your Country by your countrymen: <span id="average_country-status"></span></p>
                 <p>Your country percentage of 5 stars rated jokes by your countrymen: <span id="country-ratio"></span></p>-->
+
+                <script>
+                // Assuming personal_ratio is defined elsewhere in your script
+                const personalRatio = {{ personal_ratio }}; // Replace with your method to get the ratio
+                const percentage = Math.round(personalRatio * 100); // Convert to percentage
+
+                // Set the percentage in the designated element
+                document.getElementById('personalRatioPercentage').innerText = percentage + '%';
+                </script>
 
                 <script>
                     // Get the average status from your template (or dynamically)
