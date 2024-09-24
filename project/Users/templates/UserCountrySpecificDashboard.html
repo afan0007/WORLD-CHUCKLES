@@ -527,58 +527,53 @@
 
                 <!--<div id="averageStatusDisplay">-->
                     <!--The average status will be displayed here-->
-                    <div class="container">
-                        <h2 class = "your-jokes-label">Your Visualisation</h2>
-                        <!-- Row 1: Personal Jokes Average Rating and Personal Ratio of 5 Stars -->
-                        <div class="stat-card1">
-                            <div class="stat-header1">Average Rating</div>
-                            <div class="stat-content1">
-                                <div class="stat-circle1" id="statCircle"></div>
-                                <div class="stat-average" id="statAverage">{{ average_status }}</div>
-                                
-                            </div>
-                        </div>
-
-                    
-                        <div class="stat-card2">
-                            <div class="stat-header2">User Satisfaction</div>
-                            <div class="stat-content2">
-                                <div class="stat-circle2" id="personalRatioPercentage"></div>
-                                <div class="country-label-text">of the generated jokes received a 5-star rating</div>
-                                <div class = "star"> ⭐⭐⭐⭐⭐ </div>
-                                </div>
-                            </div>
+                <div class="container">
+                    <h2 class = "your-jokes-label">Your Visualisation</h2>
+                    <!-- Row 1: Personal Jokes Average Rating and Personal Ratio of 5 Stars -->
+                    <div class="stat-card1">
+                        <div class="stat-header1">Average Rating</div>
+                        <div class="stat-content1">
+                            <div class="stat-circle1" id="statCircle"></div>
+                            <div class="stat-average" id="statAverage">{{ average_status }}</div>
+                            
                         </div>
                     </div>
 
-                    <div class="container2">
-                        <h2 class = "other-jokes-label">General Visualisation</h2>
-                        <h3 class = "subhead">What do the people around you think?</h3>
-                        <!-- Row 1: Personal Jokes Average Rating and Personal Ratio of 5 Stars -->
-                        <div class="stat-card3">
-                            <div class="stat-header3">Average Rating</div>
-                            <div class="stat-content3">
-                                <!--<div class="stat-circle3" id="average_country-status"></div>-->
-                                <span id="average_country-status"></span>
-                                <!--<div class="stat-average" id="statAverage">{{ average_status }}</div>-->
+                
+                    <div class="stat-card2">
+                        <div class="stat-header2">User Satisfaction</div>
+                        <div class="stat-content2">
+                            <div class="stat-circle2" id="personalRatioPercentage"></div>
+                            <div class="country-label-text">of the generated jokes received a 5-star rating</div>
+                            <div class = "star"> ⭐⭐⭐⭐⭐ </div>
                             </div>
                         </div>
+                    </div>
+                </div>
 
-                        <div class="stat-card4">
-                            <div class="stat-header4">User Satisfaction</div>
-                            <div class="stat-content4">
-                                <div class="stat-circle4" id="country-ratio"></div>
-                                <div class="country-label-text">of the generated jokes received a 5-star rating</div>
-                                <div class = "star"> ⭐⭐⭐⭐⭐ </div>
-                            </div>
+                <div class="container2">
+                    <h2 class = "other-jokes-label"> <span id="user-country"></span>&nbsp;General Visualisation</h2>
+                    <h3 class = "subhead">What do the people around you think?</h3>
+                    <!-- Row 1: Personal Jokes Average Rating and Personal Ratio of 5 Stars -->
+                    <div class="stat-card3">
+                        <div class="stat-header3">Average Rating</div>
+                        <div class="stat-content3">
+                            <div class="stat-circle3" id="statCircleC"></div>
+                            <div id="average_country-status"></div>
                         </div>
-
-
                     </div>
 
-                <p>your Country: <span id="user-country"></span></p>
-                <p>Average rating for your Country by your countrymen: <span id="average_country-status"></span></p>
-                <p>Your country percentage of 5 stars rated jokes by your countrymen: <span id="country-ratio"></span></p>
+                    <div class="stat-card4">
+                        <div class="stat-header4">User Satisfaction</div>
+                        <div class="stat-content4">
+                            <div class="stat-circle4" id="country-ratio"></div>
+                            <div class="country-label-text">of the generated jokes received a 5-star rating</div>
+                            <div class = "star"> ⭐⭐⭐⭐⭐ </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
                 <!--<h1>personal jokes average {{ average_status }} personal ratio of 5 stars {{ personal_ratio }}</h1>
 
                 <p>your Country: <span id="user-country"></span></p>
@@ -593,6 +588,8 @@
                 // Set the percentage in the designated element
                 document.getElementById('personalRatioPercentage').innerText = percentage + '%';
                 </script>
+                
+
 
                 <script>
                     // Get the average status from your template (or dynamically)
@@ -615,7 +612,25 @@
                         statAverage.classList.add('stat-average-green');  // Green text for above 3
                     }
                 </script>
-                
+
+                <script>
+                    const averageCountryStatus = parseFloat(document.getElementById('average_country-status').textContent);
+                    const statCircleC = document.getElementById('statCircleC');
+
+                    // Apply different classes based on the averageCountryStatus value
+                    if (isNaN(averageCountryStatus)) {
+                        console.error("Invalid average country status value");
+                    } else if (averageCountryStatus < 3) {
+                        statCircleC.classList.add('stat-circle-red');  // Red for below 3
+                        document.getElementById('average_country-status').classList.add('stat-average-red');  // Red text for below 3
+                    } else if (averageCountryStatus >= 3 && averageCountryStatus < 4) {
+                        statCircleC.classList.add('stat-circle-yellow');  // Yellow for between 3 and 4
+                        document.getElementById('average_country-status').classList.add('stat-average-yellow');  // Yellow text for between 3 and 4
+                    } else {
+                        statCircleC.classList.add('stat-circle-green');  // Green for above 4
+                        document.getElementById('average_country-status').classList.add('stat-average-green');  // Green text for above 4
+                    }
+                </script>
 
                 <script>
                     function fetchAverageStatus() {
@@ -737,7 +752,7 @@
                                     // Update the page with the country-specific data
                                     document.getElementById('user-country').textContent = data.user_country;
                                     document.getElementById('average_country-status').textContent = data.average_country_status ? data.average_country_status.toFixed(2) : 'N/A';
-                                    document.getElementById('country-ratio').textContent = (data.country_ratio * 100).toFixed(2) + '%';
+                                    document.getElementById('country-ratio').textContent = Math.round(data.country_ratio * 100) + "%";
                                 }
                             })
                             .catch(error => {

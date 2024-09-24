@@ -458,7 +458,7 @@ canvas {
 
 .container2 {
   position: absolute;
-  top: 800px;
+  top: 600px;
   left: 1000px;
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Two columns */
@@ -600,19 +600,22 @@ canvas {
 
 .stat-circle3 {
   position: absolute;
-  top: 100px;
-  left: 30px;
-  font-size: 50px;
-  font-family: Spinnaker;
-  font-weight: 500;
-  color: rgb(7, 42, 138);
+  margin: 20px 0;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
   
 }
 
 .stat-circle4 {
   position: absolute;
-  top: 40px;
-  left: 100px;
+  top: 30px;
+  left: 30px;
   font-size: 50px;
   font-family: Spinnaker;
   font-weight: 500;
@@ -642,7 +645,7 @@ canvas {
   color: rgb(7, 42, 138);
   position: absolute;
   top: 30px;
-  left: 150px;
+  left: 130px;
 
 }
 
@@ -650,7 +653,7 @@ canvas {
   font-size: 15px;
   font-family: Spinnaker;
   position: absolute;
-  left: 130px;
+  left: 120px;
   top: 60px;
   color: grey;
 }
