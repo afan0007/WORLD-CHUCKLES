@@ -525,18 +525,58 @@
                     <div id="historyTable"></div>
                 </div>
 
-                <div id="averageStatusDisplay">
-                    <!-- The average status will be displayed here -->
-                </div>
+                <!--<div id="averageStatusDisplay">-->
+                    <!--The average status will be displayed here-->
+                    <div class="container">
+                        <h2 class = "your-jokes-label">Your Visualisation</h2>
+                        <!-- Row 1: Personal Jokes Average Rating and Personal Ratio of 5 Stars -->
+                        <div class="stat-card1">
+                            <div class="stat-header1">Average Rating</div>
+                            <div class="stat-content1">
+                                <div class="stat-circle1" id="statCircle"></div>
+                                <div class="stat-average" id="statAverage">{{ average_status }}</div>
+                            </div>
+                        </div>
 
-                <h1>personal jokes average {{ average_status }} personal ratio of 5 stars {{ personal_ratio }}</h1>
+                    
+                        <div class="stat-card">
+                            <div class="stat-header">User Satisfaction</div>
+                            <div class="stat-content">
+                                <div class="stat-circle">
+                                    <div class="stat-average" id="statAverage">{{ personal_ratio }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!--<h1>personal jokes average {{ average_status }} personal ratio of 5 stars {{ personal_ratio }}</h1>
 
                 <p>your Country: <span id="user-country"></span></p>
                 <p>Average rating for your Country by your countrymen: <span id="average_country-status"></span></p>
-                <p>Your country percentage of 5 stars rated jokes by your countrymen: <span id="country-ratio"></span></p>
+                <p>Your country percentage of 5 stars rated jokes by your countrymen: <span id="country-ratio"></span></p>-->
 
-
-
+                <script>
+                    // Get the average status from your template (or dynamically)
+                    const averageStatus = {{average_status}};
+                    
+                    // Get the stat circle element
+                    const statCircle = document.getElementById('statCircle');
+                    const statAverage = document.getElementById('statAverage');
+                    statAverage.innerText = averageStatus.toFixed(1);
+                    
+                    // Apply different classes based on the average_status value
+                    if (averageStatus < 3) {
+                        statCircle.classList.add('stat-circle-red');  // Red for below 3
+                        statAverage.classList.add('stat-average-red');  // Red text for below 3
+                    } else if (averageStatus>3 & averageStatus<4) {
+                        statCircle.classList.add('stat-circle-yellow');  // Yellow for exactly 3
+                        statAverage.classList.add('stat-average-yellow');  // Yellow text for exactly 3
+                    } else {
+                        statCircle.classList.add('stat-circle-green');  // Green for above 3
+                        statAverage.classList.add('stat-average-green');  // Green text for above 3
+                    }
+                </script>
+                
 
                 <script>
                     function fetchAverageStatus() {

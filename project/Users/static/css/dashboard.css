@@ -363,7 +363,7 @@ canvas {
 }
 
 
-/* Styling for the average status display */
+/* Styling for the average status display
 #averageStatusDisplay {
   display: flex;
   position: relative;
@@ -371,7 +371,7 @@ canvas {
   left: 450px;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #e0f7fa, #a7ffeb); /* Gradient background */
+  background: linear-gradient(135deg, #e0f7fa, #a7ffeb); /* Gradient background
   padding: 20px 30px;
   border-radius: 12px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
@@ -379,10 +379,10 @@ canvas {
   margin: 20px auto;
   width: fit-content;
   font-family: 'Arial', sans-serif;
-  animation: pulse 2s infinite; /* Pulsing effect */
+  animation: pulse 2s infinite; /* Pulsing effect
 }
 
-/* Add pulse effect to the container */
+/* Add pulse effect to the container
 @keyframes pulse {
   0% {
       transform: scale(1);
@@ -398,7 +398,7 @@ canvas {
   }
 }
 
-/* Style for the average status text */
+/* Style for the average status text 
 #averageStatusDisplay p {
   font-size: 22px;
   font-weight: bold;
@@ -409,32 +409,181 @@ canvas {
   display: inline-block;
 }
 
-/* Add emoji or icon before the text */
+/* Add emoji or icon before the text
 #averageStatusDisplay p::before {
-  content: "⭐"; /* You can change this to any emoji or icon */
+  content: "⭐"; /* You can change this to any emoji or icon
   font-size: 24px;
   margin-right: 10px;
 }
 
-/* Change text color smoothly when the status is updated */
+/* Change text color smoothly when the status is updated
 #averageStatusDisplay p.updated {
   color: #ff5722;
   transition: color 0.5s ease;
 }
 
-/* Styling for emphasized text */
+/* Styling for emphasized text
 #averageStatusDisplay p strong {
-  color: #ff9800; /* Highlighted text color */
+  color: #ff9800; /* Highlighted text color
   font-size: 24px;
 }
 
-/* Smooth hover effect */
+/* Smooth hover effect
 #averageStatusDisplay:hover {
   transform: scale(1.05);
   background: linear-gradient(135deg, #f0f4c3, #c8e6c9);
 }
 
-/* Glow effect on hover */
+/* Glow effect on hover
 #averageStatusDisplay:hover p {
   text-shadow: 0 0 10px rgba(255, 152, 0, 0.8);
+}*/
+
+.container {
+  position: absolute;
+  top: 200px;
+  left: 1000px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  grid-gap: 20px;
+  background-color: #bce7f5;
+  height: 350px;
+  width: 500px;
+  padding-top: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  border-radius: 15px;
+}
+
+
+.stat-card1 {
+  position: absolute;
+  top: 80px;
+  left: 30px;
+  width: 200px; /* Full width inside grid */
+  height: 250px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.stat-header1 {
+  font-size: 18px;
+  color: black;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-family: Spinnaker;
+}
+
+.stat-content1 {
+  position: absolute;
+}
+
+.stat-circle1 {
+  position: absolute;
+  margin: 20px 0;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.your-jokes-label {
+  font-size: 22px;
+  font-family: Spinnaker;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+  color: rgb(7, 42, 138);
+  position: relative;
+  top: -20px;
+  left: 130px;
+
+}
+
+.stat-circle-red {
+  font-size: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1; /* Make it semi-transparent */
+  position: relative;
+}
+
+.stat-circle-red::before {
+  content: "😡"; /* Add the emoji */
+  position: absolute; /* Position it behind the text */
+  font-size: 100px; /* Size of the emoji */
+  opacity: 1;
+  top: -10px;
+}
+
+.stat-circle-yellow {
+  font-size: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1; /* Make it semi-transparent */
+  position: relative;
+}
+
+.stat-circle-yellow::before {
+  content: "😐"; /* Add the emoji */
+  position: absolute; /* Position it behind the text */
+  font-size: 100px; /* Size of the emoji */
+  opacity: 1;
+  top: -10px;
+}
+
+.stat-circle-green {
+  font-size: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1; /* Make it semi-transparent */
+  position: relative;
+}
+
+.stat-circle-green::before {
+  content: "😁"; /* Add the emoji */
+  position: absolute; /* Position it behind the text */
+  font-size: 100px; /* Size of the emoji */
+  opacity: 1;
+  top: -10px;
+}
+
+/* Change text color based on the status */
+.stat-average-red {
+  color: #FF4D4D; /* Red text */
+  font-size: 30px;
+  font-weight: 800;
+  top: 140px;
+  left: 50px;
+  position: absolute;
+}
+
+.stat-average-yellow {
+  color: #FFD700; /* Yellow text */
+  font-size: 30px;
+  font-weight: 800;
+  top: 140px;
+  left: 50px;
+  position: absolute;
+}
+
+.stat-average-green {
+  color: #4CAF50; /* Green text */
+  font-size: 30px;
+  font-weight: 800;
+  top: 140px;
+  left: 50px;
+  position: absolute;
 }
