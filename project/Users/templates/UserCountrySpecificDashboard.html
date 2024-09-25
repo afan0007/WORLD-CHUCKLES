@@ -534,7 +534,7 @@
                         <div class="stat-header1">Average Rating</div>
                         <div class="stat-content1">
                             <div class="stat-circle1" id="statCircle"></div>
-                            <div class="stat-average" id="statAverage">{{ average_status }}</div>
+                            <div class="stat-average" id="statAverage">{{ personal_average_status }}</div>
                             
                         </div>
                     </div>
@@ -593,7 +593,7 @@
 
                 <script>
                     // Get the average status from your template (or dynamically)
-                    const averageStatus = {{average_status}};
+                    const averageStatus = {{ personal_average_status }};
                     
                     // Get the stat circle element
                     const statCircle = document.getElementById('statCircle');

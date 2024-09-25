@@ -326,7 +326,7 @@ def dashboard(request):
             if average_status is None:
                 average_status = 0 
             
-            return render(request, 'UserCountrySpecificDashboard.html', {'user': user, 'average_status': average_status, 'personal_ratio': ratio})
+            return render(request, 'UserCountrySpecificDashboard.html', {'user': user, 'personal_average_status': average_status, 'personal_ratio': ratio})
     else:
         user = None
     return render(request, 'Dashboard.html', {'user': user})
