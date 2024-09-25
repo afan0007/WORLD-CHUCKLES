@@ -477,6 +477,9 @@ def get_country_specific_data(request):
             total_count = user_history.count()
             status_five_count = user_history.filter(status=5).count()
             ratio = status_five_count / total_count if total_count > 0 else 0
+
+
+            print(average_status)
             
             # Send the data as JSON response
             return JsonResponse({
