@@ -1,0 +1,837 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster|Monoton|Truculenta|Turret+Road|Space+Mono');  
+
+.history-page-container {
+  width: 100%;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+
+}
+.history-page-history-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  overflow-y: auto;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  background-color: rgba(255, 255, 255, 1);
+}
+/* .history-page-rectangle2 {
+  top: -4px;
+  left: -5px;
+  width: 302px;
+  height: 1000px;
+  position: absolute;
+} */
+
+.history-page-rectangle2 {
+  /* top: -4px;
+  left: -5px;
+  width: 302px;
+  height: 1028px;
+  position: absolute;
+  background: linear-gradient(359.15deg, #3579FD 14.16%, rgba(21, 204, 94, 0.51) 39.73%, rgba(173, 98, 243, 0.51) 100.2%);
+  */
+  top: 0;
+  left: 0;
+  width: 302px;
+  height: 100vh;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 150px; 
+  background: linear-gradient(359.15deg, #3579FD 14.16%, rgba(21, 204, 94, 0.51) 39.73%, rgba(173, 98, 243, 0.51) 100.2%);
+} */
+  position: fixed; /* Keep the navigation bar fixed during scrolling */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  background:  linear-gradient(359.15deg, #3579FD 14.16%, rgba(21, 204, 94, 0.51) 39.73%, rgba(173, 98, 243, 0.51) 100.2%);
+  padding-top: 50px; /* Adjust padding to center content vertically */
+}
+.history-page-chevronleftdouble {
+  top: 47px;
+  left: 238px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+}
+.username-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px; /* Space between username and other items */
+}
+.history-page-text04, .history-page-text06, .history-page-text08, .history-page-text09, .history-page-text10 {
+  font-size: 36px; /* Adjusted font size */
+  font-family: Lobster; /* Or any font of your choice */
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 50px; /* Space between items */
+  text-align: left;
+  white-space: nowrap; /* Prevent text from wrapping */
+  margin-left: 10px;
+}
+
+.history-page-text04 {
+  width: 160px; /* Adjusted width to fit within the navigation bar */
+  font-weight: bold;
+  font-size: 31px;
+  color: #2E2E2E; /* Adjusted color */
+  text-align: left;
+  font-family: Turret Road;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+  word-wrap: break-word; /* Ensure long words break to the next line */
+  white-space: normal; /* Allow text to wrap to the next line */
+  overflow-wrap: break-word; /* Break long words */
+  margin-bottom: 20px; /* Space between items */
+}
+
+.history-page-text08 {
+  font-size: 36px; /* Adjusted font size */
+  font-family: Lobster; /* Or any font of your choice */
+  color: #1a73e8;
+  margin-bottom: 20px; /* Space between items */
+  text-align: left;
+  white-space: nowrap; /* Prevent text from wrapping */
+  text-decoration: underline;
+  margin-bottom: 50px; /* Space between items */
+}
+.history-page-ellipse9 {
+  /* top: 234px;
+  left: 14px;
+  width: 89px;
+  height: 84px;
+  position: absolute; */
+  
+  /* top: 182px;
+  left: 15px;
+  width: 89px;
+  height: 84px;
+  position: absolute;
+  border-radius: 30px; */
+  width: 89px;
+  height: 84px;
+  border-radius: 30px;
+  margin-right: 13px;
+}
+
+.link-button {
+  background-color: #008CBA; /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 15px 32px; /* Some padding */
+  text-align: center; /* Centered text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Make the button inline */
+  font-size: 16px; /* Increase font size */
+  margin: 4px 2px; /* Add some margin */
+  cursor: pointer; /* Add a pointer cursor on hover */
+  border-radius: 12px; /* Rounded corners */
+}
+
+.history-link {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.history-link:hover {
+  text-decoration: underline;
+  color:rgba(43, 64, 255, 1);
+}
+.history-page-rectangle4 {
+  top: 47px;
+  left: 337px;
+  width: 5px;
+  height: 40px;
+  position: absolute;
+}
+.history-page-text {
+  top: 45px;
+  left: 354px;
+  color: rgba(0, 0, 0, 1);
+  width: 556px;
+  height: auto;
+  position: absolute;
+  font-size: 40px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Lobster;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.history-page-search {
+  /* top: 45px;
+  left: 1100px;
+  width: 212px;
+  height: 44px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  background-color: rgba(255, 255, 255, 1); */
+
+  top: 45px;
+  left: 1100px;
+  width: 212px; /* Adjusted width to fit both search bar and button */
+  height: 44px;
+  display: flex;
+  position: absolute;
+  align-items: center; /* Center align items vertically */
+  flex-shrink: 0; /* Ensure the container doesn't shrink */
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 25px; /* To match the search bar and button */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds a slight shadow for better visibility */
+}
+
+.search-bar {
+  /* border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 25px 0 0 25px;
+  width: 300px; */
+  border: 1px solid grey; /* Grey outline */
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 25px 0 0 25px;
+  width: 300px;
+}
+
+.search-bar::placeholder {
+  color: #999; /* Lighter font color for the placeholder */
+}
+
+.search-button {
+  /* border: none; */
+  background-color: #007BFF;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 0 25px 25px 0;
+  transition: background-color 0.3s;
+
+  border: 1px solid grey; /* Grey outline */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds a slight shadow for better visibility */
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+.history-page-rectangle41 {
+  top: 211px;
+  left: 321px;
+  width: 1091px;
+  height: 3px;
+  position: absolute;
+}
+.history-page-rectangle7 {
+  top: 234px;
+  left: 321px;
+  width: 1091px;
+  height: 75px;
+  position: absolute;
+}
+.history-page-rectangle9 {
+  top: 211px;
+  left: 321px;
+  width: 1091px;
+  height: 3px;
+  position: absolute;
+}
+.history-page-rectangle8 {
+  top: 211px;
+  left: 321px;
+  width: 1091px;
+  height: 3px;
+  position: absolute;
+}
+.history-page-text12 {
+  top: 169px;
+  left: 257px;
+  color: black;
+  width: 216px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Spinnaker;
+  font-weight: 800;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.history-page-text13 {
+  top: 169px;
+  left: 930px;
+  color: black;
+  width: 216px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Spinnaker;
+  font-weight: 800;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+
+.history-page-text14 {
+  top: 167px;
+  left: 720px;
+  color: rgba(0, 0, 0, 1);
+  width: 216px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Regular;
+  text-align: center;
+  font-family: "Space Mono";
+  font-weight: 800;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.history-page-text16 {
+  top: 260px;
+  left: 351px;
+  color: rgba(0, 0, 0, 1);
+  width: 311px;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.history-page-text18 {
+  top: 255px;
+  left: 780px;
+  color: rgba(0, 0, 0, 1);
+  width: 311px;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.history-page-text20 {
+  top: 255px;
+  left: 780px;
+  color: rgba(0, 0, 0, 1);
+  width: 311px;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.history-page-text22 {
+  top: 353px;
+  left: 781px;
+  color: rgba(0, 0, 0, 1);
+  width: 311px;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.history-page-text24 {
+  top: 439px;
+  left: 781px;
+  color: rgba(0, 0, 0, 1);
+  width: 311px;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.history-page-text26 {
+  top: 353px;
+  left: 781px;
+  color: rgba(0, 0, 0, 1);
+  width: 311px;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.history-page-text28 {
+  top: 537px;
+  left: 781px;
+  color: rgba(0, 0, 0, 1);
+  width: 311px;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.history-page-trash02 {
+  top: 258px;
+  left: 1368px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+}
+.history-page-rectangle10 {
+  top: 329px;
+  left: 321px;
+  width: 1091px;
+  height: 75px;
+  position: absolute;
+}
+.history-page-text30 {
+  top: 348px;
+  left: 351px;
+  color: rgba(0, 0, 0, 1);
+  width: 92px;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.history-page-trash021 {
+  top: 353px;
+  left: 1368px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+}
+.history-page-rectangle11 {
+  top: 424px;
+  left: 321px;
+  width: 1091px;
+  height: 75px;
+  position: absolute;
+}
+.history-page-text32 {
+  top: 450px;
+  left: 351px;
+  color: rgba(0, 0, 0, 1);
+  width: 86px;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.history-page-trash022 {
+  top: 448px;
+  left: 1368px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+}
+.history-page-rectangle12 {
+  top: 519px;
+  left: 321px;
+  width: 1091px;
+  height: 75px;
+  position: absolute;
+}
+.history-page-text34 {
+  top: 540px;
+  left: 351px;
+  color: rgba(0, 0, 0, 1);
+  width: 86px;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.history-page-trash023 {
+  top: 543px;
+  left: 1368px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+}
+.history-page-group13 {
+  bottom:20px;
+  left: 80px;
+  width: 131px;
+  height: 43px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.history-page-rectangle49 {
+  top: 0px;
+  left: 0px;
+  width: 131px;
+  height: 43px;
+  position: absolute;
+}
+.history-page-logout04 {
+  top: 10px;
+  left: 99px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+}
+.history-page-text36 {
+  top: 8px;
+  left: 14px;
+  color: rgba(43, 64, 255, 1);
+  width: 77px;
+  height: auto;
+  position: absolute;
+  font-size: 22px;
+  font-style: Regular;
+  text-align: right;
+  font-family: Spinnaker;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.history-page-group2 {
+  top: 250px;
+  left: 1243px;
+  width: 94px;
+  height: 35px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  background-color: rgba(240, 180, 250, 0.6100000143051147);
+}
+.history-page-text38 {
+  top: 10px;
+  left: 12.638655662536621px;
+  color: rgba(0, 0, 0, 1);
+  width: 70px;
+  height: auto;
+  position: absolute;
+  font-size: 12px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.history-page-group14 {
+  width: 94px;
+  height: 30px;
+  left: 850px;
+  padding-top: 8px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 1;
+  background-color: rgba(83, 147, 223, 0.5);
+  
+}
+.history-page-text40 {
+  top: 10px;
+  left: 12.638655662536621px;
+  color: rgba(0, 0, 0, 1);
+  width: 70px;
+  height: auto;
+  position: absolute;
+  font-size: 12px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.history-page-group15 {
+  top: 344px;
+  left: 1245px;
+  width: 94px;
+  height: 35px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  background-color: rgba(83, 147, 223, 0.5);
+}
+.history-page-text42 {
+  top: 10px;
+  left: 12.638655662536621px;
+  color: rgba(0, 0, 0, 1);
+  width: 70px;
+  height: auto;
+  position: absolute;
+  font-size: 12px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.history-page-group16 {
+  top: 442px;
+  left: 1244px;
+  width: 94px;
+  height: 35px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  background-color: rgba(83, 147, 223, 0.5);
+}
+.history-page-text44 {
+  top: 10px;
+  left: 12.638655662536621px;
+  color: rgba(0, 0, 0, 1);
+  width: 70px;
+  height: auto;
+  position: absolute;
+  font-size: 12px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.history-page-group17 {
+  top: 538px;
+  left: 1244px;
+  width: 94px;
+  height: 35px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  background-color: rgba(83, 147, 223, 0.5);
+}
+.history-page-text46 {
+  top: 10px;
+  left: 12.638655662536621px;
+  color: rgba(0, 0, 0, 1);
+  width: 70px;
+  height: auto;
+  position: absolute;
+  font-size: 12px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+
+/* table version user list information display */
+/* Position the table */
+.history-info-table {
+  position: absolute;
+  top: 240px;
+  left: 321px;
+  width: 1091px;
+  border-collapse: collapse;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border: none;
+}
+
+/* General table styling */
+/* .history-info-table tr, .history-info-table td {
+  padding: 10px;
+  text-align: left;
+  border: none;
+} */
+
+
+/* .history-info-table tr:nth-child(even) {
+  background-color:rgba(0, 0, 0, 0.1) ;/* Light grey background for even rows */
+/* } */ 
+
+/* .history-info-table tr:nth-child(odd) {
+  background-color: #dc9ddb; /* White background for odd rows */
+/* } */ 
+/* table version user list information display */
+/* Position the table */
+.history-info-table {
+  position: absolute;
+  top: 234px;
+  left: 321px;
+  width: 1091px;
+  border-collapse: collapse;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* overflow: hidden; */
+}
+
+/* General table styling */
+.history-info-table th, .history-info-table td {
+  padding: 10px;
+  text-align: left;
+  border: none; /* Remove the borders */
+  /* 1px solid #ddd; */
+}
+
+/* Style for the header */
+.history-info-table th {
+  background-color: none;
+  /* #f2f2f2; */
+  font-family: 'Spinnaker', sans-serif;
+  font-weight: bold;
+}
+
+/* Style for user info rows with blue text bubble effect */
+/* .user-info-row td {
+  position: relative;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  background-color: #b2d5f8;
+  border-radius: 15px;
+  font-family: 'Spinnaker', sans-serif;
+} */
+/* Style for user info rows with blue text bubble effect */
+.history-info-row {
+  position: relative;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  background-color: #bce7f5; /* Light blue background color for the bubble */
+  border-radius: 15px; /* Rounded corners for the bubble effect */
+  font-family: 'Spinnaker', sans-serif;
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr; /* Adjust columns as needed */
+  align-items: center;
+  }
+
+/* Remove borders from table cells */
+.history-info-row td {
+  border: none;
+  /* padding: 10px; */
+  min-width: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Optional: Additional hover effect for rows */
+.history-info-row:hover {
+  background-color: #d0e7ff; /* Slightly darker blue on hover */
+}
+
+.more-info-button {
+  background-color:#0056b3; /* Green background */
+  border: none; /* Remove border */
+  color: white; /* White text */
+  padding: 10px 27px; /* Some padding */
+  text-align: center; /* Centered text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Get the element to behave like an inline element while retaining block-level properties */
+  font-size: 16px; /* Increase font size */
+  margin: 2px 2px; /* Add some margin */
+  cursor: pointer; /* Pointer/hand icon on hover */
+  border-radius: 12px; /* Rounded corners */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+}
+
+.more-info-button:hover {
+  background-color: #14695d; /* Darker green on hover */
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+.delete-button{
+  background-color: #e74c3c; /* Red background */
+    border: none; /* Remove border */
+    color: white; /* White text */
+    padding: 10px 27px; /* Some padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Get the element to behave like an inline element while retaining block-level properties */
+    font-size: 16px; /* Increase font size */
+    margin: 4px 2px; /* Add some margin */
+    cursor: pointer; /* Pointer/hand icon on hover */
+    border-radius: 12px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+}
+
+.delete-button:hover {
+  background-color: #c0392b; /* Darker red on hover */
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+
+

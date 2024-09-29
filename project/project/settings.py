@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-on%hwo_ji%8gj40+$lbj0^csoylb1f^6&x6$mbh3vvwx^*ntr7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 #source .venv/bin/activate
 #python project/manage.py runserver 8000
@@ -37,11 +37,12 @@ CSRF_TRUSTED_ORIGINS = [
     'https://8000-idx-jokegenerator-1719924905435.cluster-bec2e4635ng44w7ed22sa22hes.cloudworkstations.dev',
     'https://4000-idx-jokegenerator-1719924905435.cluster-bec2e4635ng44w7ed22sa22hes.cloudworkstations.dev',
     'https://3000-idx-jokegenerator-1719924905435.cluster-bec2e4635ng44w7ed22sa22hes.cloudworkstations.dev',
-    'https://5000-idx-jokegenerator-1719924905435.cluster-bec2e4635ng44w7ed22sa22hes.cloudworkstations.dev'
+    'https://5000-idx-jokegenerator-1719924905435.cluster-bec2e4635ng44w7ed22sa22hes.cloudworkstations.dev',
+    'https://WORLDCHUCKLES.pythonanywhere.com'
 ]
 
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', 'WORLDCHUCKLES.pythonanywhere.com']
 
 # Application definition
 
@@ -134,6 +135,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 MEDIA_URL = "/media/"
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 MEDIA_ROOT=os.path.join(BASE_DIR,"media")
 
 # Default primary key field type

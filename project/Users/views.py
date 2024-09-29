@@ -12,6 +12,8 @@ from django.db.models import Avg, Count
 from django.db.models.functions import Trim
 import os
 
+def custom_404_view(request, exception):
+    return render(request, '404.html', status=404)
 
 def moreinfo(request, history_id):
     user_id1 = request.session.get('user_id')

@@ -1,0 +1,811 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster|Monoton|Truculenta|Turret+Road|Space+Mono');
+.adminuserdatabase-page-container {
+  width: 100%;
+  overflow-y: scroll;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+.adminuserdatabase-page-adminuserdatabase-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  overflow-y: auto;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  background-color: rgba(255, 255, 255, 1);
+}
+/* .adminuserdatabase-page-rectangle2 {
+  top: -4px;
+  left: -5px;
+  width: 302px;
+  height: 1028px;
+  position: absolute;
+} */
+.adminuserdatabase-page-rectangle2 {
+  /* top: -4px;
+  left: -5px;
+  width: 302px;
+  height: 1028px;
+  position: absolute;
+  background: linear-gradient(359.15deg, #3579FD 14.16%, rgba(21, 204, 94, 0.51) 39.73%, rgba(173, 98, 243, 0.51) 100.2%);
+  */
+  top: 0;
+  left: 0;
+  width: 302px;
+  height: 100vh;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 150px; 
+  background: linear-gradient(359.15deg, #3579FD 14.16%, rgba(21, 204, 94, 0.51) 39.73%, rgba(173, 98, 243, 0.51) 100.2%);
+} */
+  position: fixed; /* Keep the navigation bar fixed during scrolling */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  background:  linear-gradient(359.15deg, #3579FD 14.16%, rgba(21, 204, 94, 0.51) 39.73%, rgba(173, 98, 243, 0.51) 100.2%);
+  padding-top: 50px; /* Adjust padding to center content vertically */
+}
+.adminuserdatabase-page-chevronleftdouble {
+  top: 47px;
+  left: 238px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+}
+.username-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px; /* Space between username and other items */
+}
+
+.adminuserdatabase-page-text04, .adminuserdatabase-page-text06, .adminuserdatabase-page-text09, .adminuserdatabase-page-text08, .adminuserdatabase-page-text10 {
+  font-size: 36px; /* Adjusted font size */
+  font-family: Lobster; /* Or any font of your choice */
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 50px; /* Space between items */
+  text-align: left;
+  white-space: nowrap; /* Prevent text from wrapping */
+  
+  margin-left: 10px;
+}
+
+.adminuserdatabase-page-text04 {
+  width: 160px; /* Adjusted width to fit within the navigation bar */
+  font-weight: 700;
+  font-size: 31px;
+  color:#2E2E2E; /* Adjusted color */
+  text-align: left;
+  font-family: Turret Road;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+  word-wrap: break-word; /* Ensure long words break to the next line */
+  white-space: normal; /* Allow text to wrap to the next line */
+  overflow-wrap: break-word; /* Break long words */
+  margin-bottom: 20px; /* Space between items */
+}
+.adminuserdatabase-page-text10 {
+  font-size: 36px; /* Adjusted font size */
+  font-family: Lobster; /* Or any font of your choice */
+  color: rgba(43, 64, 255, 1);
+  margin-bottom: 20px; /* Space between items */
+  text-align: left;
+  white-space: nowrap; /* Prevent text from wrapping */
+  text-decoration: underline;
+  margin-bottom: 50px; /* Space between items */
+}
+.adminuserdatabase-page-ellipse10 {
+  /* top: 234px;
+  left: 14px;
+  width: 89px;
+  height: 84px;
+  position: absolute; */
+
+  /* top: 182px;
+  left: 15px;
+  width: 89px;
+  height: 84px;
+  position: absolute;
+  border-radius: 30px; */
+
+  width: 89px;
+  height: 84px;
+  border-radius: 30px;
+  margin-right: 13px;
+}
+
+.database-link {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.database-link:hover {
+  text-decoration: underline;
+  color:rgba(43, 64, 255, 1);
+}
+.adminuserdatabase-rectangle4 {
+  top: 47px;
+  left: 337px;
+  width: 5px;
+  height: 40px;
+  position: absolute;
+}
+.adminuserdatabase-page-text {
+  top: 45px;
+  left: 354px;
+  color: rgba(0, 0, 0, 1);
+  width: 556px;
+  height: auto;
+  position: absolute;
+  font-size: 40px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Lobster;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+
+.adminuserdatabase-page-rectangle41 {
+  top: 211px;
+  left: 321px;
+  width: 1091px;
+  height: 3px;
+  position: absolute;
+}
+.adminuserdatabase-page-rectangle7 {
+  top: 234px;
+  left: 321px;
+  width: 1091px;
+  height: 75px;
+  position: absolute;
+}
+.adminuserdatabase-page-rectangle9 {
+  top: 211px;
+  left: 321px;
+  width: 1091px;
+  height: 3px;
+  position: absolute;
+}
+.adminuserdatabase-page-rectangle8 {
+  top: 211px;
+  left: 321px;
+  width: 1091px;
+  height: 3px;
+  position: absolute;
+}
+.adminuserdatabase-page-text12 {
+  top: 169px;
+  left: 325px;
+  color: rgba(0, 0, 0, 1);
+  width: 216px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Regular;
+  text-align: center;
+  font-family: "Space Mono";
+  font-weight: 800;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.adminuserdatabase-page-text14 {
+  top: 167px;
+  left: 758px;
+  color: rgba(0, 0, 0, 1);
+  width: 95px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Regular;
+  text-align: center;
+  font-family: "Space Mono";
+  font-weight: 800;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.adminuserdatabase-page-text16 {
+  top: 165px;
+  left:913px;
+  color: rgba(0, 0, 0, 1);
+  width: 95px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Regular;
+  text-align: center;
+  font-family: "Space Mono";
+  font-weight: 800;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.adminuserdatabase-page-text161 {
+  top: 165px;
+  left:1063px;
+  color: rgba(0, 0, 0, 1);
+  width: 95px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Regular;
+  text-align: center;
+  font-family: "Space Mono";
+  font-weight: 800;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+/* .header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 169px;
+  left: 321px;
+  width: 1091px;
+}
+
+.adminuserdatabase-page-text12,
+.adminuserdatabase-page-text14,
+.adminuserdatabase-page-text16 {
+  color: rgba(0, 0, 0, 1);
+  font-size: 20px;
+  font-style: Regular;
+  text-align: center;
+  font-family: "Space Mono";
+  font-weight: 800;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.adminuserdatabase-page-text12 {
+  width: 216px;
+}
+
+.adminuserdatabase-page-text14 {
+  width: 95px;
+}
+
+.adminuserdatabase-page-text16 {
+  width: 95px;
+} */
+
+/* .text-bubble-container {
+  position: absolute;
+  top: 434px;
+  left: 821px;
+  width: 1091px;
+  padding: 20px;
+  background-color: #ADD8E6; /* Light blue background color */
+  /* border-radius: 15px; /* Rounded corners */
+  /* display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box; */
+/* } */  
+
+.user-list-container {
+  position: absolute;
+  top:234px;
+  left: 321px;
+  width: 1091px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px; /* Space between user info bubbles */
+}
+
+.user-info-bubble {
+  background-color: #bce7f5;
+  border-radius: 15px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.users-setting-page-text18,
+.users-setting-page-text20,
+.users-setting-page-text22 {
+  color: rgba(0, 0, 0, 1);
+  font-size: 18px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Spinnaker;
+  font-weight: 400;
+  line-height: 1.5;
+  word-wrap: break-word;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.delete-button {
+  margin-left: 10px;
+  cursor: pointer;
+  background-color: #ff0000; /* Red delete button */
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+.adminuserdatabase-page-text18 {
+  top: 260px;
+  left: 351px;
+  color: rgba(0, 0, 0, 1);
+  width: 86px;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.adminuserdatabase-page-text20 {
+  top: 258px;
+  left: 653px;
+  color: rgba(0, 0, 0, 1);
+  width: 257px;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.adminuserdatabase-page-text22 {
+  top: 255px;
+  left: 960px;
+  color: rgba(0, 0, 0, 1);
+  width: 257px;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+/* table version user list information display */
+/* Position the table */
+.user-info-table {
+  position: absolute;
+  top: 234px;
+  left: 321px;
+  width: 1091px;
+  border-collapse: collapse;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* overflow: hidden; */
+}
+
+/* General table styling */
+.user-info-table th, .user-info-table td {
+  padding: 10px;
+  text-align: left;
+  border: none; /* Remove the borders */
+  /* 1px solid #ddd; */
+}
+
+/* Style for the header */
+.user-info-table th {
+  background-color: none;
+  /* #f2f2f2; */
+  font-family: 'Spinnaker', sans-serif;
+  font-weight: bold;
+}
+
+/* Style for user info rows with blue text bubble effect */
+/* .user-info-row td {
+  position: relative;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  background-color: #b2d5f8;
+  border-radius: 15px;
+  font-family: 'Spinnaker', sans-serif;
+} */
+/* Style for user info rows with blue text bubble effect */
+.user-info-row {
+  position: relative;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  background-color: #bce7f5;
+  border-radius: 15px;
+  font-family: 'Spinnaker', sans-serif;
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr 150px; /* Adjust the number of columns as needed */
+  align-items: center;
+}
+
+.user-info-row td {
+  border: none; /* Remove cell borders */
+  /* padding: 10px; Add padding for better spacing */
+  min-width: 0; /* Ensure columns shrink properly */
+  word-wrap: break-word; /* Ensure long text wraps */
+  overflow-wrap: break-word; /* Ensure long text wraps */
+}
+
+/* Optional: Additional hover effect for rows */
+.user-info-row:hover {
+  background-color: #d0e7ff;
+}
+/* Styling the Remove button */
+.delete-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.delete-button:hover {
+  background-color: #c0392b; /* Darker red on hover */
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+
+
+.adminuserdatabase-page-text24 {
+  top: 355px;
+  left: 960px;
+  color: rgba(0, 0, 0, 1);
+  width: 257px;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.adminuserdatabase-page-text26 {
+  top: 450px;
+  left: 960px;
+  color: rgba(0, 0, 0, 1);
+  width: 257px;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.adminuserdatabase-page-text28 {
+  top: 545px;
+  left: 960px;
+  color: rgba(0, 0, 0, 1);
+  width: 257px;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.adminuserdatabase-page-trash02 {
+  top: 258px;
+  left: 1368px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+}
+.adminuserdatabase-page-rectangle10 {
+  top: 333px;
+  left: 321px;
+  width: 1091px;
+  height: 75px;
+  position: absolute;
+}
+.adminuserdatabase-page-text30 {
+  top: 348px;
+  left: 351px;
+  color: rgba(0, 0, 0, 1);
+  width: 92px;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.adminuserdatabase-page-text32 {
+  top: 353px;
+  left: 653px;
+  color: rgba(0, 0, 0, 1);
+  width: 257px;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.adminuserdatabase-page-trash021 {
+  top: 353px;
+  left: 1368px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+}
+.adminuserdatabase-page-rectangle11 {
+  top: 424px;
+  left: 321px;
+  width: 1091px;
+  height: 75px;
+  position: absolute;
+}
+.adminuserdatabase-page-text34 {
+  top: 450px;
+  left: 351px;
+  color: rgba(0, 0, 0, 1);
+  width: 86px;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.adminuserdatabase-page-text36 {
+  top: 448px;
+  left: 653px;
+  color: rgba(0, 0, 0, 1);
+  width: 257px;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.adminuserdatabase-page-trash022 {
+  top: 448px;
+  left: 1368px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+}
+.adminuserdatabase-page-rectangle12 {
+  top: 517px;
+  left: 321px;
+  width: 1091px;
+  height: 75px;
+  position: absolute;
+}
+.adminuserdatabase-page-text38 {
+  top: 540px;
+  left: 351px;
+  color: rgba(0, 0, 0, 1);
+  width: 86px;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.adminuserdatabase-page-text40 {
+  top: 543px;
+  left: 653px;
+  color: rgba(0, 0, 0, 1);
+  width: 257px;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.adminuserdatabase-page-trash023 {
+  top: 543px;
+  left: 1368px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+}
+.adminuserdatabase-page-group13 {
+  bottom:20px;
+  left: 80px;
+  width: 131px;
+  height: 43px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  cursor: pointer;
+  text-decoration: none;
+}
+.adminuserdatabase-page-rectangle49 {
+  top: 0px;
+  left: 0px;
+  width: 131px;
+  height: 43px;
+  position: absolute;
+}
+.adminuserdatabase-page-logout04 {
+  top: 10px;
+  left: 99px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+}
+.adminuserdatabase-page-text42 {
+  top: 8px;
+  left: 14px;
+  color: rgba(43, 64, 255, 1);
+  width: 77px;
+  height: auto;
+  position: absolute;
+  font-size: 22px;
+  font-style: Regular;
+  text-align: right;
+  font-family: Spinnaker;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+
+.database-page-search {
+  /* top: 45px;
+  left: 1100px;
+  width: 212px;
+  height: 44px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  background-color: rgba(255, 255, 255, 1); */
+
+  top: 45px;
+  left: 1100px;
+  width: 212px; /* Adjusted width to fit both search bar and button */
+  height: 44px;
+  display: flex;
+  position: absolute;
+  align-items: center; /* Center align items vertically */
+  flex-shrink: 0; /* Ensure the container doesn't shrink */
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 25px; /* To match the search bar and button */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds a slight shadow for better visibility */
+
+}
+
+.search-bar {
+  /* border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 25px 0 0 25px;
+  width: 300px; */
+
+  border: 1px solid grey; /* Grey outline */
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 25px 0 0 25px;
+  width: 300px;
+}
+
+.search-bar::placeholder {
+  color: #999; /* Lighter font color for the placeholder */
+}
+
+.search-button {
+  /* border: none; */
+  background-color: #007BFF;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 0 25px 25px 0;
+  transition: background-color 0.3s;
+
+  border: 1px solid grey; /* Grey outline */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds a slight shadow for better visibility */
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+.search-results {
+  position: absolute;
+  top: 100px; /* Adjust as needed */
+  left: 1100px; /* Adjust as needed */
+  width: 300px; /* Match the search bar width */
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);/* Optional: Adds a slight shadow for better visibility*/
+  z-index: 1000; /* Ensure it appears above other elements */
+  max-height: 200px; /* Limit the height */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.search-results ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.search-results li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.search-results li:hover {
+  background-color: #f0f0f0;
+}

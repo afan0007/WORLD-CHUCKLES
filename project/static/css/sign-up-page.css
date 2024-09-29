@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster|Monoton|Truculenta|Turret+Road|Space+Mono|Stalinist+One|VT323');  
+.sign-up-page-container {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.sign-up-page-sign-up-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  background: linear-gradient(37deg, rgba(148, 233, 172, 1) 0%, rgba(93, 209, 235, 1) 100%);
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sign-up-page-form {
+  width: 90%; /* Adjust width to fit within smaller screens */
+  max-width: 573px;
+  height: 90vh; /* Ensure it doesn't exceed the viewport height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center content vertically */
+  background-color: rgba(255, 255, 255, 0.8600000143051147);
+  border-radius: 20px;
+  padding: 20px;
+  box-sizing: border-box; /* Ensure padding is included in height calculation */
+}
+
+.sign-up-page-logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.sign-up-page-text {
+  color: rgba(53, 121, 253, 1);
+  font-size: 32px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Spinnaker;
+  font-weight: 400;
+  line-height: normal;
+
+  /* color: rgba(53, 121, 253, 1);
+  font-size: 62px;
+  font-style: Regular;
+  text-align: center;
+  font-family: VT323;
+  font-weight: 400;
+  line-height: normal; */
+}
+
+.sign-up-page-input,
+.sign-up-page-input1,
+.sign-up-page-input2,
+.sign-up-page-input3,
+.sign-up-page-input4,
+.sign-up-page-input5 {
+  /* width: 100%; */
+  left: 27px;
+  width: 517.62109375px;
+  margin-bottom: 15px;
+}
+
+.sign-up-page-rectangle1 {
+  width: 100%;
+  height: 59px;
+  border-color: rgba(255, 255, 255, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.sign-up-page-text02 {
+  color: rgba(108, 107, 107, 1);
+  font-size: 18px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Spinnaker;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+.error {
+  color: red;
+  /* font-size: 18px; */
+  font-style: Regular;
+  text-align: left;
+  font-family: Spinnaker;
+}
+
+.sign-up-page-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-style: Regular;
+  text-align: center;
+  font-family: Spinnaker;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.sign-up-page-btn:hover {
+  background-color: #0056b3;
+}
+
+.sign-up-page input::placeholder {
+  font-size: 20px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Spinnaker;
+  font-weight: 100;
+  line-height: normal;
+  text-decoration: none;
+}
+
+.dialog {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.dialog-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 300px;
+  text-align: center;
+}
+
+.close-btn {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.login-link {
+  /* bottom:20px;
+  left:50%; */
+  /* margin-top: 20px; */
+  /* font-size: 16px;
+  color: #333; */
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+  text-align: center; /* Center the text horizontally */
+}
+
+.login-link a {
+  color: #007BFF;
+  text-decoration: underline;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}

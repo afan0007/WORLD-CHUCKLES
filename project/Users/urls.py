@@ -1,7 +1,10 @@
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls import handler404
 from . import views
+
+handler404 = 'Users.views.custom_404_view'
 
 urlpatterns = [
     path('signup/', views.signup, name='signup'),
@@ -43,8 +46,5 @@ urlpatterns = [
 
 
 
-]
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

@@ -1,0 +1,753 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster|Monoton|Truculenta|Turret+Road|Space+Mono|Spinnaker');
+.adminuserdatabase-page-container {
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+.adminuserdatabase-page-adminuserdatabase-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  overflow-y: auto;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  background-color: rgba(255, 255, 255, 1);
+}
+/* .adminuserdatabase-page-rectangle2 {
+  top: -4px;
+  left: -5px;
+  width: 302px;
+  height: 1028px;
+  position: absolute;
+} */
+.adminuserdatabase-page-rectangle2 {
+  /* top: -4px;
+  left: -5px;
+  width: 302px;
+  height: 1028px;
+  position: absolute;
+  background: linear-gradient(359.15deg, #3579FD 14.16%, rgba(21, 204, 94, 0.51) 39.73%, rgba(173, 98, 243, 0.51) 100.2%);
+  */
+  top: 0;
+  left: 0;
+  width: 302px;
+  height: 100vh;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 150px; 
+  background: linear-gradient(359.15deg, #3579FD 14.16%, rgba(21, 204, 94, 0.51) 39.73%, rgba(173, 98, 243, 0.51) 100.2%);
+} */
+  position: fixed; /* Keep the navigation bar fixed during scrolling */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  background:  linear-gradient(359.15deg, #3579FD 14.16%, rgba(21, 204, 94, 0.51) 39.73%, rgba(173, 98, 243, 0.51) 100.2%);
+  padding-top: 50px; /* Adjust padding to center content vertically */
+}
+.adminuserdatabase-page-chevronleftdouble {
+  top: 47px;
+  left: 238px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+}
+.username-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px; /* Space between username and other items */
+}
+
+.adminuserdatabase-page-text04, .adminuserdatabase-page-text06, .adminuserdatabase-page-text08, .adminuserdatabase-page-text09, .adminuserdatabase-page-text10 {
+  font-size: 36px; /* Adjusted font size */
+  font-family: Lobster; /* Or any font of your choice */
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 50px; /* Space between items */
+  text-align: left;
+  white-space: nowrap; /* Prevent text from wrapping */
+  
+  margin-left: 10px;
+}
+
+.adminuserdatabase-page-text04 {
+  width: 160px; /* Adjusted width to fit within the navigation bar */
+  font-weight: 700;
+  font-size: 31px;
+  color: #2E2E2E; /* Adjusted color */
+  text-align: left;
+  font-family: Turret Road;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+  word-wrap: break-word; /* Ensure long words break to the next line */
+  white-space: normal; /* Allow text to wrap to the next line */
+  overflow-wrap: break-word; /* Break long words */
+  margin-bottom: 20px; /* Space between items */
+}
+.adminuserdatabase-page-text09 {
+  font-size: 36px; /* Adjusted font size */
+  font-family: Lobster; /* Or any font of your choice */
+  color: rgba(43, 64, 255, 1);
+  margin-bottom: 20px; /* Space between items */
+  text-align: left;
+  white-space: nowrap; /* Prevent text from wrapping */
+  text-decoration: underline;
+  margin-bottom: 50px; /* Space between items */
+}
+.adminuserdatabase-page-ellipse10 {
+  /* top: 234px;
+  left: 14px;
+  width: 89px;
+  height: 84px;
+  position: absolute; */
+
+  /* top: 182px;
+  left: 15px;
+  width: 89px;
+  height: 84px;
+  position: absolute;
+  border-radius: 30px; */
+
+  width: 89px;
+  height: 84px;
+  border-radius: 30px;
+  margin-right: 13px;
+}
+
+.database-link {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.database-link:hover {
+  text-decoration: underline;
+  color: #3579FD;
+}
+.adminuserdatabase-page-group13 {
+    bottom:20px;
+    left: 80px;
+    width: 131px;
+    height: 43px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .adminuserdatabase-page-rectangle49 {
+    top: 0px;
+    left: 0px;
+    width: 131px;
+    height: 43px;
+    position: absolute;
+  }
+  .adminuserdatabase-page-logout04 {
+    top: 10px;
+    left: 99px;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+  }
+  .adminuserdatabase-page-text42 {
+    top: 8px;
+    left: 14px;
+    color: rgba(43, 64, 255, 1);
+    width: 77px;
+    height: auto;
+    position: absolute;
+    font-size: 22px;
+    font-style: Regular;
+    text-align: right;
+    font-family: Spinnaker;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  
+.adminuserdatabase-rectangle4 {
+  top: 47px;
+  left: 337px;
+  width: 5px;
+  height: 40px;
+  position: absolute;
+}
+.adminuserdatabase-page-text {
+  top: 45px;
+  left: 354px;
+  color: rgba(0, 0, 0, 1);
+  width: 556px;
+  height: auto;
+  position: absolute;
+  font-size: 40px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Lobster;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.adminuserdatabase-page-text01{
+    top: 130px;
+    left: 354px;
+    color: rgb(68, 49, 207);
+    width: 1091px;
+    height: auto;
+    position: absolute;
+    font-size: 33px;
+    font-style: italic;
+    text-align: center;
+    font-family: Spinnaker;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+  }
+  
+/* Container for the bar chart and its label */
+.chart-container {
+  position: absolute;
+  top: 194px;
+  left: 321px;
+  width: 40%;
+  margin: 20px;
+  padding: 20px;
+  background-color: #bce7f5;
+  border-radius: 10px;
+  height: auto; /* Set a fixed height for the bar chart container */
+}
+
+/* Container for the pie chart and its label */
+.chart-container2 {
+  position: absolute;
+  top: 194px;
+  left: calc(321px + 40% + 40px);
+  width: 30%;
+  margin: 20px;
+  padding: 20px;
+  background-color: #bce7f5;
+  border-radius: 10px;
+  height: auto; /* Set the same fixed height as the bar chart container */
+}
+
+/* Label for each chart */
+.chart-label {
+  font-size: 22px;
+  font-family: Spinnaker;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+  color: rgba(0, 0, 0, 1);
+}
+
+/* Chart canvas */
+canvas {
+  width: 100%; /* Stretch the chart to fill the container */
+  height: 100%; /* Stretch the chart to fill the container's height */
+}
+
+.word-cloud-label{
+  font-size: 22px;
+  font-family: Spinnaker;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+  color: rgba(0, 0, 0, 1);
+}
+
+.chart-container3 {
+  position: absolute; /* or keep absolute and set a fixed height */
+  top: 560px; /*remove this if using relative positioning */
+  left: 321px; /*remove this if using relative positioning */
+  width: 40%;
+  margin: 20px;
+  padding: 20px;
+  background-color: #bce7f5;
+  border-radius: 10px;
+  height: 500px; /* old: 500px , Set a fixed height, adjust as needed */
+  overflow: hidden; /* Hide any overflow */
+  
+}
+
+.chart-container-top-jokes {
+  position: absolute;
+  top: 174px;
+  left: 321px;
+  width: 600px; /* Fixed width, you can adjust this value else use "auto"*/
+  margin: 20px;
+  padding: 30px;
+  background-color: #bce7f5;
+  border-radius: 10px;
+  height: auto; /* Set a fixed height for the bar chart container */
+}
+/* having wordcloud to have white background within the blue widget container  */
+/* #wordCloud {
+  background-color: white; 
+  width: 80%; 
+  height: 80%; 
+  border-radius: 20px;
+} */
+.table-row-bubble {
+  background-color: rgb(238, 248, 252);
+  color: black;
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+}
+
+.table-row-bubble-wrapper {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.table-description, .table-header-description {
+  width: 70%; /* Same width for header and data cells */
+  word-wrap: break-word;
+  white-space: normal;
+  text-align: left;
+}
+.table-header-description{
+  font-size: 18px;
+}
+
+.table-offensive, .table-header-offensive
+ {
+  width: 15%; /* Same width for header and data cells */
+  text-align: left;
+}
+
+.table-header-offensive{
+  font-size: 18px;
+}
+.table-status, .table-header-status {
+  width: 5%; /* Same width for header and data cells */
+  text-align: center;
+}
+.top-rated-jokes-label {
+  font-size: 22px;
+  font-family: Spinnaker;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+  color: rgb(7, 42, 138);
+  /* text-decoration: underline; */
+}
+.users-country{
+  top: 130px;
+  left: 354px;
+  color: rgb(68, 49, 207);
+  width: 1091px;
+  height: auto;
+  position: absolute;
+  font-size: 33px;
+  font-style: italic;
+  text-align: center;
+  font-family: Spinnaker;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+}
+
+
+/* Styling for the average status display
+#averageStatusDisplay {
+  display: flex;
+  position: relative;
+  top: 300px;
+  left: 450px;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e0f7fa, #a7ffeb); /* Gradient background
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background 0.3s ease;
+  margin: 20px auto;
+  width: fit-content;
+  font-family: 'Arial', sans-serif;
+  animation: pulse 2s infinite; /* Pulsing effect
+}
+
+/* Add pulse effect to the container
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+      transform: scale(1.03);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+      transform: scale(1);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Style for the average status text 
+#averageStatusDisplay p {
+  font-size: 22px;
+  font-weight: bold;
+  color: #00796b;
+  margin: 0;
+  transition: color 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+/* Add emoji or icon before the text
+#averageStatusDisplay p::before {
+  content: "⭐"; /* You can change this to any emoji or icon
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+/* Change text color smoothly when the status is updated
+#averageStatusDisplay p.updated {
+  color: #ff5722;
+  transition: color 0.5s ease;
+}
+
+/* Styling for emphasized text
+#averageStatusDisplay p strong {
+  color: #ff9800; /* Highlighted text color
+  font-size: 24px;
+}
+
+/* Smooth hover effect
+#averageStatusDisplay:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #f0f4c3, #c8e6c9);
+}
+
+/* Glow effect on hover
+#averageStatusDisplay:hover p {
+  text-shadow: 0 0 10px rgba(255, 152, 0, 0.8);
+}*/
+
+.container {
+  position: absolute;
+  top: 200px;
+  left: 1000px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  grid-gap: 20px;
+  background-color: #bce7f5;
+  height: 350px;
+  width: 500px;
+  padding-top: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  border-radius: 15px;
+}
+
+.container2 {
+  position: absolute;
+  top: 600px;
+  left: 1000px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  grid-gap: 20px;
+  background-color: #bce7f5;
+  height: 350px;
+  width: 500px;
+  padding-top: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  border-radius: 15px;
+}
+
+
+.stat-card1 {
+  position: absolute;
+  top: 80px;
+  left: 30px;
+  width: 200px; /* Full width inside grid */
+  height: 250px;
+  padding: 20px;
+  background-color: rgb(238, 248, 252);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.stat-card2 {
+  position: absolute;
+  top: 80px;
+  left: 270px;
+  width: 200px; /* Full width inside grid */
+  height: 250px;
+  padding: 20px;
+  background-color: rgb(238, 248, 252);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.stat-card3 {
+  position: absolute;
+  top: 100px;
+  left: 30px;
+  width: 200px; /* Full width inside grid */
+  height: 250px;
+  padding: 20px;
+  background-color: rgb(238, 248, 252);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.stat-card4 {
+  position: absolute;
+  top: 100px;
+  left: 270px;
+  width: 200px; /* Full width inside grid */
+  height: 250px;
+  padding: 20px;
+  background-color: rgb(238, 248, 252);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.stat-header1 {
+  font-size: 18px;
+  color: black;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-family: Spinnaker;
+}
+
+.stat-header2 {
+  font-size: 18px;
+  color: black;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-family: Spinnaker;
+}
+
+.stat-header3 {
+  font-size: 18px;
+  color: black;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-family: Spinnaker;
+}
+
+.stat-header4 {
+  font-size: 18px;
+  color: black;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-family: Spinnaker;
+}
+
+.stat-content1 {
+  position: absolute;
+}
+
+.stat-content2{
+  position: absolute;
+}
+
+.stat-content3{
+  position: absolute;
+}
+
+.stat-content4{
+  position: absolute;
+}
+
+.stat-circle1 {
+  position: absolute;
+  margin: 20px 0;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stat-circle2 {
+  position: absolute;
+  top: 40px;
+  left: 30px;
+  font-size: 50px;
+  font-family: Spinnaker;
+  font-weight: 500;
+  color: rgb(7, 42, 138);
+  
+}
+
+.stat-circle3 {
+  position: absolute;
+  margin: 20px 0;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+.stat-circle4 {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  font-size: 50px;
+  font-family: Spinnaker;
+  font-weight: 500;
+  color: rgb(7, 42, 138);
+  
+}
+
+.your-jokes-label {
+  font-size: 22px;
+  font-family: Spinnaker;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+  color: rgb(7, 42, 138);
+  position: absolute;
+  top: 30px;
+  left: 150px;
+
+}
+
+.other-jokes-label {
+  font-size: 22px;
+  font-family: Spinnaker;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+  color: rgb(7, 42, 138);
+  position: absolute;
+  top: 30px;
+  left: 130px;
+
+}
+
+.subhead{
+  font-size: 15px;
+  font-family: Spinnaker;
+  position: absolute;
+  left: 120px;
+  top: 60px;
+  color: grey;
+}
+
+.stat-circle-red {
+  font-size: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1; /* Make it semi-transparent */
+  position: relative;
+}
+
+.stat-circle-red::before {
+  content: "😡"; /* Add the emoji */
+  position: absolute; /* Position it behind the text */
+  font-size: 100px; /* Size of the emoji */
+  opacity: 1;
+  top: -10px;
+}
+
+.stat-circle-yellow {
+  font-size: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1; /* Make it semi-transparent */
+  position: relative;
+}
+
+.stat-circle-yellow::before {
+  content: "😐"; /* Add the emoji */
+  position: absolute; /* Position it behind the text */
+  font-size: 100px; /* Size of the emoji */
+  opacity: 1;
+  top: -10px;
+}
+
+.stat-circle-green {
+  font-size: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1; /* Make it semi-transparent */
+  position: relative;
+}
+
+.stat-circle-green::before {
+  content: "😁"; /* Add the emoji */
+  position: absolute; /* Position it behind the text */
+  font-size: 100px; /* Size of the emoji */
+  opacity: 1;
+  top: -10px;
+}
+
+/* Change text color based on the status */
+.stat-average-red {
+  color: #FF4D4D; /* Red text */
+  font-size: 30px;
+  font-weight: 800;
+  top: 140px;
+  left: 50px;
+  position: absolute;
+}
+
+.stat-average-yellow {
+  color: #FFD700; /* Yellow text */
+  font-size: 30px;
+  font-weight: 800;
+  top: 140px;
+  left: 50px;
+  position: absolute;
+}
+
+.stat-average-green {
+  color: #4CAF50; /* Green text */
+  font-size: 30px;
+  font-weight: 800;
+  top: 140px;
+  left: 50px;
+  position: absolute;
+}
+
+.country-label-text{
+  position:relative;
+  top: 120px;
+  left: -10px;
+  font-family: Spinnaker;
+  font-size: 15px;
+  
+}
+
+.star{
+  position: absolute;
+  top: 165px;
+  left: 25px;
+}

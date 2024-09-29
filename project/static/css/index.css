@@ -1,0 +1,164 @@
+
+.login-page-container {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+
+.login-page-login-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(37deg, rgba(148, 233, 172, 1) 0%, rgba(93, 209, 235, 1) 100%);
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.login-page-form {
+  width: 60%;
+  max-width: 400px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.86);
+  border-radius: 10px;
+}
+
+.login-page-logo {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 20px;
+  text-align: center; /* Ensure text alignment is centered */
+}
+
+.login-page-text {
+  color: rgba(53, 121, 253, 1);
+  width: 100%;
+  height: auto;
+  font-size: 24px;
+  text-align: center;
+  font-family: Spinnaker;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.login-page-input,
+.login-page-input1 {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.login-page-rectangle1,
+.login-page-rectangle11 {
+  width: 100%;
+  height: 40px;
+  border-color: rgba(255, 255, 255, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.login-page-text02,
+.login-page-text04,
+.login-page-text06,
+.login-page-text08 {
+  color: rgb(43, 42, 42);
+  width: 100%;
+  height: auto;
+  font-size: 14px;
+  text-align: left;
+  font-family: Spinnaker;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.toggle-password {
+  position: absolute;
+  left: 60%;
+  top: 57.15%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.login-page-btn,
+.login-page-btn1 {
+  width: calc(100% - 5px); /* Adjusted width for two buttons with spacing */
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(83, 147, 223, 1);
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-page-btn1 {
+  background-color: rgba(93, 209, 235, 1);
+}
+
+.login-page-btn:hover,
+.login-page-btn1:hover {
+  background-color: rgba(73, 127, 203, 1);
+}
+
+.login-page-text10,
+.login-page-text12 {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 14px;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 500;
+}
+
+.login-page-rectangle13 {
+  height: 2px;
+  width: 100%;
+  background-color: rgba(108, 107, 107, 0.3);
+  margin: 10px auto;
+}
+
+.login-page-image3 {
+  width: 90px;
+  height: auto;
+  margin-top: 10px;
+  align-self: center;
+  display: block; /* Ensure it behaves as a block-level element */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.input-text-field {
+  
+  width: 100%;
+  height: 40px;
+  border-color: rgba(255, 255, 255, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+  font-family: Montserrat;
+  font-size: 14px;
+}
