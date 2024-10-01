@@ -278,6 +278,7 @@ canvas {
   
 }
 
+
 .chart-container-top-jokes {
   position: absolute;
   top: 174px;
@@ -460,17 +461,15 @@ canvas {
   position: absolute;
   top: 600px;
   left: 970px;
-  display: grid;
   grid-template-columns: repeat(2, 1fr); /* Two columns */
   grid-gap: 20px;
   background-color: #bce7f5;
   height: 370px;
   width: 430px;
-  padding-top: 50px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 20px;
+  padding: 0;
+  margin: 0;
   border-radius: 15px;
+  max-height: 100vh;
 }
 
 
