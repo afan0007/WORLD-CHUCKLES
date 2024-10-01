@@ -646,7 +646,7 @@ canvas {
   color: rgb(7, 42, 138);
   position: absolute;
   top: 30px;
-  left: 90px;
+  left: 50px;
 
 }
 
@@ -655,7 +655,7 @@ canvas {
   font-family: Spinnaker;
   position: absolute;
   left: 80px;
-  top: 60px;
+  top: 80px;
   color: grey;
 }
 

@@ -778,7 +778,15 @@
 
                     fetchUserHistory();
                     setInterval(fetchUserHistory, 5000);
-                        
+                    
+                    // Map country codes to full country names
+                    const countryMapping = {
+                        "MY": "Malaysia's",
+                        "CN": "China's",
+                        "IN": "India's",
+                        "KR": "South Korea's",
+                        "QA": "Qatar's"
+                    };
                     function fetchCountrySpecificData() {
                         fetch('/get-country-specific-data/')
                             .then(response => {
@@ -792,8 +800,11 @@
                                     // Handle error response
                                     document.getElementById('error-message').textContent = data.error;
                                 } else {
+                                    // Get the full country name from the mapping
+                                    const fullCountryName = countryMapping[data.user_country] || data.user_country;
+                
                                     // Update the page with the country-specific data
-                                    document.getElementById('user-country').textContent = data.user_country;
+                                    document.getElementById('user-country').textContent = fullCountryName;
                                     document.getElementById('average_country-status').textContent = data.average_country_status ? data.average_country_status.toFixed(2) : 'N/A';
                                     document.getElementById('country-ratio').textContent = Math.round(data.country_ratio * 100) + "%";
                                 }
