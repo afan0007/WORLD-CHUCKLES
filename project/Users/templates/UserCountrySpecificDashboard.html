@@ -612,8 +612,39 @@
                         statAverage.classList.add('stat-average-green');  // Green text for above 3
                     }
 
-
                     function updateCountryStatus() {
+                        const averageCountryStatusElement = document.getElementById('average_country-status');
+                        const averageCountryStatus = parseFloat(averageCountryStatusElement.textContent);
+
+                        const statCircleC = document.getElementById('statCircleC');
+
+                        // Remove any previously added status classes
+                        statCircleC.classList.remove('stat-circle-red', 'stat-circle-yellow', 'stat-circle-green');
+                        averageCountryStatusElement.classList.remove('stat-average-red', 'stat-average-yellow', 'stat-average-green');
+
+                        // Update the displayed text to show 1 decimal place
+                        if (!isNaN(averageCountryStatus)) {
+                            averageCountryStatusElement.textContent = averageCountryStatus.toFixed(1);
+                        } else {
+                            console.error("Invalid average country status value");
+                        }
+
+                        // Apply different classes based on the averageCountryStatus value
+                        if (isNaN(averageCountryStatus)) {
+                            console.error("Invalid average country status value");
+                        } else if (averageCountryStatus < 3) {
+                            statCircleC.classList.add('stat-circle-red');  // Red for below 3
+                            averageCountryStatusElement.classList.add('stat-average-red');  // Red text for below 3
+                        } else if (averageCountryStatus >= 3 && averageCountryStatus < 4) {
+                            statCircleC.classList.add('stat-circle-yellow');  // Yellow for between 3 and 4
+                            averageCountryStatusElement.classList.add('stat-average-yellow');  // Yellow text for between 3 and 4
+                        } else {
+                            statCircleC.classList.add('stat-circle-green');  // Green for above 4
+                            averageCountryStatusElement.classList.add('stat-average-green');  // Green text for above 4
+                        }
+                    }
+
+                    /*function updateCountryStatus() {
                         const averageCountryStatus = parseFloat(document.getElementById('average_country-status').textContent);
                         const statCircleC = document.getElementById('statCircleC');
 
@@ -634,7 +665,7 @@
                             statCircleC.classList.add('stat-circle-green');  // Green for above 4
                             document.getElementById('average_country-status').classList.add('stat-average-green');  // Green text for above 4
                         }
-                    }
+                    }*/
 
                     // Call the function every second (1000 milliseconds)
                     setInterval(updateCountryStatus, 1000);

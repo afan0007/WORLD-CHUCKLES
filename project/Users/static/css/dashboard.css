@@ -442,7 +442,7 @@ canvas {
 .container {
   position: absolute;
   top: 200px;
-  left: 1000px;
+  left: 970px;
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Two columns */
   grid-gap: 20px;
@@ -459,7 +459,7 @@ canvas {
 .container2 {
   position: absolute;
   top: 600px;
-  left: 1000px;
+  left: 970px;
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Two columns */
   grid-gap: 20px;
