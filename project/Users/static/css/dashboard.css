@@ -278,6 +278,7 @@ canvas {
   
 }
 
+
 .chart-container-top-jokes {
   position: absolute;
   top: 174px;
@@ -442,13 +443,13 @@ canvas {
 .container {
   position: absolute;
   top: 200px;
-  left: 1000px;
+  left: 970px;
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Two columns */
   grid-gap: 20px;
   background-color: #bce7f5;
   height: 350px;
-  width: 500px;
+  width: 430px;
   padding-top: 50px;
   padding-left: 20px;
   padding-right: 20px;
@@ -459,18 +460,16 @@ canvas {
 .container2 {
   position: absolute;
   top: 600px;
-  left: 1000px;
-  display: grid;
+  left: 970px;
   grid-template-columns: repeat(2, 1fr); /* Two columns */
   grid-gap: 20px;
   background-color: #bce7f5;
-  height: 350px;
-  width: 500px;
-  padding-top: 50px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 20px;
+  height: 370px;
+  width: 430px;
+  padding: 0;
+  margin: 0;
   border-radius: 15px;
+  max-height: 100vh;
 }
 
 
@@ -478,7 +477,7 @@ canvas {
   position: absolute;
   top: 80px;
   left: 30px;
-  width: 200px; /* Full width inside grid */
+  width: 170px; /* Full width inside grid */
   height: 250px;
   padding: 20px;
   background-color: rgb(238, 248, 252);
@@ -490,8 +489,8 @@ canvas {
 .stat-card2 {
   position: absolute;
   top: 80px;
-  left: 270px;
-  width: 200px; /* Full width inside grid */
+  left: 220px;
+  width: 170px; /* Full width inside grid */
   height: 250px;
   padding: 20px;
   background-color: rgb(238, 248, 252);
@@ -504,7 +503,7 @@ canvas {
   position: absolute;
   top: 100px;
   left: 30px;
-  width: 200px; /* Full width inside grid */
+  width: 170px; /* Full width inside grid */
   height: 250px;
   padding: 20px;
   background-color: rgb(238, 248, 252);
@@ -516,8 +515,8 @@ canvas {
 .stat-card4 {
   position: absolute;
   top: 100px;
-  left: 270px;
-  width: 200px; /* Full width inside grid */
+  left: 220px;
+  width: 170px; /* Full width inside grid */
   height: 250px;
   padding: 20px;
   background-color: rgb(238, 248, 252);
@@ -560,6 +559,7 @@ canvas {
 
 .stat-content1 {
   position: absolute;
+  left: 10px;
 }
 
 .stat-content2{
@@ -568,6 +568,7 @@ canvas {
 
 .stat-content3{
   position: absolute;
+  left: 10px;
 }
 
 .stat-content4{
@@ -589,8 +590,8 @@ canvas {
 
 .stat-circle2 {
   position: absolute;
-  top: 40px;
-  left: 30px;
+  top: 20px;
+  left: 10px;
   font-size: 50px;
   font-family: Spinnaker;
   font-weight: 500;
@@ -614,8 +615,8 @@ canvas {
 
 .stat-circle4 {
   position: absolute;
-  top: 30px;
-  left: 30px;
+  top: 20px;
+  left: 10px;
   font-size: 50px;
   font-family: Spinnaker;
   font-weight: 500;
@@ -632,7 +633,7 @@ canvas {
   color: rgb(7, 42, 138);
   position: absolute;
   top: 30px;
-  left: 150px;
+  left: 120px;
 
 }
 
@@ -645,7 +646,7 @@ canvas {
   color: rgb(7, 42, 138);
   position: absolute;
   top: 30px;
-  left: 130px;
+  left: 50px;
 
 }
 
@@ -653,8 +654,8 @@ canvas {
   font-size: 15px;
   font-family: Spinnaker;
   position: absolute;
-  left: 120px;
-  top: 60px;
+  left: 80px;
+  top: 80px;
   color: grey;
 }
 
@@ -739,7 +740,7 @@ canvas {
 
 .country-label-text{
   position:relative;
-  top: 120px;
+  top: 100px;
   left: -10px;
   font-family: Spinnaker;
   font-size: 15px;
@@ -748,6 +749,6 @@ canvas {
 
 .star{
   position: absolute;
-  top: 165px;
-  left: 25px;
+  top: 155px;
+  left: 10px;
 }
